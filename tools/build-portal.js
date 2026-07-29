@@ -73,7 +73,7 @@ write("login.html", page(
 /* ======================= DASHBOARD ======================= */
 write("dashboard.html", page(
   "My learning",
-  "Your Mindify student dashboard — track module completion and download your certificate.",
+  "Your Mindify dashboard — track progress across your courses and download certificates.",
   `
 <div class="dash-head">
   <div class="wrap">
@@ -81,10 +81,10 @@ write("dashboard.html", page(
       <div>
         <p class="eyebrow">Student area</p>
         <h1 style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin-bottom:.25em">Hello, <span id="u-name">…</span></h1>
-        <p class="muted" style="margin:0">${COURSE.title} · ${COURSE.subtitle}</p>
+        <p class="muted" style="margin:0" id="u-sub">Your courses</p>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn btn-light btn-sm" href="courses.html">Course overview</a>
+        <a class="btn btn-light btn-sm" href="courses.html">Browse courses</a>
         <button class="btn btn-ghost btn-sm" id="signout" type="button">Sign out</button>
       </div>
     </div>
@@ -92,7 +92,7 @@ write("dashboard.html", page(
     <div class="progress-shell">
       <div class="progress-bar"><div class="progress-fill" id="bar"></div></div>
       <div class="progress-meta">
-        <span id="p-count" role="status">0 of 6 modules complete</span>
+        <span id="p-count" role="status">Loading…</span>
         <span id="p-pct">0%</span>
       </div>
     </div>
@@ -103,38 +103,22 @@ write("dashboard.html", page(
   <div class="wrap">
     <div class="alert alert-info" id="dash-note" role="status"></div>
     <div class="alert alert-error" id="dash-err" role="alert"></div>
+    <div id="courses"></div>
 
-    <div class="grid" style="grid-template-columns:1.6fr 1fr;gap:34px;align-items:start" id="dash-grid">
-      <div>
-        <h2 style="font-size:1.5rem">Your modules</h2>
-        <p class="muted" style="font-size:.92rem;margin-bottom:22px">Tick a module once you've worked through it and tried the home practice. You can untick if you want to revisit.</p>
-        <div id="mod-list"></div>
-      </div>
-
-      <aside>
-        <div class="cert-panel" id="cert-panel">
-          <div style="width:52px;height:52px;margin:0 auto 16px;color:var(--blue-500)">${icons.cert}</div>
-          <h3 id="cert-title">Certificate of Completion</h3>
-          <p class="muted" style="font-size:.92rem" id="cert-msg">Complete all six modules to unlock your certificate.</p>
-          <button class="btn btn-primary btn-block" id="cert-btn" type="button" disabled style="margin-top:16px">Download certificate</button>
-          <p class="hint" id="cert-hint" style="margin-top:12px">Issued as a dated PDF in your name.</p>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h4>Home practice, this week</h4>
-          <p style="font-size:.92rem" id="next-practice">—</p>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h4>Need a hand?</h4>
-          <p style="font-size:.92rem">Stuck on a module, or something not saving? <a href="contact.html">Send us a message</a> and we'll sort it.</p>
-        </div>
-      </aside>
+    <div class="card" style="margin-top:26px">
+      <h4>Need a hand?</h4>
+      <p style="font-size:.92rem;margin:0">Stuck on a module, or something not saving? <a href="contact.html">Send us a message</a> and we'll sort it.</p>
     </div>
   </div>
 </section>
 `, {
-  extraHead: `<style>@media (max-width:900px){#dash-grid{grid-template-columns:1fr !important}}</style>`,
+  extraHead: `<style>
+    .course-block{margin-bottom:40px}
+    .course-block .head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+    .course-block .bar-wrap{margin:14px 0 22px}
+    .dash-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:30px;align-items:start}
+    @media (max-width:900px){.dash-grid{grid-template-columns:1fr}}
+  </style>`,
   scripts: `<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 <script src="assets/js/certificate.js"></script>
 <script src="assets/js/dashboard.js"></script>`

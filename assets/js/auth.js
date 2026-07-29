@@ -9,7 +9,8 @@
   "use strict";
 
   var CFG = window.MINDIFY_CONFIG || {};
-  var COURSE = "therapeutic-parenting";
+  var DEFAULT_COURSE = "therapeutic-parenting";
+  var slugOf = function (s) { return s || DEFAULT_COURSE; };
   var SB_CDN = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
   var LIVE = !!(CFG.supabaseUrl && CFG.supabaseAnonKey);
 
@@ -142,43 +143,47 @@
       });
     },
 
-    /* Array of completed module numbers, e.g. [1,2,4] */
-    getProgress: function () {
+    /* Array of completed module numbers for a course, e.g. [1,2,4] */
+    getProgress: function (courseSlug) {
+      var course = slugOf(courseSlug);
       return API.getUser().then(function (user) {
         if (!user) return [];
         if (LIVE) {
           return sb.from("progress").select("module_no")
-            .eq("user_id", user.id).eq("course_slug", COURSE)
+            .eq("user_id", user.id).eq("course_slug", course)
             .then(function (r) {
               if (r.error) { console.warn("[Mindify] progress read failed", r.error.message); return []; }
               return (r.data || []).map(function (x) { return x.module_no; }).sort(function (a, b) { return a - b; });
             });
         }
         var all = readLS(LS_PROGRESS, {});
-        return (all[user.email] || []).slice().sort(function (a, b) { return a - b; });
+        var key = user.email + "|" + course;
+        return (all[key] || []).slice().sort(function (a, b) { return a - b; });
       });
     },
 
-    setModuleComplete: function (moduleNo, done) {
+    setModuleComplete: function (courseSlug, moduleNo, done) {
+      var course = slugOf(courseSlug);
       moduleNo = Number(moduleNo);
       return API.getUser().then(function (user) {
         if (!user) throw new Error("Not signed in.");
         if (LIVE) {
           if (done) {
             return sb.from("progress").upsert(
-              { user_id: user.id, course_slug: COURSE, module_no: moduleNo },
+              { user_id: user.id, course_slug: course, module_no: moduleNo },
               { onConflict: "user_id,course_slug,module_no" }
             ).then(function (r) { if (r.error) throw r.error; return true; });
           }
           return sb.from("progress").delete()
-            .eq("user_id", user.id).eq("course_slug", COURSE).eq("module_no", moduleNo)
+            .eq("user_id", user.id).eq("course_slug", course).eq("module_no", moduleNo)
             .then(function (r) { if (r.error) throw r.error; return true; });
         }
         var all = readLS(LS_PROGRESS, {});
-        var list = all[user.email] || [];
+        var key = user.email + "|" + course;
+        var list = all[key] || [];
         if (done) { if (list.indexOf(moduleNo) === -1) list.push(moduleNo); }
         else { list = list.filter(function (n) { return n !== moduleNo; }); }
-        all[user.email] = list;
+        all[key] = list;
         writeLS(LS_PROGRESS, all);
         return true;
       });

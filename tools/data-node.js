@@ -4,4 +4,9 @@ const src = fs.readFileSync(path.join(__dirname, "..", "assets", "js", "data.js"
 const ctx = { window: {} };
 vm.createContext(ctx);
 vm.runInContext(src, ctx);
-module.exports = { COURSE: ctx.window.MINDIFY_COURSE, TESTIMONIALS: ctx.window.MINDIFY_TESTIMONIALS };
+module.exports = {
+  PLATFORM: ctx.window.MINDIFY_PLATFORM,
+  COURSES: ctx.window.MINDIFY_COURSES,
+  COURSE: ctx.window.MINDIFY_COURSE,
+  TESTIMONIALS: ctx.window.MINDIFY_TESTIMONIALS
+};

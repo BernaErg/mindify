@@ -125,9 +125,22 @@ Two ambers, deliberately: `--amber` (#D99A3E) is for fills and fails contrast as
 
 ### Editing content
 
-Almost everything you'll want to change is in **`assets/js/data.js`** — module
-titles, blurbs, learning outcomes, home practice, testimonials. Change it there
-and both the marketing pages and the dashboard update together.
+Almost everything you'll want to change is in **`assets/js/data.js`**:
+
+- `MINDIFY_PLATFORM` — the promise line and the four audience segments, in priority
+  order. Psychology students first; that ordering drives copy across the site.
+- `MINDIFY_COURSES` — the catalogue. Each course carries `status`
+  (`"available"` or `"in-development"`), `level`, `hours`, `summary`, `why`, and
+  either a `modules` array or an `outline` array.
+- `MINDIFY_TESTIMONIALS` — placeholder quotes. Replace before launch.
+
+Adding a course means adding an object here and running `npm run build`. The
+catalogue page, the home preview, the course detail page, the cover art and the
+dashboard all pick it up. Nothing else needs editing.
+
+Three of the four courses are **placeholders** marked `in-development` — they exist
+so the platform structure is visible. Replace their titles, summaries and outlines
+with real ones, then flip `status` to `"available"` and add a `modules` array.
 
 Page copy and layout live in `tools/build-pages.js` / `tools/build-portal.js`.
 Edit those and run `npm run build`. **Don't hand-edit the generated `.html` files** —
@@ -174,6 +187,9 @@ Listed plainly so nothing surprises you later:
 
 1. **No lesson content yet.** Module pages show outcomes and key ideas; the teaching
    blocks themselves are still in the PowerPoints. That was the agreed scope.
+1b. **Three placeholder courses.** `developmental-neuroscience`, `attachment-in-practice`
+   and `psychology-at-work` are outlines only, clearly labelled "In development" on the
+   site. Replace or delete them before launch.
 2. **No payment.** Enrolment is free. Stripe + a Netlify Function is the usual next step.
 3. **No quizzes.** Completion is self-reported ticking.
 4. **Testimonials are written placeholders.** Replace them in `data.js` before launch —

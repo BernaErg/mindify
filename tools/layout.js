@@ -1,6 +1,16 @@
 /* Shared chrome for every page. Edit here, then run `npm run build:pages`. */
 
 const { MARK, MARK_ON_DARK } = require("./art");
+const fs = require("fs");
+const crypto = require("crypto");
+
+// Content hash on the stylesheet URL. Netlify caches /assets/* for an hour, so
+// without this a returning visitor keeps the old CSS after a rebrand.
+const CSS_V = crypto
+  .createHash("md5")
+  .update(fs.readFileSync(require("path").join(__dirname, "..", "assets", "css", "styles.css")))
+  .digest("hex")
+  .slice(0, 8);
 
 // Two drawings, not one: Strata is a filled disc and vanishes on a dark ground.
 const LOGO = MARK("hdr");
@@ -29,7 +39,7 @@ function head(title, desc, extraHead = "") {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=${CSS_V}">
 ${extraHead}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -59,7 +69,8 @@ const FOOT = `</main>
       <div>
         <h5>Learn</h5>
         <a href="courses.html">All courses</a>
-        <a href="courses.html#modules">Therapeutic Parenting</a>
+        <a href="brand.html">Brand</a>
+        <a href="course.html?c=therapeutic-parenting">Therapeutic Parenting</a>
         <a href="login.html">Student login</a>
       </div>
       <div>

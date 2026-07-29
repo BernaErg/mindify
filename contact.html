@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact Us · Mindify</title>
-<meta name="description" content="Questions about the course, group bookings or accessibility? Get in touch with Mindify.">
+<meta name="description" content="Questions about a course, group bookings or accessibility? Get in touch with Mindify.">
 <meta property="og:title" content="Contact Us · Mindify">
-<meta property="og:description" content="Questions about the course, group bookings or accessibility? Get in touch with Mindify.">
+<meta property="og:description" content="Questions about a course, group bookings or accessibility? Get in touch with Mindify.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#FAF7F2">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=7ff9e7e1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -44,7 +44,7 @@
   <div class="wrap" style="max-width:760px">
     <p class="eyebrow">Contact us</p>
     <h1>Ask us anything</h1>
-    <p class="lede">Questions about whether the course fits your situation, group and organisational bookings, accessibility needs, or anything else — we read every message and reply within two working days.</p>
+    <p class="lede">Whether a course fits your situation, group and institutional bookings, accessibility needs, or a suggestion for what we should teach next — we read every message and reply within two working days.</p>
   </div>
 </section>
 
@@ -58,31 +58,33 @@
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
           <input type="hidden" name="form-name" value="contact">
           <p class="hidden"><label>Don't fill this in: <input name="bot-field"></label></p>
-          <div class="field"><label for="c-name">Your name</label>
-            <input class="input" id="c-name" name="name" required autocomplete="name"></div>
-          <div class="field"><label for="c-email">Email address</label>
-            <input class="input" id="c-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="field"><label for="c-topic">What's this about?</label>
-            <select class="input" id="c-topic" name="topic">
-              <option>A question about the course</option>
-              <option>Group or organisational booking</option>
+          <div class="field"><label for="cf-name">Your name</label>
+            <input class="input" id="cf-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="cf-email">Email address</label>
+            <input class="input" id="cf-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="cf-topic">What's this about?</label>
+            <select class="input" id="cf-topic" name="topic">
+              <option>A question about a course</option>
+              <option>I'm a student — does this count for anything?</option>
+              <option>Group, university or organisational booking</option>
               <option>Accessibility or learning support</option>
-              <option>Problem with my student account</option>
+              <option>Suggest a course</option>
+              <option>Problem with my account</option>
               <option>Something else</option>
             </select></div>
-          <div class="field"><label for="c-msg">Message</label>
-            <textarea class="input" id="c-msg" name="message" required></textarea></div>
+          <div class="field"><label for="cf-msg">Message</label>
+            <textarea class="input" id="cf-msg" name="message" required></textarea></div>
           <button class="btn btn-primary btn-block" type="submit">Send message</button>
           <p class="hint" style="text-align:center">We'll only use your details to reply. Nothing is added to a mailing list.</p>
         </form>
       </div>
       <div>
-        <div class="card reveal" style="margin-bottom:16px"><div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.7-7.5-9.6A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8C19.5 15.3 12 20 12 20Z"/></svg></div><div>
+        <div class="card reveal" style="margin-bottom:16px"><div class="feature"><div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.7-7.5-9.6A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8C19.5 15.3 12 20 12 20Z"/></svg></div><div>
           <h4>Email</h4><p><a href="mailto:hello@mindify.co.uk">hello@mindify.co.uk</a><br><span class="muted">Replies within two working days.</span></p></div></div></div>
-        <div class="card reveal" style="margin-bottom:16px"><div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 19a6.2 6.2 0 0 1 12.4 0"/><path d="M16 5.4A3.2 3.2 0 0 1 16 11"/><path d="M17.6 13.6A6.2 6.2 0 0 1 21.2 19"/></svg></div><div>
-          <h4>Groups and organisations</h4><p>Schools, fostering agencies and support services — we offer bulk enrolment and a facilitator pack for running the modules as live sessions.</p></div></div></div>
-        <div class="card reveal"><div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 4.5-3.3 7.8-8 9-4.7-1.2-8-4.5-8-9V6Z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg></div><div>
-          <h4>Accessibility</h4><p>Tell us what you need. We can supply transcripts, large-print workbooks and extended access on request, at no extra cost.</p></div></div></div>
+        <div class="card reveal" style="margin-bottom:16px"><div class="feature"><div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 19a6.2 6.2 0 0 1 12.4 0"/><path d="M16 5.4A3.2 3.2 0 0 1 16 11"/><path d="M17.6 13.6A6.2 6.2 0 0 1 21.2 19"/></svg></div><div>
+          <h4>Universities and organisations</h4><p>Departments, fostering agencies, schools and support services — we offer bulk enrolment and a facilitator pack for running modules as live seminars.</p></div></div></div>
+        <div class="card reveal"><div class="feature"><div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 4.5-3.3 7.8-8 9-4.7-1.2-8-4.5-8-9V6Z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg></div><div>
+          <h4>Accessibility</h4><p>Tell us what you need. Transcripts, large-print workbooks and extended access are available on request, at no extra cost.</p></div></div></div>
       </div>
     </div>
   </div>
@@ -92,12 +94,13 @@
   <div class="wrap-narrow">
     <p class="eyebrow center">FAQs</p>
     <h2 class="center" style="margin-bottom:36px">Questions we get a lot</h2>
-    <details class="acc"><summary>Isn't therapeutic parenting just being permissive?</summary><div class="acc-body">No — and this is the single most common misunderstanding. Permissive parenting drops the boundary to avoid conflict, which leaves a child feeling loved but not safe. Therapeutic parenting holds the boundary firmly and adds empathy alongside it. “I won't let you hit. I'm right here.” The limit doesn't move.</div></details>
-    <details class="acc"><summary>How long does the course take?</summary><div class="acc-body">Around twelve hours of material across six modules. Most people spread it over six to ten weeks, doing a module a week with the home practice in between. There's no deadline and no expiry — your access doesn't run out.</div></details>
-    <details class="acc"><summary>Is there a certificate?</summary><div class="acc-body">Yes. Mark all six modules complete in your dashboard and a dated PDF certificate unlocks for download. It's widely used for CPD logs, supervision records and fostering panel evidence. It isn't a regulated professional qualification and we don't claim it is.</div></details>
-    <details class="acc"><summary>My child is autistic / has ADHD / has experienced trauma. Does this still apply?</summary><div class="acc-body">The underlying model — regulation before reasoning, connection before correction — holds across all of these, and much of the material was originally written with developmental trauma in mind. It isn't a substitute for a diagnostic assessment or specialist therapeutic input, and we'd never suggest it is.</div></details>
-    <details class="acc"><summary>Can I do this with a partner or co-parent?</summary><div class="acc-body">You can, and it works noticeably better when you do — a shared language matters more than either person's individual technique. Each person needs their own account so progress and certificates stay accurate.</div></details>
-    <details class="acc"><summary>Do you offer this as live training?</summary><div class="acc-body">Each module is written as a two-hour facilitated session with check-ins, teaching blocks, paired reflection and an applied activity. If you'd like to run it live with a group, get in touch about the facilitator pack.</div></details>
+    <details class="acc"><summary>I'm a psychology student. Does this count for anything?</summary><div class="acc-body">Not as academic credit — we're not a degree-awarding body and won't pretend otherwise. What it does give you is a dated certificate and applied material that reads well in a placement application or an assistant psychologist interview, because it shows you've gone past the syllabus voluntarily.</div></details>
+    <details class="acc"><summary>Do I need a psychology background?</summary><div class="acc-body">Depends on the course, and each one says so under its title. Introductory courses assume nothing. Intermediate ones assume you're comfortable with the basic vocabulary — roughly first-year undergraduate level.</div></details>
+    <details class="acc"><summary>How long does a course take?</summary><div class="acc-body">Between eleven and sixteen hours depending on the course. Most people spread it over six to ten weeks, doing a module a week with the practice in between. No deadline, no expiry.</div></details>
+    <details class="acc"><summary>Is there a certificate?</summary><div class="acc-body">Yes — mark every module complete and a dated PDF unlocks in your dashboard. Widely used for CPD logs, supervision records, placement portfolios and fostering panel evidence. It is not a regulated professional qualification.</div></details>
+    <details class="acc"><summary>Isn't therapeutic parenting just being permissive?</summary><div class="acc-body">No, and it's the most common misreading. Permissive parenting drops the boundary to avoid conflict, which leaves a child feeling loved but not safe. The therapeutic stance holds the boundary firmly and adds empathy alongside it. The limit doesn't move.</div></details>
+    <details class="acc"><summary>Can I run this as live training with a group?</summary><div class="acc-body">Each module is written as a two-hour facilitated session with check-ins, teaching blocks, paired reflection and an applied activity. Get in touch about the facilitator pack.</div></details>
+    <details class="acc"><summary>When will the courses marked ‘in development’ be ready?</summary><div class="acc-body">No dates yet — we'd rather publish the outline early and hear what's missing than promise a launch we then rush. Tell us which one you want most and it moves up the queue.</div></details>
   </div>
 </section>
 </main>
@@ -118,7 +121,8 @@
       <div>
         <h5>Learn</h5>
         <a href="courses.html">All courses</a>
-        <a href="courses.html#modules">Therapeutic Parenting</a>
+        <a href="brand.html">Brand</a>
+        <a href="course.html?c=therapeutic-parenting">Therapeutic Parenting</a>
         <a href="login.html">Student login</a>
       </div>
       <div>

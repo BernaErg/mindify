@@ -1,14 +1,21 @@
-/* Mindify — module detail page, hydrated from the query string */
+/* Mindify — module detail page, hydrated by ?c=<slug>&m=<n> */
 (function () {
   "use strict";
-  var COURSE = window.MINDIFY_COURSE;
-  var n = parseInt(new URLSearchParams(location.search).get("m"), 10);
-  var m = COURSE.modules.find(function (x) { return x.n === n; }) || COURSE.modules[0];
+  var ALL = window.MINDIFY_COURSES || [];
+  var q = new URLSearchParams(location.search);
+  var c = ALL.filter(function (x) { return x.slug === q.get("c"); })[0] || ALL[0];
+  var mods = c.modules || [];
+  var n = parseInt(q.get("m"), 10);
+  var m = mods.filter(function (x) { return x.n === n; })[0] || mods[0];
   var $ = function (id) { return document.getElementById(id); };
+  if (!m) { location.replace("course.html?c=" + c.slug); return; }
 
-  document.title = "Module " + m.n + ": " + m.title.replace(/^Module \d+ — /, "") + " · Mindify";
-  $("m-num").textContent = "Module " + m.n + " of " + COURSE.modules.length + " · " + m.minutes + " min";
-  $("m-title").textContent = m.title.replace(/^Module \d+ — /, "");
+  document.title = "Module " + m.n + ": " + m.title + " · Mindify";
+  $("m-back").setAttribute("href", "course.html?c=" + c.slug);
+  $("m-back").textContent = "← " + c.title;
+  $("m-all").setAttribute("href", "course.html?c=" + c.slug + "#modules");
+  $("m-num").textContent = "Module " + m.n + " of " + mods.length + " · " + m.minutes + " min";
+  $("m-title").textContent = m.title;
   $("m-tagline").textContent = "“" + m.tagline + "”";
   $("m-blurb").textContent = m.blurb;
   $("m-practice").textContent = m.practice;
@@ -18,9 +25,8 @@
   if (window.MindifyAuth) {
     window.MindifyAuth.getUser().then(function (u) {
       if (!u) return;
-      var cta = $("m-cta");
-      cta.textContent = "Back to my dashboard";
-      cta.setAttribute("href", "dashboard.html");
+      $("m-cta").textContent = "Back to my dashboard";
+      $("m-cta").setAttribute("href", "dashboard.html");
     });
   }
 })();
