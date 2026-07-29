@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Login · Mindify</title>
+<meta name="description" content="Sign in to your Mindify student area to continue the Therapeutic Parenting course and download your certificate.">
+<meta property="og:title" content="Student Login · Mindify">
+<meta property="og:description" content="Sign in to your Mindify student area to continue the Therapeutic Parenting course and download your certificate.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FBF9F5">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2" opacity=".22"/>
+      <path d="M10 32 C12.6 12 15.2 52 17.8 32 C20.4 17.5 23 46.5 25.6 32 C28.2 21.5 30.8 42.5 33.4 32 C35.2 26 37 38 38.8 32 C39.8 29.5 40.8 34 41.8 32 L54 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg><span class="brand-name">mindify</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="btn btn-primary btn-sm nav-cta" href="login.html" data-auth-cta>Student Login</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="auth-wrap">
+  <div class="auth-panel">
+    <div class="auth-card">
+      <p class="eyebrow">Student area</p>
+      <h1 style="font-size:clamp(1.9rem,3.6vw,2.5rem)" id="auth-heading">Welcome back</h1>
+      <p class="muted" style="margin-bottom:28px" id="auth-sub">Sign in to pick up where you left off.</p>
+
+      <div class="alert alert-info" id="demo-banner" role="status">
+        <b>Demo mode.</b> No server is connected, so accounts and progress are stored only in this browser.
+        Add your Supabase keys in Netlify to switch on real accounts — see <code>README.md</code>.
+      </div>
+      <div class="alert alert-error" id="auth-err" role="alert"></div>
+      <div class="alert alert-ok" id="auth-ok" role="alert"></div>
+
+      <div class="tabs">
+        <button type="button" id="tab-in" class="active" aria-pressed="true">Sign in</button>
+        <button type="button" id="tab-up" aria-pressed="false">Create account</button>
+      </div>
+
+      <form id="auth-form" novalidate>
+        <div class="field hidden" id="f-name">
+          <label for="i-name">Full name</label>
+          <input class="input" id="i-name" autocomplete="name" placeholder="As it should appear on your certificate">
+        </div>
+        <div class="field">
+          <label for="i-email">Email address</label>
+          <input class="input" id="i-email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="i-pass">Password</label>
+          <input class="input" id="i-pass" type="password" autocomplete="current-password" required>
+          <p class="hint" id="pw-hint">At least 8 characters.</p>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" id="auth-submit">Sign in</button>
+      </form>
+
+      <p class="hint" style="text-align:center;margin-top:18px">
+        <a href="#" id="forgot">Forgotten your password?</a>
+      </p>
+      <p class="hint" style="text-align:center;margin-top:22px">
+        Not enrolled yet? <a href="courses.html">See the course first →</a>
+      </p>
+    </div>
+  </div>
+
+  <aside class="auth-aside">
+    <div class="auth-aside-inner">
+      <p class="eyebrow">Therapeutic Parenting</p>
+      <h2>Connection, Regulation & Repair</h2>
+      <p>Six modules on reading behaviour as communication, regulating before reasoning, and repairing well — at whatever pace your life allows.</p>
+      <ul>
+        <li>Track exactly which modules you've completed</li>
+        <li>Pick up on any device, right where you left off</li>
+        <li>Download a dated certificate when all six are done</li>
+        <li>Access never expires</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2" opacity=".22"/>
+      <path d="M10 32 C12.6 12 15.2 52 17.8 32 C20.4 17.5 23 46.5 25.6 32 C28.2 21.5 30.8 42.5 33.4 32 C35.2 26 37 38 38.8 32 C39.8 29.5 40.8 34 41.8 32 L54 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg><span class="brand-name">mindify</span></a>
+        <p style="max-width:34ch">Self-paced psychology training for the people doing the hardest, least-credited work there is.</p>
+      </div>
+      <div>
+        <h5>Learn</h5>
+        <a href="courses.html">All courses</a>
+        <a href="courses.html#modules">Therapeutic Parenting</a>
+        <a href="login.html">Student login</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="about.html">About Mindify</a>
+        <a href="about.html#approach">Our approach</a>
+        <a href="contact.html">Contact us</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="contact.html#faq">FAQs</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© <span data-year>2026</span> Mindify · mindify.co.uk</span>
+      <span>Made for parents, carers and the people who support them.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/login.js"></script>
+</body>
+</html>
