@@ -113,7 +113,7 @@ write("dashboard.html", page(
 
       <aside>
         <div class="cert-panel" id="cert-panel">
-          <div style="width:52px;height:52px;margin:0 auto 16px;color:var(--green-500)">${icons.cert}</div>
+          <div style="width:52px;height:52px;margin:0 auto 16px;color:var(--blue-500)">${icons.cert}</div>
           <h3 id="cert-title">Certificate of Completion</h3>
           <p class="muted" style="font-size:.92rem" id="cert-msg">Complete all six modules to unlock your certificate.</p>
           <button class="btn btn-primary btn-block" id="cert-btn" type="button" disabled style="margin-top:16px">Download certificate</button>

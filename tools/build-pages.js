@@ -1,6 +1,6 @@
 const fs = require("fs"), path = require("path");
 const { page } = require("./layout");
-const { heroArt, icons, moduleCard, testimonialCard, COURSE, TESTIMONIALS } = require("./pieces");
+const { heroArt, icons, moduleCard, testimonialCard, COURSE, TESTIMONIALS, BANNER } = require("./pieces");
 
 const OUT = path.join(__dirname, "..");
 const write = (f, html) => { fs.writeFileSync(path.join(OUT, f), html); console.log("  ✓", f); };
@@ -10,19 +10,21 @@ write("index.html", page(
   "Therapeutic parenting training, self-paced",
   "Mindify runs self-paced psychology-led training for parents, carers and practitioners. Six modules on connection, regulation and repair — with a certificate on completion.",
   `
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Self-paced · Psychology-led · Certificated</p>
-      <h1>Behaviour is communication.<br>Learn to hear it.</h1>
-      <p class="lede">Mindify teaches therapeutic parenting the way the evidence actually supports it — connection before correction, regulation before reasoning, repair over perfection. Six modules. Your own pace. A certificate at the end.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="courses.html">Explore the course</a>
-        <a class="btn btn-ghost" href="login.html" data-auth-cta>Student Login</a>
+<section style="padding:clamp(28px,4vw,52px) 0 0">
+  <div class="wrap">
+    <div class="hero-feature">
+      <div class="art">${heroArt}</div>
+      <div class="inner">
+        <p class="eyebrow">Psychology, taught properly</p>
+        <h1>Evidence-led training,<br>at the pace your life allows.</h1>
+        <p class="lede">Self-paced courses written and delivered by a UK academic psychologist — for psychology students, practitioners, managers, and parents who want to understand people rather than manage them.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="courses.html">Browse courses</a>
+          <a class="btn btn-ghost" href="about.html">How it works</a>
+        </div>
+        <p class="hero-note">${icons.clock} Start today, finish whenever you can · certificate on completion</p>
       </div>
-      <p class="hero-note">${icons.clock} 12 hours of material · start today, finish whenever you can</p>
     </div>
-    <div class="hero-art">${heroArt}</div>
   </div>
 </section>
 
@@ -67,7 +69,7 @@ write("index.html", page(
   </div>
 </section>
 
-<section class="band-sage">
+<section class="band-tint">
   <div class="wrap">
     <div class="center" style="max-width:60ch;margin-inline:auto;margin-bottom:48px">
       <p class="eyebrow">The course</p>
@@ -91,17 +93,17 @@ write("index.html", page(
     </div>
     <div class="grid grid-3">
       <div class="card reveal center" style="padding:36px 28px">
-        <div style="font-family:var(--font-serif);font-size:2.4rem;color:var(--green-500);line-height:1">01</div>
+        <div style="font-family:var(--font-serif);font-size:2.4rem;color:var(--blue-500);line-height:1">01</div>
         <h3 style="margin-top:14px">Judge → detective</h3>
         <p>A judge asks what they did and what they deserve. A detective asks what happened and what they need. Only one of those keeps the relationship open.</p>
       </div>
       <div class="card reveal center" style="padding:36px 28px">
-        <div style="font-family:var(--font-serif);font-size:2.4rem;color:var(--green-500);line-height:1">02</div>
+        <div style="font-family:var(--font-serif);font-size:2.4rem;color:var(--blue-500);line-height:1">02</div>
         <h3 style="margin-top:14px">Won't → can't yet</h3>
         <p>The prefrontal cortex isn't fully wired until the mid-twenties. Much of what looks like defiance is machinery that hasn't been built.</p>
       </div>
       <div class="card reveal center" style="padding:36px 28px">
-        <div style="font-family:var(--font-serif);font-size:2.4rem;color:var(--green-500);line-height:1">03</div>
+        <div style="font-family:var(--font-serif);font-size:2.4rem;color:var(--blue-500);line-height:1">03</div>
         <h3 style="margin-top:14px">Rupture → repair</h3>
         <p>Rupture is normal and it isn't what wounds. Unrepaired rupture is. Repair is a skill you can learn — and it's the most freeing idea in the course.</p>
       </div>
@@ -109,7 +111,7 @@ write("index.html", page(
   </div>
 </section>
 
-<section class="band-sage">
+<section class="band-tint">
   <div class="wrap">
     <div class="center" style="max-width:56ch;margin-inline:auto;margin-bottom:48px">
       <p class="eyebrow">From our students</p>
@@ -121,7 +123,7 @@ write("index.html", page(
   </div>
 </section>
 
-<section class="band-deep">
+<section class="band-ink">
   <div class="wrap center" style="max-width:62ch">
     <p class="eyebrow">Start when you're ready</p>
     <h2>Six weeks, one idea at a time</h2>
@@ -155,7 +157,7 @@ write("about.html", page(
   </div>
 </section>
 
-<section id="approach" class="band-sage">
+<section id="approach" class="band-tint">
   <div class="wrap">
     <div class="center" style="max-width:56ch;margin-inline:auto;margin-bottom:48px">
       <p class="eyebrow">Our approach</p>
@@ -199,7 +201,7 @@ write("about.html", page(
   </div>
 </section>
 
-<section class="band-deep">
+<section class="band-ink">
   <div class="wrap center" style="max-width:60ch">
     <h2>“You already love your child and you're already trying hard.”</h2>
     <p class="lede" style="color:#BFD3C7">This is about a new lens, not a new you.</p>
@@ -237,7 +239,11 @@ write("courses.html", page(
   </div>
 </section>
 
-<section id="modules" class="band-sage">
+<section class="section-tight" style="padding-top:0">
+  <div class="wrap"><div class="banner">${BANNER(2)}</div></div>
+</section>
+
+<section id="modules" class="band-tint">
   <div class="wrap">
     <div class="center" style="max-width:56ch;margin-inline:auto;margin-bottom:48px">
       <p class="eyebrow">The curriculum</p>
@@ -273,7 +279,7 @@ write("courses.html", page(
   </div>
 </section>
 
-<section class="band-deep">
+<section class="band-ink">
   <div class="wrap center" style="max-width:60ch">
     <p class="eyebrow">Ready?</p>
     <h2>Start with Module 1 tonight</h2>
@@ -295,7 +301,7 @@ write("module.html", page(
     <p class="eyebrow"><a href="courses.html">← Back to all modules</a></p>
     <p class="eyebrow" id="m-num">Module</p>
     <h1 id="m-title">…</h1>
-    <p class="lede" id="m-tagline" style="font-style:italic;color:var(--green-700)"></p>
+    <p class="lede" id="m-tagline" style="font-style:italic;color:var(--blue-700)"></p>
     <p class="lede" id="m-blurb"></p>
     <div class="hero-actions">
       <a class="btn btn-primary" id="m-cta" href="login.html?mode=signup">Enrol to unlock this module</a>
@@ -304,7 +310,7 @@ write("module.html", page(
   </div>
 </section>
 
-<section class="band-sage">
+<section class="band-tint">
   <div class="wrap">
     <div class="grid grid-2" style="gap:clamp(28px,4vw,56px)">
       <div>
@@ -392,7 +398,7 @@ write("contact.html", page(
   </div>
 </section>
 
-<section id="faq" class="band-sage">
+<section id="faq" class="band-tint">
   <div class="wrap-narrow">
     <p class="eyebrow center">FAQs</p>
     <h2 class="center" style="margin-bottom:36px">Questions we get a lot</h2>

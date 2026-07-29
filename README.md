@@ -97,6 +97,32 @@ supabase/schema.sql        run once in the Supabase SQL editor
 build.sh                   Netlify build: regenerate pages + inject env vars
 ```
 
+### The visual system
+
+Everything visual is generated at build time from **`tools/art.js`** — the hero, every
+course cover, the section banners and the logo itself, all from the Strata mark's own
+geometry. There are no image files to manage and nothing to upload.
+
+Adding a course means adding it to `assets/js/data.js` and running `npm run build`.
+Its cover generates itself from the module number, cycling four compositions so two
+identical covers never sit next to each other.
+
+The mark ships as **four drawings, not one**. Strata is a filled disc, so it vanishes
+on a dark ground, and its three layers close into a blob below about 22px:
+
+| Context | Function |
+|---|---|
+| Light grounds | `MARK()` |
+| Dark grounds  | `MARK_ON_DARK()` |
+| Under 22px    | simplified two-layer version (see `/brand`) |
+| App icon      | rounded tile (see `/brand`) |
+
+The live brand sheet is at **`/brand`** — mark variants, palette with contrast notes,
+image language and type. Send that link to anyone who needs to make something.
+
+Two ambers, deliberately: `--amber` (#D99A3E) is for fills and fails contrast as text;
+`--amber-ink` (#9E6420) is the text-safe tone. Every pairing on the site meets WCAG AA.
+
 ### Editing content
 
 Almost everything you'll want to change is in **`assets/js/data.js`** — module

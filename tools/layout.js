@@ -1,9 +1,10 @@
 /* Shared chrome for every page. Edit here, then run `npm run build:pages`. */
 
-const LOGO = `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-      <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2" opacity=".22"/>
-      <path d="M10 32 C12.6 12 15.2 52 17.8 32 C20.4 17.5 23 46.5 25.6 32 C28.2 21.5 30.8 42.5 33.4 32 C35.2 26 37 38 38.8 32 C39.8 29.5 40.8 34 41.8 32 L54 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>`;
+const { MARK, MARK_ON_DARK } = require("./art");
+
+// Two drawings, not one: Strata is a filled disc and vanishes on a dark ground.
+const LOGO = MARK("hdr");
+const LOGO_DARK = MARK_ON_DARK("ftr");
 
 const NAV = [
   ["index.html", "Home"],
@@ -23,7 +24,7 @@ function head(title, desc, extraHead = "") {
 <meta property="og:title" content="${title} · Mindify">
 <meta property="og:description" content="${desc}">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#FBF9F5">
+<meta name="theme-color" content="#FAF7F2">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,8 +53,8 @@ const FOOT = `</main>
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="index.html">${LOGO}<span class="brand-name">mindify</span></a>
-        <p style="max-width:34ch">Self-paced psychology training for the people doing the hardest, least-credited work there is.</p>
+        <a class="brand" href="index.html">${LOGO_DARK}<span class="brand-name">mindify</span></a>
+        <p style="max-width:34ch">Self-paced psychology training from a UK academic — for students, practitioners, managers and parents.</p>
       </div>
       <div>
         <h5>Learn</h5>

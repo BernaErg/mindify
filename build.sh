@@ -8,6 +8,7 @@ set -euo pipefail
 echo "→ Building pages…"
 node tools/build-pages.js
 node tools/build-portal.js
+node tools/build-brand.js
 
 echo "→ Writing assets/js/config.js…"
 cat > assets/js/config.js <<CONFIG

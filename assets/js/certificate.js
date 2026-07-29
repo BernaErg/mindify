@@ -5,11 +5,12 @@
 (function () {
   "use strict";
 
-  var GREEN = [44, 85, 72];      // #2C5548
-  var SAGE  = [143, 176, 158];   // #8FB09E
-  var INK   = [22, 36, 31];      // #16241F
-  var MUTED = [110, 130, 121];   // #6E8279
-  var CREAM = [251, 249, 245];   // #FBF9F5
+  var GREEN = [46, 67, 114];     // #2E4372  deep blue  (name kept for diff clarity)
+  var SAGE  = [143, 163, 206];   // #8FA3CE  cornflower
+  var INK   = [21, 28, 46];      // #151C2E
+  var MUTED = [85, 96, 117];     // #556075
+  var CREAM = [250, 247, 242];   // #FAF7F2
+  var AMBER = [217, 154, 62];    // #D99A3E
 
   /* jsPDF's built-in fonts are WinAnsi-encoded, which has no ğ ş İ ı ř ł etc.
      Rather than ship a ~300KB embedded Unicode font for a certificate, we
@@ -60,22 +61,50 @@
     return "MDF-" + (h >>> 0).toString(36).toUpperCase().padStart(7, "0").slice(0, 7);
   }
 
-  /* Decaying-oscillation mark, drawn as a polyline. */
-  function drawMark(doc, cx, cy, w) {
-    var pts = [], N = 130, i, t, amp, y;
+  /* The Strata mark, drawn as filled mass rather than a line — the same
+     drawing as the SVG logo. jsPDF has no reliable clipping, so each layer is
+     closed along the disc's own arc instead, which keeps it inside by
+     construction. Opacities are pre-blended against the disc colour because
+     PDF transparency groups are not worth the compatibility risk here. */
+  var DISC  = [46, 67, 114];    // #2E4372
+  var LAY_1 = [75, 96, 142];    // cornflower at 30% over DISC
+  var LAY_2 = [99, 120, 165];   // cornflower at 55% over DISC
+
+  function layer(doc, cx, cy, r, y, amp, decay, cycles, col) {
+    var dy = y - cy;
+    if (Math.abs(dy) >= r) return;
+    var halfW = Math.sqrt(r * r - dy * dy);
+    var x0 = cx - halfW, x1 = cx + halfW;
+    var pts = [], N = 80, i, t, a, x, u;
+
+    // the settling line, left to right
     for (i = 0; i <= N; i++) {
       t = i / N;
-      amp = 7 * Math.exp(-4.2 * t);
-      y = cy - amp * Math.sin(t * Math.PI * 9);
-      pts.push([cx - w / 2 + t * w, y]);
+      a = amp * Math.exp(-decay * t);
+      pts.push([x0 + t * (x1 - x0), y - a * Math.sin(t * Math.PI * cycles)]);
     }
-    doc.setDrawColor(GREEN[0], GREEN[1], GREEN[2]);
-    doc.setLineWidth(0.75);
-    doc.setLineCap("round"); doc.setLineJoin("round");
-    for (i = 1; i < pts.length; i++) doc.line(pts[i - 1][0], pts[i - 1][1], pts[i][0], pts[i][1]);
+    // back along the bottom of the disc, right to left (PDF y grows downward)
+    for (i = 0; i <= N; i++) {
+      x = x1 + (x0 - x1) * (i / N);
+      u = r * r - (x - cx) * (x - cx);
+      pts.push([x, cy + Math.sqrt(u > 0 ? u : 0)]);
+    }
+
+    var rel = [], j;
+    for (j = 1; j < pts.length; j++) rel.push([pts[j][0] - pts[j - 1][0], pts[j][1] - pts[j - 1][1]]);
+    doc.setFillColor(col[0], col[1], col[2]);
+    doc.lines(rel, pts[0][0], pts[0][1], [1, 1], "F", true);
+  }
+
+  function drawMark(doc, cx, cy, r) {
+    doc.setFillColor(DISC[0], DISC[1], DISC[2]);
+    doc.circle(cx, cy, r, "F");
+    layer(doc, cx, cy, r, cy - r * 0.07, r * 0.20, 3.3, 9, LAY_1);
+    layer(doc, cx, cy, r, cy + r * 0.31, r * 0.15, 3.6, 8, LAY_2);
+    layer(doc, cx, cy, r, cy + r * 0.62, r * 0.09, 4.0, 7, AMBER);
     doc.setDrawColor(SAGE[0], SAGE[1], SAGE[2]);
-    doc.setLineWidth(0.4);
-    doc.circle(cx, cy, w / 2 + 4, "S");
+    doc.setLineWidth(0.35);
+    doc.circle(cx, cy, r, "S");
   }
 
   function generate(opts) {
@@ -102,7 +131,7 @@
     doc.rect(M + 3.5, M + 3.5, W - (M + 3.5) * 2, H - (M + 3.5) * 2, "S");
 
     /* Mark + wordmark */
-    drawMark(doc, W / 2, 36, 22);
+    drawMark(doc, W / 2, 36, 13);
     doc.setFont("times", "normal"); doc.setFontSize(22);
     doc.setTextColor(GREEN[0], GREEN[1], GREEN[2]);
     doc.text("mindify", W / 2, 60, { align: "center" });

@@ -27,8 +27,8 @@
   to = "/dashboard.html"
   status = 200
 [[redirects]]
-  from = "/logos"
-  to = "/logos.html"
+  from = "/brand"
+  to = "/brand.html"
   status = 200
 
 # Build sources shouldn't be fetchable from the deployed site.
