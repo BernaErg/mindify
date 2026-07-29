@@ -14,31 +14,32 @@ const SOFT = (k, dev = 34) => `<filter id="sf${k}" x="-40%" y="-40%" width="180%
     <feGaussianBlur stdDeviation="${dev}"/></filter>`;
 
 /* An open decaying oscillation — the mark's line, at any size. */
-const wave = (x0, x1, y, amp, decay, cycles, stroke, sw) => {
+const wave = (x0, x1, y, amp, decay, cycles, stroke, sw, cls) => {
   const N = 200; let d = "";
   for (let i = 0; i <= N; i++) {
     const t = i / N, a = amp * Math.exp(-decay * t);
     d += (i ? "L" : "M") + (x0 + t * (x1 - x0)).toFixed(1) + " " + (y - a * Math.sin(t * Math.PI * cycles)).toFixed(1);
   }
-  return `<path d="${d}" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round"/>`;
+  return `<path class="${cls || ""}" d="${d}" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round"/>`;
 };
 
 /* The same oscillation, closed downward into a filled band. */
-const band = (x0, x1, y, amp, decay, cycles, bottom, fill, op = 1) => {
+const band = (x0, x1, y, amp, decay, cycles, bottom, fill, op = 1, cls) => {
   const N = 180; let d = "";
   for (let i = 0; i <= N; i++) {
     const t = i / N, a = amp * Math.exp(-decay * t);
     d += (i ? "L" : "M") + (x0 + t * (x1 - x0)).toFixed(1) + " " + (y - a * Math.sin(t * Math.PI * cycles)).toFixed(1);
   }
-  return `<path d="${d}L${x1} ${bottom}L${x0} ${bottom}Z" fill="${fill}" opacity="${op}"/>`;
+  return `<path class="${cls || ""}" d="${d}L${x1} ${bottom}L${x0} ${bottom}Z" fill="${fill}" opacity="${op}"/>`;
 };
 
 /* Three layers in the mark's proportions: the amber base stays a sliver. */
-const strata = (x0, x1, yTop, span, bottom, layer, base) => {
+const strata = (x0, x1, yTop, span, bottom, layer, base, anim) => {
   const s = span / 3;
-  return band(x0, x1, yTop,         s * .58, 3.3, 9, bottom, layer, .3)
-       + band(x0, x1, yTop + s,     s * .44, 3.6, 8, bottom, layer, .55)
-       + band(x0, x1, yTop + s * 2, s * .28, 4.0, 7, bottom, base,  1);
+  const c = anim ? ["st-a", "st-b", "st-c"] : ["", "", ""];
+  return band(x0, x1, yTop,         s * .58, 3.3, 9, bottom, layer, .3,  c[0])
+       + band(x0, x1, yTop + s,     s * .44, 3.6, 8, bottom, layer, .55, c[1])
+       + band(x0, x1, yTop + s * 2, s * .28, 4.0, 7, bottom, base,  1,   c[2]);
 };
 
 const rings = (cx, cy, from, to, step, stroke, sw, op) => {
@@ -80,12 +81,12 @@ const HERO = () => `<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg
   <g clip-path="url(#ahc)">
     <rect width="900" height="520" fill="url(#ahbg)"/>
     <circle cx="770" cy="70" r="200" fill="#2E4372" opacity=".42" filter="url(#sfah)"/>
-    ${rings(672, 256, 214, 336, 34, "#8FA3CE", 1.2, .2)}
+    <g class="hr-rings">${rings(672, 256, 214, 336, 34, "#8FA3CE", 1.2, .2)}</g>
     <circle cx="672" cy="256" r="196" fill="url(#ahd)"/>
-    <g clip-path="url(#ahdc)">${strata(476, 872, 250, 210, 470, "#8FA3CE", "#D99A3E")}</g>
+    <g clip-path="url(#ahdc)">${strata(456, 892, 250, 210, 480, "#8FA3CE", "#D99A3E", true)}</g>
     <circle cx="672" cy="256" r="196" fill="none" stroke="#8FA3CE" stroke-width="1.4" opacity=".36"/>
-    ${wave(0, 900, 478, 22, 3.2, 9, "#8FA3CE", 2.4)}
-    ${wave(0, 900, 501, 12, 3.6, 8, "#D99A3E", 1.8)}
+    ${wave(-70, 970, 478, 22, 3.2, 9, "#8FA3CE", 2.4, "hw-a")}
+    ${wave(-70, 970, 501, 12, 3.6, 8, "#D99A3E", 1.8, "hw-b")}
     <rect width="900" height="520" filter="url(#grah)" opacity=".6"/>
   </g></svg>`;
 

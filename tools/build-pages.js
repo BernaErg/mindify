@@ -59,12 +59,12 @@ write("index.html", page(
 <section class="band-tint">
   <div class="wrap">
     <div class="center" style="max-width:62ch;margin-inline:auto;margin-bottom:48px">
-      <p class="eyebrow">Courses</p>
-      <h2>What's available, and what's coming</h2>
-      <p class="lede">Each course is self-contained, self-paced, and ends with a dated certificate. Access never expires.</p>
+      <p class="eyebrow">The catalogue</p>
+      <h2>${COURSES.length} courses, ${COURSES.reduce((a,c)=>a+(c.modules?c.modules.length:0),0)} modules</h2>
+      <p class="lede">Attachment and developmental practice, psychedelic science, breathwork facilitation, nature-based wellbeing. Each is self-contained, self-paced, and ends with a dated certificate.</p>
     </div>
     <div class="grid grid-3">
-      ${COURSES.slice(0, 3).map(courseCard).join("\n      ")}
+      ${COURSES.map(courseCard).join("\n      ")}
     </div>
     <div class="center" style="margin-top:34px">
       <a class="btn btn-primary" href="courses.html">See all courses</a>
@@ -134,7 +134,7 @@ write("courses.html", page(
 <section class="hero" style="padding-bottom:clamp(32px,5vw,56px)">
   <div class="wrap" style="max-width:840px">
     <p class="eyebrow">Courses</p>
-    <h1>${COURSES.length} courses, ${live.length} available now</h1>
+    <h1>${live.length} courses, all open</h1>
     <p class="lede">Every course is self-contained and self-paced, ends with a dated certificate, and never expires. Start with any of them — there's no required order.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="login.html?mode=signup">Create your account</a>
@@ -154,13 +154,13 @@ write("courses.html", page(
       <h2>Open for enrolment</h2>
     </div>
     <div class="grid grid-3">${live.map(courseCard).join("\n      ")}</div>
-
+    ${soon.length ? `
     <div class="center" style="max-width:56ch;margin-inline:auto;margin:64px auto 44px">
       <p class="eyebrow">In development</p>
       <h2>Coming next</h2>
       <p class="lede">Outlines are published early so you can tell us what's missing before they're written.</p>
     </div>
-    <div class="grid grid-3">${soon.map((c, i) => courseCard(c, i + live.length)).join("\n      ")}</div>
+    <div class="grid grid-3">${soon.map((c, i) => courseCard(c, i + live.length)).join("\n      ")}</div>` : ""}
   </div>
 </section>
 
@@ -200,6 +200,7 @@ write("course.html", page(
     <h1 id="c-title">…</h1>
     <p class="lede" id="c-sub" style="font-style:italic;color:var(--blue-700)"></p>
     <p class="lede" id="c-summary"></p>
+    <div class="notice-block hidden" id="c-notice"></div>
     <div class="hero-actions">
       <a class="btn btn-primary" id="c-cta" href="login.html?mode=signup">Enrol — create your account</a>
       <a class="btn btn-ghost" href="#modules">See the modules</a>

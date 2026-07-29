@@ -54,6 +54,7 @@ function courseCard(c, i) {
         <h3>${c.title}</h3>
         <p class="tagline">${c.subtitle}</p>
         <p>${c.summary}</p>
+        ${c.notice ? `<p class="notice-inline">Educational content only · not a recommendation of personal use</p>` : ""}
         <div class="card-foot">
           <span class="pill">${count}</span><span class="pill">${c.hours} hours</span>
           ${live

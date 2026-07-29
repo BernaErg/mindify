@@ -16,6 +16,12 @@
     (live ? c.modules.length + " modules" : (c.outline || []).length + " topics") +
     " · " + c.hours + " hours · self-paced" + (live ? " · certificate on completion" : " · in development");
 
+  if (c.notice) {
+    var nb = $("c-notice");
+    nb.innerHTML = "<b>Please read first.</b> " + c.notice;
+    nb.classList.remove("hidden");
+  }
+
   $("c-why").textContent = c.why;
   if (!live) {
     $("c-why-h").textContent = "Not written yet";

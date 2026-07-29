@@ -138,9 +138,16 @@ Adding a course means adding an object here and running `npm run build`. The
 catalogue page, the home preview, the course detail page, the cover art and the
 dashboard all pick it up. Nothing else needs editing.
 
-Three of the four courses are **placeholders** marked `in-development` — they exist
-so the platform structure is visible. Replace their titles, summaries and outlines
-with real ones, then flip `status` to `"available"` and add a `modules` array.
+All four courses are real and live: Therapeutic Parenting, Psychedelics in Mental
+Health, Integrative Breathwork Facilitation, and Forest Bathing & Silvotherapy —
+24 modules, 39 hours. The `in-development` code path still works: set a course's
+`status` to `"in-development"` and give it an `outline` array instead of `modules`,
+and it renders as a published outline with a "tell us to write this" call to action.
+
+A course may carry a `notice` string. It renders as a short warning on the course
+card and as a full block at the top of the course page. Psychedelics in Mental
+Health uses it for the educational-only framing and the Türkiye legal position —
+that text is a compliance requirement, not decoration. Don't delete it.
 
 Page copy and layout live in `tools/build-pages.js` / `tools/build-portal.js`.
 Edit those and run `npm run build`. **Don't hand-edit the generated `.html` files** —
@@ -187,9 +194,9 @@ Listed plainly so nothing surprises you later:
 
 1. **No lesson content yet.** Module pages show outcomes and key ideas; the teaching
    blocks themselves are still in the PowerPoints. That was the agreed scope.
-1b. **Three placeholder courses.** `developmental-neuroscience`, `attachment-in-practice`
-   and `psychology-at-work` are outlines only, clearly labelled "In development" on the
-   site. Replace or delete them before launch.
+1b. **Course pages are summaries, not lessons.** All 24 modules show outcomes, key
+   ideas and the weekly practice. The teaching content itself is still in the
+   PowerPoint decks and narration guides.
 2. **No payment.** Enrolment is free. Stripe + a Netlify Function is the usual next step.
 3. **No quizzes.** Completion is self-reported ticking.
 4. **Testimonials are written placeholders.** Replace them in `data.js` before launch —
