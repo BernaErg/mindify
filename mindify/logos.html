@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mindify — logo concepts</title>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .lg{border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden;background:#fff;margin-bottom:28px}
+  .lg-head{padding:22px 26px;border-bottom:1px solid var(--line)}
+  .lg-head h2{margin:0 0 .25em}
+  .lg-head p{margin:0;font-size:.92rem;color:var(--ink-soft)}
+  .lg-body{display:grid;grid-template-columns:1.2fr 1fr;gap:1px;background:var(--line)}
+  @media(max-width:760px){.lg-body{grid-template-columns:1fr}}
+  .cell{background:var(--cream);padding:40px 30px;display:grid;place-items:center;min-height:190px}
+  .cell.dark{background:var(--green-900)}
+  .cell.white{background:#fff}
+  .lockup{display:flex;align-items:center;gap:14px;color:var(--green-700)}
+  .lockup svg{width:52px;height:52px}
+  .lockup span{font-family:var(--font-serif);font-size:2.1rem;font-weight:500;letter-spacing:-.035em}
+  .dark .lockup{color:#fff}
+  .stack{display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--green-700)}
+  .stack svg{width:64px;height:64px}
+  .stack span{font-family:var(--font-serif);font-size:1.5rem;letter-spacing:-.03em}
+  .sizes{display:flex;align-items:center;gap:22px;color:var(--green-700)}
+  .sizes svg:nth-child(1){width:16px;height:16px}
+  .sizes svg:nth-child(2){width:24px;height:24px}
+  .sizes svg:nth-child(3){width:34px;height:34px}
+  .sizes svg:nth-child(4){width:48px;height:48px}
+  .lg-note{padding:20px 26px;background:var(--sage-50);font-size:.9rem;color:var(--ink-soft);border-top:1px solid var(--line)}
+  .lg-note b{color:var(--green-900)}
+  .swatches{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .sw{width:74px}
+  .sw i{display:block;height:52px;border-radius:10px;border:1px solid rgba(0,0,0,.06)}
+  .sw code{font-size:.68rem;color:var(--muted);display:block;margin-top:6px;font-family:ui-monospace,monospace}
+</style>
+</head>
+<body>
+<main id="main">
+<section class="hero" style="padding-bottom:36px">
+  <div class="wrap" style="max-width:820px">
+    <p class="eyebrow">Brand · Round 1</p>
+    <h1>Mindify — four logo directions</h1>
+    <p class="lede">All four are single-colour, drawn on the same optical grid, and legible down to 16px. Every mark is a live SVG (no raster), so it scales to a billboard and recolours with one CSS variable.</p>
+    <p class="muted" style="font-size:.9rem">Wordmark: <b>Fraunces</b> (soft serif, warm, slightly humanist). Supporting type: <b>Inter</b>. Both are free and open source — no licensing cost, and they load from Google Fonts.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+<div class="wrap">
+
+  <!-- 1 -->
+  <div class="lg">
+    <div class="lg-head">
+      <h2>01 · The Settling Wave <span class="pill" style="vertical-align:middle;margin-left:8px">Recommended</span></h2>
+      <p>An agitated line that decays into stillness inside a containing circle. It is literally the window of tolerance — the core idea of Module 2 — and it reads as breath, regulation and calm without ever saying the words.</p>
+    </div>
+    <div class="lg-body">
+      <div class="cell"><div class="lockup" id="l1a"></div></div>
+      <div class="cell dark"><div class="lockup" id="l1b"></div></div>
+      <div class="cell white"><div class="stack" id="l1c"></div></div>
+      <div class="cell"><div class="sizes" id="l1d"></div></div>
+    </div>
+    <div class="lg-note"><b>Why it wins:</b> it's the only concept whose meaning is specific to what you actually teach. Distinctive as a favicon, and the wave alone works as a loading animation, section divider and certificate motif. <b>Risk:</b> at 16px the oscillation flattens — the small-size version drops to three peaks.</div>
+  </div>
+
+  <!-- 2 -->
+  <div class="lg">
+    <div class="lg-head">
+      <h2>02 · The Open Loop</h2>
+      <p>Two nested arcs — an inhale and an exhale — that deliberately never close, with a single dot resting in the gap. Breath work, mindfulness, and the ‘good enough’ principle: the circle doesn't have to be complete to hold.</p>
+    </div>
+    <div class="lg-body">
+      <div class="cell"><div class="lockup" id="l2a"></div></div>
+      <div class="cell dark"><div class="lockup" id="l2b"></div></div>
+      <div class="cell white"><div class="stack" id="l2c"></div></div>
+      <div class="cell"><div class="sizes" id="l2d"></div></div>
+    </div>
+    <div class="lg-note"><b>Why it might win:</b> the most conventionally beautiful of the four and the most obviously "mindfulness/wellbeing" — good if you plan to expand beyond parenting into breathwork and self-paced psychology generally. <b>Risk:</b> open-ring marks are a crowded category. Lower distinctiveness.</div>
+  </div>
+
+  <!-- 3 -->
+  <div class="lg">
+    <div class="lg-head">
+      <h2>03 · The Secure Base</h2>
+      <p>Three nested arcs cradling a single filled dot — a harbour, a shelter, a held child. Directly Bowlby: a secure base to explore from and a safe haven to return to.</p>
+    </div>
+    <div class="lg-body">
+      <div class="cell"><div class="lockup" id="l3a"></div></div>
+      <div class="cell dark"><div class="lockup" id="l3b"></div></div>
+      <div class="cell white"><div class="stack" id="l3c"></div></div>
+      <div class="cell"><div class="sizes" id="l3d"></div></div>
+    </div>
+    <div class="lg-note"><b>Why it might win:</b> the warmest and most obviously about <em>a child</em> — strongest emotional hit with parents and carers. Also reads as sound waves or a signal, which flatters the ‘listening to behaviour’ idea. <b>Risk:</b> narrows the brand to parenting. Harder to stretch to adult self-development courses later.</div>
+  </div>
+
+  <!-- 4 -->
+  <div class="lg">
+    <div class="lg-head">
+      <h2>04 · The M Monogram</h2>
+      <p>An M built from two arches of unequal weight — two people, or two breaths, one leaning on the other — topped with a small dot. The most corporate and the most flexible of the four.</p>
+    </div>
+    <div class="lg-body">
+      <div class="cell"><div class="lockup" id="l4a"></div></div>
+      <div class="cell dark"><div class="lockup" id="l4b"></div></div>
+      <div class="cell white"><div class="stack" id="l4c"></div></div>
+      <div class="cell"><div class="sizes" id="l4d"></div></div>
+    </div>
+    <div class="lg-note"><b>Why it might win:</b> a letterform mark survives everything — app icon, embroidered polo shirt, single-colour fax. Best choice if Mindify becomes a platform with many course brands under it. <b>Risk:</b> it says nothing about psychology. It's a container, not a story.</div>
+  </div>
+
+  <div class="card" style="padding:30px">
+    <h2>Shared palette — Calm Clinical</h2>
+    <p class="muted" style="font-size:.92rem">Every mark above uses <code>currentColor</code>, so a single CSS variable recolours the whole system.</p>
+    <div class="swatches">
+      <div class="sw"><i style="background:#1F3A32"></i><code>#1F3A32</code></div>
+      <div class="sw"><i style="background:#2C5548"></i><code>#2C5548</code></div>
+      <div class="sw"><i style="background:#4A7D6B"></i><code>#4A7D6B</code></div>
+      <div class="sw"><i style="background:#8FB09E"></i><code>#8FB09E</code></div>
+      <div class="sw"><i style="background:#E4EDE7"></i><code>#E4EDE7</code></div>
+      <div class="sw"><i style="background:#EFE7DA"></i><code>#EFE7DA</code></div>
+      <div class="sw"><i style="background:#FBF9F5"></i><code>#FBF9F5</code></div>
+      <div class="sw"><i style="background:#BE7454"></i><code>#BE7454</code></div>
+    </div>
+  </div>
+
+  <p style="margin-top:32px"><a class="btn btn-ghost" href="index.html">← Back to the site</a></p>
+</div>
+</section>
+</main>
+
+<script>
+const MARKS = {
+  1:`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2" opacity=".22"/><path d="M10 32 C12.6 12 15.2 52 17.8 32 C20.4 17.5 23 46.5 25.6 32 C28.2 21.5 30.8 42.5 33.4 32 C35.2 26 37 38 38.8 32 C39.8 29.5 40.8 34 41.8 32 L54 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  2:`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M43.9 12.6 A24 24 0 1 0 52.8 26.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M39.6 22.9 A13 13 0 1 0 44.4 30.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" opacity=".42"/><circle cx="52" cy="14" r="4.6" fill="currentColor"/></svg>`,
+  3:`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M6 22 A26 26 0 0 0 58 22" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" opacity=".28"/><path d="M14 24 A18 18 0 0 0 50 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" opacity=".55"/><path d="M22 26 A10 10 0 0 0 42 26" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><circle cx="32" cy="40.5" r="5.4" fill="currentColor"/></svg>`,
+  4:`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M11 47 L11 27 A11 11 0 0 1 33 27 L33 47" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M31 47 L31 27 A11 11 0 0 1 53 27 L53 47" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" opacity=".45"/><circle cx="32" cy="14.5" r="3.6" fill="currentColor"/></svg>`
+};
+for (const n of [1,2,3,4]) {
+  const m = MARKS[n];
+  document.getElementById('l'+n+'a').innerHTML = m + '<span>mindify</span>';
+  document.getElementById('l'+n+'b').innerHTML = m + '<span>mindify</span>';
+  document.getElementById('l'+n+'c').innerHTML = m + '<span>mindify</span>';
+  document.getElementById('l'+n+'d').innerHTML = m+m+m+m;
+}
+</script>
+</body>
+</html>

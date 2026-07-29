@@ -1,0 +1,12 @@
+{
+  "name": "mindify",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mindify — self-paced therapeutic parenting training (mindify.co.uk)",
+  "scripts": {
+    "build": "node tools/build-pages.js && node tools/build-portal.js && node tools/build-brand.js",
+    "dev": "npm run build && npx --yes serve -l 5173 .",
+    "check": "node tools/check.js"
+  },
+  "engines": { "node": ">=18" }
+}

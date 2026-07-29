@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Mindify mark — the open loop">
+  <path d="M43.9 12.6 A24 24 0 1 0 52.8 26.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M39.6 22.9 A13 13 0 1 0 44.4 30.4" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" opacity=".42"/>
+  <circle cx="52" cy="14" r="4.6" fill="currentColor"/>
+</svg>
