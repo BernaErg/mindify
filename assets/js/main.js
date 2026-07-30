@@ -45,6 +45,8 @@
   };
   var here = base(location.pathname);
   document.querySelectorAll(".nav-links a[href]").forEach(function (a) {
+    // buttons keep their own colour scheme — never mark them active
+    if (a.classList.contains("lang-switch") || a.classList.contains("btn")) return;
     if (base(a.getAttribute("href")) === here) a.classList.add("active");
   });
 

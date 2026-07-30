@@ -2,6 +2,7 @@
 (function () {
   "use strict";
   var A = window.MindifyAuth;
+  var t = (window.MINDIFY_T && window.MINDIFY_T.auth) || {};
   var $ = function (id) { return document.getElementById(id); };
   var mode = "signin";
 
@@ -21,13 +22,11 @@
     $("tab-in").setAttribute("aria-pressed", String(!up));
     $("tab-up").setAttribute("aria-pressed", String(up));
     $("f-name").classList.toggle("hidden", !up);
-    $("auth-heading").textContent = up ? "Create your account" : "Welcome back";
-    $("auth-sub").textContent = up
-      ? "Thirty seconds, and the whole course is yours."
-      : "Sign in to pick up where you left off.";
-    $("auth-submit").textContent = up ? "Create account" : "Sign in";
+    $("auth-heading").textContent = up ? t.createH : t.welcome;
+    $("auth-sub").textContent = up ? t.createSub : t.welcomeSub;
+    $("auth-submit").textContent = up ? t.tabUp : t.tabIn;
     $("i-pass").setAttribute("autocomplete", up ? "new-password" : "current-password");
-    $("pw-hint").textContent = up ? "At least 8 characters." : "";
+    $("pw-hint").textContent = up ? t.pwHint : "";
     clearAlerts();
   }
 
@@ -50,11 +49,11 @@
     var btn = $("auth-submit");
     var label = btn.textContent;
 
-    if (!email || !pass) return show($("auth-err"), "Please fill in both fields.");
-    if (mode === "signup" && !name) return show($("auth-err"), "Please tell us your name — it goes on your certificate.");
-    if (mode === "signup" && pass.length < 8) return show($("auth-err"), "Password must be at least 8 characters.");
+    if (!email || !pass) return show($("auth-err"), t.errFill);
+    if (mode === "signup" && !name) return show($("auth-err"), t.errName);
+    if (mode === "signup" && pass.length < 8) return show($("auth-err"), t.errShort);
 
-    btn.disabled = true; btn.textContent = "One moment…";
+    btn.disabled = true; btn.textContent = t.working;
     var p = mode === "signup" ? A.signUp(email, pass, name) : A.signIn(email, pass);
 
     p.then(function (r) {
@@ -62,22 +61,22 @@
       if (r && r.needsConfirm) {
         // setMode rewrites the button label itself, so restore *before* calling it.
         setMode("signin");
-        show($("auth-ok"), "Almost there — check your inbox and click the confirmation link, then come back and sign in.");
+        show($("auth-ok"), t.confirm);
         return;
       }
       location.href = next;
     }).catch(function (err) {
       btn.disabled = false; btn.textContent = label;
-      show($("auth-err"), (err && err.message) || "Something went wrong. Please try again.");
+      show($("auth-err"), (err && err.message) || t.errGeneric);
     });
   });
 
   $("forgot").addEventListener("click", function (e) {
     e.preventDefault(); clearAlerts();
     var email = $("i-email").value.trim();
-    if (!email) return show($("auth-err"), "Enter your email address above first, then click again.");
+    if (!email) return show($("auth-err"), t.resetNeedEmail);
     A.resetPassword(email)
-      .then(function () { show($("auth-ok"), "If that address has an account, a reset link is on its way."); })
+      .then(function () { show($("auth-ok"), t.resetSent); })
       .catch(function (err) { show($("auth-err"), err.message); });
   });
 })();

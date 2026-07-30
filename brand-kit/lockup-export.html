@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mindify — lockup export</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17233D;--blue:#2E4372;--corn:#8FA3CE;--amber:#D99A3E;--paper:#FAF7F2;--line:#E0DBD2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:#151C2E;font:400 16px/1.6 Inter,sans-serif;padding:40px 24px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-family:Fraunces,serif;font-weight:500;letter-spacing:-.02em;margin:0 0 .2em}
+p{opacity:.75;max-width:62ch}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:22px 0 8px}
+label{font:600 .78rem/1 Inter;letter-spacing:.08em;text-transform:uppercase;opacity:.6}
+select,button{font:600 .9rem/1 Inter;padding:10px 16px;border-radius:100px;border:1.5px solid var(--line);background:#fff;cursor:pointer}
+button{background:var(--blue);color:#fff;border-color:var(--blue)}
+.stage{margin-top:20px;border:1px solid var(--line);border-radius:18px;padding:44px;display:grid;place-items:center}
+.stage.dark{background:var(--ink);border-color:var(--ink)}
+.lock{display:flex;align-items:center;gap:.34em}
+.lock svg{width:1.35em;height:1.35em;flex:0 0 auto}
+.lock span{font-family:Fraunces,serif;font-weight:500;letter-spacing:-.038em;line-height:1}
+.lock.stack{flex-direction:column;gap:.18em}
+.note{font-size:.86rem;opacity:.6;margin-top:10px}
+canvas{display:none}
+</style></head><body>
+<div class="wrap">
+  <h1>Lockup export</h1>
+  <p>The wordmark is live text in <b>Fraunces</b>, so it can't be exported from a machine without the font. This page renders it in your browser — where the font loads — and saves a transparent PNG at whatever size you pick.</p>
+
+  <div class="row">
+    <label>Layout</label>
+    <select id="layout"><option value="h">Horizontal</option><option value="s">Stacked</option></select>
+    <label>On</label>
+    <select id="ground"><option value="light">Light ground</option><option value="dark">Dark ground</option></select>
+    <label>Width</label>
+    <select id="size"><option>800</option><option selected>1600</option><option>2400</option><option>3200</option></select>
+    <button id="dl">Download PNG</button>
+  </div>
+
+  <div class="stage" id="stage"><div class="lock" id="lock"></div></div>
+  <p class="note">Transparent background. Clear space is baked in at 25% of the mark's height on every side.</p>
+</div>
+<canvas id="cv"></canvas>
+<script>
+const MARKS = {
+ light:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><clipPath id="a"><circle cx="32" cy="32" r="29"/></clipPath><linearGradient id="ga" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#2E4372"/><stop offset="1" stop-color="#17233D"/></linearGradient></defs><circle cx="32" cy="32" r="29" fill="url(#ga)"/><g clip-path="url(#a)"><path d="M-2 30C3 10 8 50 13 30s9 26 14 13 8 14 13 5 9 5 22 3v62H-2Z" fill="#8FA3CE" opacity=".3"/><path d="M-2 41C3 26 8 58 13 41s9 21 14 10 8 11 13 4 9 4 22 2v40H-2Z" fill="#8FA3CE" opacity=".55"/><path d="M-2 52C3 44 8 62 13 52s9 13 14 6 8 7 13 2 9 2 22 1v26H-2Z" fill="#D99A3E"/></g></svg>`,
+ dark:`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><clipPath id="b"><circle cx="32" cy="32" r="29"/></clipPath><linearGradient id="gb" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#A8B9DC"/><stop offset="1" stop-color="#6E85B8"/></linearGradient></defs><circle cx="32" cy="32" r="29" fill="url(#gb)"/><g clip-path="url(#b)"><path d="M-2 30C3 10 8 50 13 30s9 26 14 13 8 14 13 5 9 5 22 3v62H-2Z" fill="#2E4372" opacity=".3"/><path d="M-2 41C3 26 8 58 13 41s9 21 14 10 8 11 13 4 9 4 22 2v40H-2Z" fill="#2E4372" opacity=".55"/><path d="M-2 52C3 44 8 62 13 52s9 13 14 6 8 7 13 2 9 2 22 1v26H-2Z" fill="#D99A3E"/></g></svg>`
+};
+const $ = id => document.getElementById(id);
+function paint(){
+  const dark = $("ground").value === "dark";
+  $("stage").classList.toggle("dark", dark);
+  const l = $("lock");
+  l.className = "lock" + ($("layout").value === "s" ? " stack" : "");
+  l.style.fontSize = "64px";
+  l.innerHTML = MARKS[dark ? "dark" : "light"] + '<span style="color:' + (dark ? "#FAF7F2" : "#17233D") + '">mindify</span>';
+}
+["layout","ground"].forEach(id => $(id).addEventListener("change", paint));
+paint();
+
+$("dl").addEventListener("click", async () => {
+  await document.fonts.ready;
+  const W = +$("size").value, dark = $("ground").value === "dark", stack = $("layout").value === "s";
+  const em = stack ? W / 5.2 : W / 8.2;
+  const pad = em * 0.34;
+  const node = $("lock").cloneNode(true);
+  node.style.fontSize = em + "px";
+  const H = Math.round((stack ? em * 2.6 : em * 1.5) + pad * 2);
+  const wrapper = document.createElement("div");
+  wrapper.setAttribute("xmlns","http://www.w3.org/1999/xhtml");
+  wrapper.style.cssText = "display:flex;align-items:center;justify-content:center;width:"+W+"px;height:"+H+"px;padding:"+pad+"px;font-family:Fraunces,serif";
+  wrapper.appendChild(node);
+  const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="'+W+'" height="'+H+'">'
+    + '<foreignObject width="100%" height="100%">' + new XMLSerializer().serializeToString(wrapper) + '</foreignObject></svg>';
+  const img = new Image();
+  img.onload = () => {
+    const cv = $("cv"); cv.width = W; cv.height = H;
+    cv.getContext("2d").drawImage(img, 0, 0);
+    const a = document.createElement("a");
+    a.download = "mindify-lockup-" + (stack ? "stacked" : "horizontal") + "-" + (dark ? "reversed" : "primary") + "-" + W + ".png";
+    a.href = cv.toDataURL("image/png"); a.click();
+  };
+  img.onerror = () => alert("Your browser blocked the export. Take a screenshot of the preview instead, or open this file in Chrome.");
+  img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+});
+</script></body></html>

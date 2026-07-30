@@ -5,7 +5,7 @@
 # If SUPABASE_URL / SUPABASE_ANON_KEY are not set, the site builds in demo mode.
 set -euo pipefail
 
-echo "→ Building pages…"
+echo "→ Building pages (en + tr)…"
 node tools/build-pages.js
 node tools/build-portal.js
 node tools/build-brand.js

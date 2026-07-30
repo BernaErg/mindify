@@ -5,6 +5,18 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Language root
+[[redirects]]
+  from = "/tr"
+  to = "/tr/index.html"
+  status = 200
+
+# Pretty URLs, Turkish tree
+[[redirects]]
+  from = "/tr/:page"
+  to = "/tr/:page.html"
+  status = 200
+
 # Pretty URLs: /about → /about.html
 [[redirects]]
   from = "/about"

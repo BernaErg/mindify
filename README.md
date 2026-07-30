@@ -117,11 +117,36 @@ on a dark ground, and its three layers close into a blob below about 22px:
 | Under 22px    | simplified two-layer version (see `/brand`) |
 | App icon      | rounded tile (see `/brand`) |
 
+The downloadable kit lives in **`brand-kit/`** — SVGs, 22 transparent PNGs, a
+browser-based lockup exporter and a two-page PDF guide. It's linked from the footer.
+
 The live brand sheet is at **`/brand`** — mark variants, palette with contrast notes,
 image language and type. Send that link to anyone who needs to make something.
 
 Two ambers, deliberately: `--amber` (#D99A3E) is for fills and fails contrast as text;
 `--amber-ink` (#9E6420) is the text-safe tone. Every pairing on the site meets WCAG AA.
+
+### Languages
+
+The site is built twice: English at the root, Turkish under `tr/`. Both trees are
+generated from the same templates, so they can never drift structurally — `npm run
+check` fails if the page sets differ.
+
+**All UI and marketing copy lives in `tools/copy.js`**, as two mirrored objects,
+`EN` and `TR`. Nothing is hard-coded in a template. Add a string to one and the
+build will surface it as missing from the other.
+
+Course-level copy (subtitle, level, summary, why, notice) is translated inside
+`assets/js/data.js` under each course's `tr` key. **Module content is deliberately
+untranslated** — module titles, outcomes, key ideas and practices still render in
+English on the Turkish site, pending translation by the course author. The lookup
+falls back to English automatically, so nothing breaks; it just isn't Turkish yet.
+
+Browser-side strings reach the page through `window.MINDIFY_T`, emitted by
+`tools/layout.js`. If you add a client-side string, add it to `clientStrings()`
+there or it won't exist in the browser.
+
+The brand sheet at `/brand` is English-only by design — it's an internal reference.
 
 ### Editing content
 

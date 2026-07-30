@@ -1,6 +1,5 @@
-/* Reusable markup fragments. */
+/* Reusable markup fragments. Everything takes a language object `L`. */
 const { PLATFORM, COURSES, COURSE, TESTIMONIALS } = require("./data-node");
-
 const { HERO, COVER, BANNER } = require("./art");
 
 const heroArt = HERO();
@@ -16,57 +15,52 @@ const icons = {
   repeat: `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 16"/><path d="M4 20v-4h4"/></svg>`,
 };
 
-function moduleCard(m, { link = true } = {}) {
+/* Language-aware field lookup: falls back to English when a translation is absent. */
+const f = (obj, key, L) => (L.code !== "en" && obj.tr && obj.tr[key]) || obj[key];
+
+function courseCard(L, c, i) {
+  const t = L.courses;
+  const live = c.status === "available";
+  const count = live ? `${c.modules.length} ${t.modules}` : `${(c.outline || []).length} ${t.topics}`;
   return `<article class="card card-hover module-card reveal">
-        <div class="cover"><span class="cover-tag">Module ${m.n}</span>${COVER(m.n)}</div>
-        <div class="module-num">Module ${m.n} · ${m.minutes} min</div>
-        <h3>${m.title.replace(/^Module \d+ — /, "")}</h3>
-        <p class="tagline">“${m.tagline}”</p>
-        <p>${m.blurb}</p>
-        <ul>${m.outcomes.slice(0, 3).map((o) => `<li>${o}</li>`).join("")}</ul>
+        <div class="cover">
+          <span class="cover-tag">${live ? t.availableNow : t.inDevelopment}</span>
+          ${COVER(i + 1)}
+        </div>
+        <div class="module-num">${f(c, "level", L)}</div>
+        <h3>${c.title}</h3>
+        <p class="tagline">${f(c, "subtitle", L)}</p>
+        <p>${f(c, "summary", L)}</p>
+        ${c.notice ? `<p class="notice-inline">${t.noticeShort}</p>` : ""}
         <div class="card-foot">
-          ${m.keys.slice(0, 2).map((k) => `<span class="pill">${k}</span>`).join("")}
-          ${link ? `<a class="btn btn-ghost btn-sm" style="margin-left:auto" href="module.html?m=${m.n}">Details</a>` : ""}
+          <span class="foot-pills"><span class="pill">${count}</span><span class="pill">${c.hours} ${t.hours}</span></span>
+          ${live
+            ? `<a class="btn btn-primary btn-sm stretch" href="course.html?c=${c.slug}">${t.viewCourse}</a>`
+            : `<span class="pill pill-soon">${t.comingSoon}</span>`}
         </div>
       </article>`;
 }
 
-function testimonialCard(t) {
+function audienceCard(L, a) {
+  const d = L.code !== "en" && a.tr ? a.tr : a;
+  return `<div class="aud reveal" style="--accent:${a.accent};--chip:${a.chip}">
+        <span class="chip">${icons[a.icon]}</span>
+        <div><h4>${d.label}</h4><p>${d.line}</p><span class="tagx">${d.tag}</span></div>
+      </div>`;
+}
+
+function testimonialCard(L, t) {
+  const quote = L.code !== "en" && t.trQuote ? t.trQuote : t.quote;
+  const role = L.code !== "en" && t.trRole ? t.trRole : t.role;
   return `<figure class="quote reveal">
         <div class="stars">★★★★★</div>
-        <blockquote>“${t.quote}”</blockquote>
+        <blockquote>“${quote}”</blockquote>
         <figcaption class="who">
           <span class="avatar">${t.initials}</span>
-          <span><b>${t.name}</b><span>${t.role}</span></span>
+          <span><b>${t.name}</b><span>${role}</span></span>
         </figcaption>
       </figure>`;
 }
 
-function courseCard(c, i) {
-  var live = c.status === "available";
-  var count = live ? c.modules.length + " modules" : (c.outline || []).length + " topics";
-  return `<article class="card card-hover module-card reveal">
-        <div class="cover">
-          <span class="cover-tag">${live ? "Available now" : "In development"}</span>
-          ${COVER(i + 1)}
-        </div>
-        <div class="module-num">${c.level}</div>
-        <h3>${c.title}</h3>
-        <p class="tagline">${c.subtitle}</p>
-        <p>${c.summary}</p>
-        ${c.notice ? `<p class="notice-inline">Educational content only · not a recommendation of personal use</p>` : ""}
-        <div class="card-foot">
-          <span class="pill">${count}</span><span class="pill">${c.hours} hours</span>
-          ${live
-            ? `<a class="btn btn-primary btn-sm" style="margin-left:auto" href="course.html?c=${c.slug}">View course</a>`
-            : `<span class="pill pill-soon" style="margin-left:auto">Coming soon</span>`}
-        </div>
-      </article>`;
-}
-
-function audienceCard(a) {
-  return `<div class="card reveal"><h4>${a.label}</h4><p style="margin:0;font-size:.94rem">${a.line}</p></div>`;
-}
-
-module.exports = { heroArt, icons, moduleCard, courseCard, audienceCard, testimonialCard,
+module.exports = { heroArt, icons, courseCard, audienceCard, testimonialCard, f,
                    PLATFORM, COURSES, COURSE, TESTIMONIALS, HERO, COVER, BANNER };

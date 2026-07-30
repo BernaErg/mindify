@@ -10,14 +10,34 @@ window.MINDIFY_PLATFORM = {
   promise: "Psychology, taught properly",
   /* Ordered. This ordering drives the copy across the whole site. */
   audiences: [
-    { key: "students",      label: "Psychology students",
-      line: "Depth your syllabus doesn't have time for, taught by someone who marks the essays." },
-    { key: "practitioners", label: "Practitioners & carers",
-      line: "Applied models you can use on Monday, with the evidence behind them intact." },
-    { key: "managers",      label: "Managers & teams",
-      line: "How people actually behave under pressure, without the business-book shortcuts." },
-    { key: "curious",       label: "Parents & the curious",
-      line: "No prior training assumed. Nothing dumbed down either." }
+    { key: "academic", icon: "brain", accent: "#2E4372", chip: "#E2E8F4",
+      label: "Academic depth, kept",
+      line: "Named researchers, real studies, and an honest note wherever a finding is contested. Nothing is simplified past the point where it stays true.",
+      tag: "Rigour",
+      tr: { label: "Akademik derinlik korunur",
+            line: "İsmiyle araştırmacılar, gerçek çalışmalar ve bir bulgu tartışmalıysa dürüst bir not. Hiçbir şey doğruluğunu yitireceği noktaya kadar basitleştirilmiyor.",
+            tag: "Titizlik" } },
+    { key: "applied", icon: "repeat", accent: "#41598F", chip: "#E4EAF6",
+      label: "Theory that survives contact",
+      line: "Every module ends with something to try. A model that can't change what you do on an ordinary day hasn't finished being taught.",
+      tag: "Application",
+      tr: { label: "Temasla sınanan teori",
+            line: "Her modül denenecek bir şeyle bitiyor. Sıradan bir günde ne yaptığınızı değiştiremeyen bir modelin anlatımı bitmemiştir.",
+            tag: "Uygulama" } },
+    { key: "open", icon: "people", accent: "#9E6420", chip: "#F4EADA",
+      label: "Open to anyone who'll do the reading",
+      line: "No prerequisite, no gatekeeping, nothing dumbed down. Each course states plainly what it assumes you already know.",
+      tag: "Access",
+      tr: { label: "Okumayı yapacak herkese açık",
+            line: "Ön koşul yok, kapıda bekletme yok, hiçbir şey de basitleştirilmiyor. Her kurs neyi bildiğinizi varsaydığını açıkça yazıyor.",
+            tag: "Erişim" } },
+    { key: "practice", icon: "shield", accent: "#2E4372", chip: "#E2E8F4",
+      label: "Built for the long run",
+      line: "Access never expires and courses are revised as the evidence moves. Learning here is a habit, not a purchase.",
+      tag: "Continuity",
+      tr: { label: "Uzun vade için kuruldu",
+            line: "Erişimin süresi hiç dolmuyor ve kanıt değiştikçe kurslar güncelleniyor. Buradaki öğrenme bir satın alma değil, bir alışkanlık.",
+            tag: "Süreklilik" } }
   ]
 };
 
@@ -25,6 +45,12 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 1 */
   {
     slug: "therapeutic-parenting",
+    tr: {
+      subtitle: "Bağ, Düzenleme ve Onarım",
+      level: "Giriş düzeyi · ön eğitim gerekmez",
+      summary: "Bağlanma kuramı ve duygulanım nörobiliminin uygulamaya bakan ucu. Davranışı iletişim olarak okumak, akıl yürütmeden önce düzenlemek ve iyi onarmak üzerine altı modül — İngiltere'de okulların ve koruyucu aile hizmetlerinin travma-bilgili uygulamasının dayandığı model.",
+      why: "Öğrenciler Bowlby ve Siegel ile derslerde tanışıyor, sonra bunların kullanıldığını hiç görmüyor. Bu kurs o köprü: aynı teori, salı akşamı saat altıda ağzınızdan çıkacak cümleye kadar takip edilmiş.",
+    },
     title: "Therapeutic Parenting",
     subtitle: "Connection, Regulation & Repair",
     status: "available",
@@ -78,6 +104,13 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 2 */
   {
     slug: "psychedelics-in-mental-health",
+    tr: {
+      subtitle: "Maddeler, Kanıt ve Terapötik Süreç",
+      level: "Orta düzey · akademik; psikoloji ve tıp öğrencilerine uygun",
+      summary: "Psychedelic rönesansının eleştirel okuması. Farmakoloji, varsayılan mod ağı, klinik araştırma kanıtının durum durum incelenmesi, terapötik model, gerçek riskler ve dünyada ile Türkiye'deki yasal tablo üzerine altı adet iki saatlik modül.",
+      why: "Kamuoyu tartışması mucize ilaç ile ahlaki panik arasında gidip geliyor ve araştırma literatürünü iyi okumak gerçekten zor. Bu kursun amacı ne savunuculuk ne de reddiye — sağlam bir bulguyu erken bir bulgudan ayırt edebilir hâle gelmeniz.",
+      notice: "Yalnızca eğitim ve akademik içerik. Hiçbir temin yolu, doz veya kullanım yöntemi anlatılmaz; kişisel kullanım önerilmez. Türkiye'de bu maddeler Türk Ceza Kanunu 188 ve 191. maddeleri kapsamında yasa dışıdır; anlatılan klinik uygulamalar yalnızca yasal olduğu ülkeler için geçerlidir.",
+    },
     title: "Psychedelics in Mental Health",
     subtitle: "Substances, Evidence and the Therapeutic Process",
     status: "available",
@@ -133,6 +166,12 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 3 */
   {
     slug: "integrative-breathwork",
+    tr: {
+      subtitle: "Fizyoloji, Teknik ve Alan Tutma",
+      level: "Giriş–orta düzey · eğitmen eğitimi",
+      summary: "Mistisizm üzerine değil fizyoloji üzerine kurulmuş bir eğitmen eğitimi. Nefes alan beden, HRV ve CO₂ toleransı, teknik seti, alan tutma zanaati, travma-bilgili güvenlik ve oturum tasarımı üzerine altı modül.",
+      why: "Nefes çalışması eğitimleri genelde ya pratiği olmayan anatomi dersine ya da mekanizması olmayan pratiğe ayrılıyor. Burada ikisi birlikte: her teknik sinir sistemine ne yaptığına kadar geri götürülüyor ve her iddia desteklenmiş, makul ya da spekülatif olarak işaretleniyor.",
+    },
     title: "Integrative Breathwork Facilitation",
     subtitle: "Physiology, Technique and Holding Space",
     status: "available",
@@ -186,6 +225,12 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 4 */
   {
     slug: "forest-bathing",
+    tr: {
+      subtitle: "Psikolojik İyi Oluş Kolaylaştırıcılığı",
+      level: "Giriş düzeyi · eğitmen eğitimi",
+      summary: "Shinrin-yoku bir wellness trendi olarak değil, kanıta dayalı bir uygulama olarak anlatılıyor. Kökenler ve etik çerçeve, fizyolojik araştırma, psikolojik mekanizmalar ve sınırları, ANFT standart dizisi, oturum tasarımı ve profesyonel uygulama üzerine altı modül.",
+      why: "Doğa temelli iyi oluş alanı fazla iddiaya açık. Bu kurs çalışmaları koruyor — fitonsitler ve NK hücreleri, kortizol, ART ve SRT — kanıt düzeylerini dürüstçe söylüyor, kolaylaştırıcılık zanaatını da bunun üzerine kuruyor.",
+    },
     title: "Forest Bathing & Silvotherapy",
     subtitle: "Psychological Wellbeing Facilitation",
     status: "available",
@@ -244,31 +289,31 @@ window.MINDIFY_TESTIMONIALS = [
   {
     quote:
       "I'd covered attachment three times at university and never once seen it applied. This was the first time the theory turned into something I could actually do.",
-    name: "Hannah R.", role: "MSc Psychology student, Manchester", initials: "HR"
+    name: "Hannah R.", role: "MSc Psychology student, Manchester", trQuote: "Üniversitede bağlanmayı üç kez gördüm ve bir kez bile uygulandığını görmedim. Teorinin gerçekten yapabileceğim bir şeye dönüştüğü ilk seferdi.", trRole: "Psikoloji yüksek lisans öğrencisi, Manchester", initials: "HR"
   },
   {
     quote:
       "The iceberg exercise undid fifteen years of ‘what's wrong with this child’ thinking in about forty minutes. I've since run it with my whole foster carer group.",
-    name: "Delia O.", role: "Foster carer & support group lead", initials: "DO"
+    name: "Delia O.", role: "Foster carer & support group lead", trQuote: "Buzdağı çalışması, on beş yıllık ‘bu çocuğun nesi var’ düşüncesini kırk dakikada çözdü. O günden beri tüm koruyucu aile grubumla yapıyorum.", trRole: "Koruyucu aile ve destek grubu lideri", initials: "DO"
   },
   {
     quote:
       "As a SENCO I've sat through a lot of training. This is the first that gave staff a shared language — ‘regulate, relate, reason’ is now said out loud in our corridors.",
-    name: "Michael T.", role: "SENCO, primary school", initials: "MT"
+    name: "Michael T.", role: "SENCO, primary school", trQuote: "Rehber öğretmen olarak çok eğitim gördüm. Ekibe ortak bir dil veren ilki bu — ‘düzenle, bağ kur, akıl yürüt’ artık koridorlarımızda yüksek sesle söyleniyor.", trRole: "Rehber öğretmen, ilkokul", initials: "MT"
   },
   {
     quote:
       "It's taught like a seminar, not a webinar. You get told where the evidence is contested instead of a tidy story that falls apart when you look it up.",
-    name: "Priya S.", role: "Assistant psychologist", initials: "PS"
+    name: "Priya S.", role: "Assistant psychologist", trQuote: "Bir slayt gösterisi gibi değil, seminer gibi anlatılıyor. Kaynağa baktığınızda dağılan düzgün bir hikâye yerine kanıtın nerede tartışmalı olduğu söyleniyor.", trRole: "Asistan psikolog", initials: "PS"
   },
   {
     quote:
       "Self-paced was the only way this was ever going to happen for me. I did most of it at 10pm with a cup of tea, ten minutes at a time.",
-    name: "Jo A.", role: "Kinship carer", initials: "JA"
+    name: "Jo A.", role: "Kinship carer", trQuote: "Kendi hızımda olması bunun benim için gerçekleşmesinin tek yoluydu. Büyük kısmını gece onda, bir çay eşliğinde, onar dakikada yaptım.", trRole: "Akraba bakım veren", initials: "JA"
   },
   {
     quote:
       "I manage a team of eleven and came in sceptical. Left with a much better sense of why my feedback kept bouncing off certain people.",
-    name: "Ellie W.", role: "Operations manager, Bristol", initials: "EW"
+    name: "Ellie W.", role: "Operations manager, Bristol", trQuote: "On bir kişilik bir ekip yönetiyorum ve şüpheyle geldim. Geri bildirimimin neden bazı insanlardan geri sektiğini çok daha iyi anlayarak ayrıldım.", trRole: "Operasyon müdürü, Bristol", initials: "EW"
   }
 ];

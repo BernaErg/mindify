@@ -4,16 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Student Login · Mindify</title>
-<meta name="description" content="Sign in to your Mindify student area to continue the Therapeutic Parenting course and download your certificate.">
+<meta name="description" content="Sign in to your Mindify student area.">
 <meta property="og:title" content="Student Login · Mindify">
-<meta property="og:description" content="Sign in to your Mindify student area to continue the Therapeutic Parenting course and download your certificate.">
+<meta property="og:description" content="Sign in to your Mindify student area.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#FAF7F2">
+<link rel="alternate" hreflang="en-GB" href="/login.html">
+<link rel="alternate" hreflang="tr" href="/tr/login.html">
+<link rel="alternate" hreflang="x-default" href="/login.html">
+<link rel="canonical" href="/login.html">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=120eaafd">
+<link rel="stylesheet" href="assets/css/styles.css?v=84031dac">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -27,7 +33,7 @@
     <path d="M-2 30C3 10 8 50 13 30s9 26 14 13 8 14 13 5 9 5 22 3v62H-2Z" fill="#8FA3CE" opacity=".3"/>
     <path d="M-2 41C3 26 8 58 13 41s9 21 14 10 8 11 13 4 9 4 22 2v40H-2Z" fill="#8FA3CE" opacity=".55"/>
     <path d="M-2 52C3 44 8 62 13 52s9 13 14 6 8 7 13 2 9 2 22 1v26H-2Z" fill="#D99A3E"/></g></svg><span class="brand-name">mindify</span></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+    <button class="nav-toggle" aria-label="Home" aria-expanded="false">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <nav class="nav-links">
@@ -35,6 +41,10 @@
       <a href="about.html">About</a>
       <a href="courses.html">Courses</a>
       <a href="contact.html">Contact Us</a>
+      <a class="lang-switch" href="tr/login.html" hreflang="tr" lang="tr">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+        Türkçe
+      </a>
       <a class="btn btn-primary btn-sm nav-cta" href="login.html" data-auth-cta>Student Login</a>
     </nav>
   </div>
@@ -47,10 +57,7 @@
       <h1 style="font-size:clamp(1.9rem,3.6vw,2.5rem)" id="auth-heading">Welcome back</h1>
       <p class="muted" style="margin-bottom:28px" id="auth-sub">Sign in to pick up where you left off.</p>
 
-      <div class="alert alert-info" id="demo-banner" role="status">
-        <b>Demo mode.</b> No server is connected, so accounts and progress are stored only in this browser.
-        Add your Supabase keys in Netlify to switch on real accounts — see <code>README.md</code>.
-      </div>
+      <div class="alert alert-info" id="demo-banner" role="status"><b>Demo mode.</b> No server is connected, so accounts and progress are stored only in this browser.</div>
       <div class="alert alert-error" id="auth-err" role="alert"></div>
       <div class="alert alert-ok" id="auth-ok" role="alert"></div>
 
@@ -76,26 +83,19 @@
         <button class="btn btn-primary btn-block" type="submit" id="auth-submit">Sign in</button>
       </form>
 
-      <p class="hint" style="text-align:center;margin-top:18px">
-        <a href="#" id="forgot">Forgotten your password?</a>
-      </p>
+      <p class="hint" style="text-align:center;margin-top:18px"><a href="#" id="forgot">Forgotten your password?</a></p>
       <p class="hint" style="text-align:center;margin-top:22px">
-        Not enrolled yet? <a href="courses.html">See the course first →</a>
+        Not enrolled yet? <a href="courses.html">See the courses →</a>
       </p>
     </div>
   </div>
 
   <aside class="auth-aside">
     <div class="auth-aside-inner">
-      <p class="eyebrow">Therapeutic Parenting</p>
-      <h2>Connection, Regulation & Repair</h2>
-      <p>Six modules on reading behaviour as communication, regulating before reasoning, and repairing well — at whatever pace your life allows.</p>
-      <ul>
-        <li>Track exactly which modules you've completed</li>
-        <li>Pick up on any device, right where you left off</li>
-        <li>Download a dated certificate when all six are done</li>
-        <li>Access never expires</li>
-      </ul>
+      <p class="eyebrow">Courses</p>
+      <h2>Everything, in one account</h2>
+      <p>One login for every Mindify course — progress, certificates and access that never expires.</p>
+      <ul><li>Track exactly which modules you've completed</li><li>Pick up on any device, right where you left off</li><li>Download a dated certificate for each course you finish</li><li>Access never expires</li></ul>
     </div>
   </aside>
 </div>
@@ -118,7 +118,7 @@
         <h5>Learn</h5>
         <a href="courses.html">All courses</a>
         <a href="brand.html">Brand</a>
-        <a href="course.html?c=therapeutic-parenting">Therapeutic Parenting</a>
+        <a href="brand-kit/Mindify-Logo-Guide.pdf">Logo guide (PDF)</a>
         <a href="login.html">Student login</a>
       </div>
       <div>
@@ -136,10 +136,11 @@
     </div>
     <div class="footer-bot">
       <span>© <span data-year>2026</span> Mindify · mindify.co.uk</span>
-      <span>Made for parents, carers and the people who support them.</span>
+      <span>Psychology, taught properly.</span>
     </div>
   </div>
 </footer>
+<script>window.MINDIFY_T = {"lang":"en","courses":{"title":"Courses","desc":"Self-paced psychology courses from Mindify.","eyebrow":"Courses","lede":"Every course is self-contained and self-paced, ends with a dated certificate, and never expires. Start with any of them — there's no required order.","ctaAccount":"Create your account","ctaCatalogue":"See the catalogue","availEyebrow":"Available now","availH2":"Open for enrolment","soonEyebrow":"In development","soonH2":"Coming next","soonLede":"Outlines are published early so you can tell us what's missing before they're written.","howEyebrow":"How it works","howH2":"Enrol, work through it, download your certificate","howP":"No live sessions to attend, no cohort to keep up with. You get the whole course the moment you enrol.","steps":[["Create a student account","Email and a password. About thirty seconds."],["Work through the modules","In order is best — each leans on the last — but nothing is locked. Mark each complete as you go."],["Try one small thing each week","Every module ends with a single experiment. That's where the learning lands."],["Download your certificate","All modules complete unlocks a dated PDF in your dashboard."]],"modules":"modules","topics":"topics","hours":"hours","availableNow":"Available now","inDevelopment":"In development","comingSoon":"Coming soon","viewCourse":"View course","noticeShort":"Educational content only · not a recommendation of personal use"},"course":{"title":"Course","desc":"Course detail at Mindify.","back":"← All courses","jump":"See the modules","enrol":"Enrol — create your account","dashboard":"Go to my dashboard","whyEyebrow":"Why this course exists","whyH2":"The gap it fills","devH2":"Not written yet","devP":"This course is still being written. The outline below is published early so you can tell us what's missing — say the word and it moves up the queue.","curriculumEyebrow":"The curriculum","curriculum":"{n} modules, one thread","outlineH":"Planned outline","devCta":"Tell us to write this one","devFoot":"Want this sooner?","footEyebrow":"Ready?","foot":"Start tonight","ask":"Ask a question","noticeLead":"Please read first.","metaSelf":"self-paced","metaCert":"certificate on completion","metaDev":"in development","details":"Details"},"module":{"title":"Module","desc":"Module detail at Mindify.","backCourse":"← Back to the course","of":"of","min":"min","enrol":"Enrol to unlock this module","dashboard":"Back to my dashboard","full":"See the full curriculum","outcomesEyebrow":"By the end of this module","outcomesH2":"What you'll walk away with","keysEyebrow":"Inside","keysH2":"Key ideas covered","practiceH":"This week's practice","lockedEyebrow":"Lesson content","lockedH2":"Full lesson unlocks after enrolment","lockedP":"Teaching blocks, reflection prompts, the applied activity and the workbook page for this module live inside your student area.","lockedCta":"Create your free account"},"auth":{"title":"Student Login","desc":"Sign in to your Mindify student area.","eyebrow":"Student area","welcome":"Welcome back","welcomeSub":"Sign in to pick up where you left off.","createH":"Create your account","createSub":"Thirty seconds, and the whole catalogue is yours.","demo":"<b>Demo mode.</b> No server is connected, so accounts and progress are stored only in this browser.","tabIn":"Sign in","tabUp":"Create account","fName":"Full name","fNamePh":"As it should appear on your certificate","fEmail":"Email address","fPass":"Password","pwHint":"At least 8 characters.","forgot":"Forgotten your password?","notEnrolled":"Not enrolled yet?","seeCourses":"See the courses →","asideH":"Everything, in one account","asideP":"One login for every Mindify course — progress, certificates and access that never expires.","asideList":["Track exactly which modules you've completed","Pick up on any device, right where you left off","Download a dated certificate for each course you finish","Access never expires"],"errFill":"Please fill in both fields.","errName":"Please tell us your name — it goes on your certificate.","errShort":"Password must be at least 8 characters.","errGeneric":"Something went wrong. Please try again.","confirm":"Almost there — check your inbox and click the confirmation link, then come back and sign in.","resetNeedEmail":"Enter your email address above first, then click again.","resetSent":"If that address has an account, a reset link is on its way.","working":"One moment…"},"dash":{"title":"My learning","desc":"Your Mindify dashboard.","eyebrow":"Student area","hello":"Hello,","browse":"Browse courses","signout":"Sign out","loading":"Loading…","yourCourses":"Your courses","coursesInProgress":"{n} courses in progress","progress":"{d} of {t} modules complete across {n} courses","demo":"<b>Demo mode.</b> Progress is saved in this browser only. Connect Supabase to make it follow you across devices.","complete":"complete","open":"Open","completeTag":"Complete","certReady":"Certificate ready","certTitle":"Certificate of Completion","certDone":"Congratulations — all {n} modules done.","certToGo":"{n} modules to go.","certBtn":"Download certificate","nextH":"Next practice","nextDone":"All done. The long game now: ‘good enough’, repeatedly, for years.","helpH":"Need a hand?","helpP":"Stuck on a module, or something not saving?","helpLink":"Send us a message","errSave":"Couldn't save that just now:","errLoad":"Couldn't load your progress:","errRetry":"Try reloading the page."},"nav":{"dashboard":"My dashboard"}};</script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/auth.js"></script>

@@ -1,6 +1,7 @@
 /* Brand sheet — the single reference for anyone touching Mindify's visuals. */
 const fs = require("fs"), path = require("path");
 const { page } = require("./layout");
+const { LANGS } = require("./copy");
 const { MARK, MARK_ON_DARK, HERO, COVER, BANNER } = require("./art");
 
 const SMALL = `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -22,7 +23,7 @@ const TILE = `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-h
 const sw = (hex, name, use) =>
   `<div class="sw"><i style="background:${hex}"></i><div><b>${name}</b><code>${hex}</code><code>${use}</code></div></div>`;
 
-const html = page("Brand", "The Mindify visual system: mark, palette, type and image language.", `
+const build = (L) => page(L, "brand.html", "Brand", "The Mindify visual system: mark, palette, type and image language.", `
 <section class="section-tight" style="padding-bottom:0">
   <div class="wrap"><div class="banner">${BANNER(3)}</div></div>
 </section>
@@ -117,5 +118,9 @@ const html = page("Brand", "The Mindify visual system: mark, palette, type and i
   </style>`
 });
 
-fs.writeFileSync(path.join(__dirname, "..", "brand.html"), html);
-console.log("  ✓ brand.html");
+for (const L of LANGS) {
+  const dir = path.join(__dirname, "..", L.dir);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, "brand.html"), build(L));
+  console.log("  ✓", (L.dir || "") + "brand.html");
+}

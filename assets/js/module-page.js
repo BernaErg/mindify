@@ -1,6 +1,8 @@
 /* Mindify — module detail page, hydrated by ?c=<slug>&m=<n> */
 (function () {
   "use strict";
+  var T = window.MINDIFY_T || {};
+  var t = T.module || {};
   var ALL = window.MINDIFY_COURSES || [];
   var q = new URLSearchParams(location.search);
   var c = ALL.filter(function (x) { return x.slug === q.get("c"); })[0] || ALL[0];
@@ -14,7 +16,7 @@
   $("m-back").setAttribute("href", "course.html?c=" + c.slug);
   $("m-back").textContent = "← " + c.title;
   $("m-all").setAttribute("href", "course.html?c=" + c.slug + "#modules");
-  $("m-num").textContent = "Module " + m.n + " of " + mods.length + " · " + m.minutes + " min";
+  $("m-num").textContent = "Module " + m.n + " " + t.of + " " + mods.length + " · " + m.minutes + " " + t.min;
   $("m-title").textContent = m.title;
   $("m-tagline").textContent = "“" + m.tagline + "”";
   $("m-blurb").textContent = m.blurb;
@@ -25,7 +27,7 @@
   if (window.MindifyAuth) {
     window.MindifyAuth.getUser().then(function (u) {
       if (!u) return;
-      $("m-cta").textContent = "Back to my dashboard";
+      $("m-cta").textContent = t.dashboard;
       $("m-cta").setAttribute("href", "dashboard.html");
     });
   }
