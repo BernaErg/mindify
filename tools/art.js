@@ -206,3 +206,31 @@ const COVER_FOR = (slug, i) => {
 
 module.exports.COVER_FOR = COVER_FOR;
 module.exports.MOTIF = MOTIF;
+
+/* About-page hero. A sibling of HERO(), not a copy: the disc sits lower and
+   smaller, the ring field is wider, and an amber disc balances the top. */
+const HERO_ABOUT = () => `<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Layered strata inside a disc">
+  <defs>
+    ${GRAIN("bh", .2)}${SOFT("bh", 46)}
+    <linearGradient id="bhbg" x1="0" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#1E2E52"/><stop offset="1" stop-color="#0B1220"/></linearGradient>
+    <linearGradient id="bhd" x1=".1" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#3A5285"/><stop offset="1" stop-color="#1B2947"/></linearGradient>
+    <clipPath id="bhc"><rect width="900" height="520" rx="26"/></clipPath>
+    <clipPath id="bhdc"><circle cx="702" cy="330" r="152"/></clipPath>
+  </defs>
+  <g clip-path="url(#bhc)">
+    <rect width="900" height="520" fill="url(#bhbg)"/>
+    <circle cx="700" cy="40" r="220" fill="#2E4372" opacity=".38" filter="url(#sfbh)"/>
+    ${rings(702, 330, 168, 430, 30, "#8FA3CE", 1.1, .17)}
+    <circle cx="702" cy="330" r="152" fill="url(#bhd)"/>
+    <g clip-path="url(#bhdc)">${strata(560, 850, 358, 168, 500, "#8FA3CE", "#D99A3E")}</g>
+    <circle cx="702" cy="330" r="152" fill="none" stroke="#8FA3CE" stroke-width="1.4" opacity=".34"/>
+    <circle cx="548" cy="104" r="30" fill="#D99A3E" opacity=".9"/>
+    <circle cx="548" cy="104" r="46" fill="none" stroke="#D99A3E" stroke-width="1.1" opacity=".35"/>
+    ${wave(-70, 970, 452, 26, 3.2, 9, "#8FA3CE", 2.4, "hw-a")}
+    ${wave(-70, 970, 480, 14, 3.6, 8, "#D99A3E", 1.9, "hw-b")}
+    <rect width="900" height="520" filter="url(#grbh)" opacity=".6"/>
+  </g></svg>`;
+
+module.exports.HERO_ABOUT = HERO_ABOUT;

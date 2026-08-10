@@ -1,6 +1,6 @@
 /* Reusable markup fragments. Everything takes a language object `L`. */
 const { PLATFORM, COURSES, COURSE, TESTIMONIALS } = require("./data-node");
-const { HERO, COVER, COVER_FOR, BANNER } = require("./art");
+const { HERO, COVER, COVER_FOR, BANNER, HERO_ABOUT } = require("./art");
 
 const heroArt = HERO();
 
@@ -59,4 +59,4 @@ function testimonialCard(L, t) {
 }
 
 module.exports = { heroArt, icons, courseCard, audienceCard, testimonialCard, f,
-                   PLATFORM, COURSES, COURSE, TESTIMONIALS, HERO, COVER, BANNER };
+                   PLATFORM, COURSES, COURSE, TESTIMONIALS, HERO, COVER, BANNER, HERO_ABOUT };

@@ -2,7 +2,7 @@ const fs = require("fs"), path = require("path");
 const { page } = require("./layout");
 const { LANGS } = require("./copy");
 const { heroArt, icons, courseCard, audienceCard, testimonialCard, f,
-        PLATFORM, COURSES, TESTIMONIALS, BANNER } = require("./pieces");
+        PLATFORM, COURSES, TESTIMONIALS, BANNER, HERO_ABOUT } = require("./pieces");
 
 const ROOT = path.join(__dirname, "..");
 const live = COURSES.filter((c) => c.status === "available");
@@ -57,16 +57,6 @@ for (const L of LANGS) {
   </div>
 </section>
 
-<section class="section-tight">
-  <div class="wrap">
-    <div class="stats reveal">
-      <div class="stat"><b>${COURSES.length}</b><span>${t.stats.courses}</span></div>
-      <div class="stat"><b>${totalHours}h</b><span>${t.stats.hours}</span></div>
-      <div class="stat"><b>100%</b><span>${t.stats.paced}</span></div>
-      <div class="stat"><b>∞</b><span>${t.stats.access}</span></div>
-    </div>
-  </div>
-</section>
 
 <section style="padding-top:clamp(30px,4vw,52px)">
   <div class="wrap">
@@ -295,16 +285,17 @@ for (const L of LANGS) {
   /* ======================= ABOUT ======================= */
   const ab = L.about;
   write(L, "about.html", page(L, "about.html", ab.title, ab.desc, `
-<section class="hero" style="padding-bottom:clamp(34px,5vw,60px)">
-  <div class="wrap" style="max-width:820px">
-    <p class="eyebrow">${ab.eyebrow}</p>
-    <h1>${ab.h1}</h1>
-    <p class="lede">${ab.lede}</p>
+<section style="padding:clamp(28px,4vw,52px) 0 0">
+  <div class="wrap">
+    <div class="hero-feature">
+      <div class="art">${HERO_ABOUT()}</div>
+      <div class="inner">
+        <p class="eyebrow">${ab.eyebrow}</p>
+        <h1>${ab.h1}</h1>
+        <p class="lede">${ab.lede}</p>
+      </div>
+    </div>
   </div>
-</section>
-
-<section class="section-tight" style="padding-top:0">
-  <div class="wrap"><div class="banner">${BANNER(4)}</div></div>
 </section>
 
 <section>
