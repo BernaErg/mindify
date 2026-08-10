@@ -1,6 +1,6 @@
 /* Reusable markup fragments. Everything takes a language object `L`. */
 const { PLATFORM, COURSES, COURSE, TESTIMONIALS } = require("./data-node");
-const { HERO, COVER, BANNER } = require("./art");
+const { HERO, COVER, COVER_FOR, BANNER } = require("./art");
 
 const heroArt = HERO();
 
@@ -25,13 +25,9 @@ function courseCard(L, c, i) {
   return `<article class="card card-hover module-card reveal">
         <div class="cover">
           <span class="cover-tag">${live ? t.availableNow : t.inDevelopment}</span>
-          ${COVER(i + 1)}
+          ${COVER_FOR(c.slug, i + 1)}
         </div>
-        <div class="module-num">${f(c, "level", L)}</div>
         <h3>${c.title}</h3>
-        <p class="tagline">${f(c, "subtitle", L)}</p>
-        <p>${f(c, "summary", L)}</p>
-        ${c.notice ? `<p class="notice-inline">${t.noticeShort}</p>` : ""}
         <div class="card-foot">
           <span class="foot-pills"><span class="pill">${count}</span><span class="pill">${c.hours} ${t.hours}</span></span>
           ${live

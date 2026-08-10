@@ -22,35 +22,35 @@ const EN = {
   home: {
     title: "Psychology courses, taught by an academic",
     desc: "Mindify is a self-paced psychology school led by a UK academic psychologist. Rigorous courses in applied psychology, open to anyone who'll do the reading.",
-    eyebrow: "Psychology, taught properly",
-    h1: "University-grade psychology,<br>on your own schedule.",
-    lede: "Self-paced courses written and taught by a UK academic psychologist. Rigorous enough to hold up in a seminar, plain enough to be useful on an ordinary Tuesday.",
-    ctaCourses: "Browse courses", ctaAbout: "What makes it different",
-    note: "Start today, finish whenever you can · certificate on completion",
+    eyebrow: "Simplify. Mindify. Qualify.",
+    h1: "University-level professional development,<br>on your own schedule.",
+    lede: "Self-paced courses, developed by practising UK academics. Accredited, practical and useful.",
+    ctaCourses: "Browse our courses", ctaAbout: "What makes it different",
+    note: "Start today, finish whenever you can · certification on completion",
     stats: { courses: "COURSES", hours: "OF TEACHING", paced: "SELF-PACED", access: "ACCESS" },
-    howEyebrow: "How we teach", howH2: "Learning that behaves like scholarship",
-    howLede: "Understanding people is not a skill you acquire once. It's a practice you keep returning to, with better questions each time. Everything here is built to be held to an academic standard — and then carried out of the room.",
+    allEyebrow: "Every course", allH2: "All courses are",
+    allItems: ["self-paced", "certified on completion", "quality-checked by accrediting bodies"],
+    allNote: "On completion you will receive a Mindify UK certificate detailing the contents of your course, in addition to certificates from Continuing Professional Development UK (CPDUK) and International Practitioners of Holistic Medicine (IPHM).",
+    howEyebrow: "How and why, Mindify?", howH2: "Join our virtual classrooms and leave with practical skills",
+    howLede: "Understanding people is not a skill you acquire once and for all. Many different approaches are used to help students become skilful as a coach, mentor, psychologist, therapist — or simply a brilliant friend. Our courses are developed by distinguished, practising UK academics, blending academic rigour with practical reality.",
+    howBullets: ["Master the content of your course", "Gain an accredited CPD certificate", "Apply it in the real world"],
     catEyebrow: "The catalogue",
     catLede: "Attachment and developmental practice, psychedelic science, breathwork facilitation, nature-based wellbeing. Each is self-contained, self-paced, and ends with a dated certificate.",
     catCta: "See all courses",
-    whyEyebrow: "Why Mindify", whyH2: "Taught like a seminar, not a slideshow",
-    why: [
-      ["Named sources, honestly used", "Bowlby and Ainsworth, Siegel, Perry, Hughes. Where a finding is contested or failed to replicate, we say so instead of flattening it into a slogan."],
-      ["Taught by someone who marks essays", "Written and delivered by a practising UK academic psychologist, not a content team. The tone is a supervision session, not a sales funnel."],
-      ["Live sessions alongside the courses", "Free monthly open webinars on a single idea, plus deeper ticketed sessions attached to individual modules — where you can ask the question a recording can't answer."],
-      ["Built for real schedules", "Ten minutes at 10pm counts. Progress saves automatically, so you can stop mid-module and pick it up next week without losing your place."],
-      ["Theory that survives contact", "Every module ends with one thing to try. Not a programme to implement — a single experiment, for a week. Messy attempts count."],
-      ["Certificate on completion", "Finish a course and download a dated PDF in your name — useful for CPD logs, placement portfolios, supervision records and fostering panels."]
+    boxes: [
+      ["Developed by UK academics and experts in the field",
+        "Each course is designed by a team of UK academics — lecturers, assistant and associate professors — and experienced professionals, leaders in education. The approach is that of a critical friend. All course content is based on empirical evidence in the field, to familiarise you with up-to-date research on the topic."],
+      ["Open to anyone",
+        "Our courses are for anyone. Whether you are a psychology student, a trainee or qualified counsellor, or any professional seeking to understand and promote wellbeing, our courses are for you."],
+      ["Applicable to the real world",
+        "All courses are designed with the real world in mind. You will develop practical skills to apply in real situations."],
+      ["Built for the long run",
+        "After creating an account, your access will never expire. Course content is regularly revised to reflect the most recent changes in the field. Learning here is a habit, not a purchase."],
+      ["Built for real schedules",
+        "Ten minutes at 10pm counts. Progress saves automatically, so you can stop mid-module and pick it up next week without losing your place."],
+      ["Gain a recognised UK certificate",
+        "Sign up, work through and complete your course to download a fully accredited CPD certificate that enhances both your CV and your practical skills."]
     ],
-    liveEyebrow: "Live sessions", liveH2: "Some things only work in a room",
-    liveLede: "Self-paced material is the right shape for theory. It's the wrong shape for the question you only think of afterwards.",
-    liveBody: "So the courses are paired with live sessions: a <b>free monthly open webinar</b> on a single idea, taken to more depth than a self-paced module allows — and <b>ticketed sessions attached to individual modules</b>, where a small group works a case through with the tutor rather than watching one.",
-    liveNote: "Schedule to be announced. Tell us which topic you'd come for and it goes first.",
-    liveCta: "Suggest a topic",
-    liveCard1Pill: "Free · monthly", liveCard1H: "Open webinar",
-    liveCard1P: "One idea, one hour, open to anyone. Recorded and released afterwards, but the live Q&amp;A stays with the room.",
-    liveCard2Pill: "Ticketed · per module", liveCard2H: "Module deep-dive",
-    liveCard2P: "A small group, a real case, and the parts of a module that need discussion rather than delivery. Attached to the module you've just finished.",
     tEyebrow: "From our students", tH2: "What people say afterwards",
     ctaEyebrow: "Start when you're ready", ctaH2: "Create an account, take your time",
     ctaLede: "Work through a course at whatever pace your life allows, and download your certificate when you're done. Nothing expires.",
@@ -62,17 +62,18 @@ const EN = {
     eyebrow: "Courses", h1: (n) => `${n} courses, all open`,
     lede: "Every course is self-contained and self-paced, ends with a dated certificate, and never expires. Start with any of them — there's no required order.",
     ctaAccount: "Create your account", ctaCatalogue: "See the catalogue",
-    availEyebrow: "Available now", availH2: "Open for enrolment",
+    availEyebrow: "Available now", availH2: "Current courses",
     soonEyebrow: "In development", soonH2: "Coming next",
     soonLede: "Outlines are published early so you can tell us what's missing before they're written.",
-    howEyebrow: "How it works", howH2: "Enrol, work through it, download your certificate",
-    howP: "No live sessions to attend, no cohort to keep up with. You get the whole course the moment you enrol.",
+    howEyebrow: "How it works", howH2: "Enrol, work through it, collect your certificate",
+    howP: "No live sessions to attend, no cohort to keep up with, no written assignments. You get the whole course the moment you enrol.",
     steps: [
-      ["Create a student account", "Email and a password. About thirty seconds."],
-      ["Work through the modules", "In order is best — each leans on the last — but nothing is locked. Mark each complete as you go."],
-      ["Try one small thing each week", "Every module ends with a single experiment. That's where the learning lands."],
-      ["Download your certificate", "All modules complete unlocks a dated PDF in your dashboard."]
+      ["Create an account in thirty seconds", ""],
+      ["Work through the modules", ""],
+      ["Complete tasks and reflect", ""],
+      ["Download your certificate", ""]
     ],
+    stepsNote: "On completion you will receive a Mindify UK certificate detailing the contents of your course, in addition to certificates from Continuing Professional Development UK (CPDUK) and International Practitioners of Holistic Medicine (IPHM).",
     modules: "modules", topics: "topics", hours: "hours",
     availableNow: "Available now", inDevelopment: "In development", comingSoon: "Coming soon",
     viewCourse: "View course", noticeShort: "Educational content only · not a recommendation of personal use"
@@ -83,6 +84,7 @@ const EN = {
     back: "← All courses", jump: "See the modules",
     enrol: "Enrol — create your account", dashboard: "Go to my dashboard",
     whyEyebrow: "Why this course exists", whyH2: "The gap it fills",
+    outcomesEyebrow: "What you'll be able to do", outcomesH2: "Learning outcomes",
     devH2: "Not written yet",
     devP: "This course is still being written. The outline below is published early so you can tell us what's missing — say the word and it moves up the queue.",
     curriculumEyebrow: "The curriculum",
@@ -108,12 +110,11 @@ const EN = {
 
   about: {
     title: "About", desc: "Mindify is a self-paced psychology school led by a UK academic psychologist.",
-    eyebrow: "About Mindify", h1: "We teach the thinking, not just the techniques.",
-    lede: "Mindify is a small UK school for applied psychology, led by an academic psychologist who teaches and supervises at university level. The courses are the ones we wished existed: rigorous enough to survive a seminar, plain enough for someone meeting the material for the first time.",
+    eyebrow: "About Mindify", h1: "We teach the thinking and the skills.",
+    lede: "Mindify is a boutique UK-based enterprise for applied psychology with a global reach. Behind the scenes at Mindify is a professional team of UK academics — counsellors, psychologists and academic leaders — who have decades of experience teaching and supervising students and other professionals.",
     body: [
-      "Psychology has an odd gap in the middle. University teaching is rigorous but rarely reaches application — you meet Bowlby and Ainsworth in a lecture, sit an exam, and never see the theory used on a real Tuesday afternoon. Meanwhile the applied market is full of confident, evidence-light training that has quietly dropped the sources.",
-      "Mindify exists in that gap. Every course keeps the citations, says out loud where the evidence is contested, and then follows the theory all the way through to what you actually do and say.",
-      "That makes it useful to more people than we first expected — an assistant psychologist, a foster carer, a SENCO, someone managing eleven people who keeps wondering why their feedback bounces off. The material doesn't change for each of them. It doesn't need to."
+      "We believe that academic learning and plain language are not opposites. The courses we promote are academically rigorous but clear enough for someone studying the material for the first time.",
+      "That makes them useful to more people than you might expect — a psychology student, an assistant psychologist, a foster carer, a SENCO, someone managing a team who keeps wondering why their feedback bounces off. The material doesn't change for each of them. It doesn't need to."
     ],
     approachEyebrow: "Our approach", approachH2: "Five principles we won't compromise on",
     principles: [
@@ -123,15 +124,14 @@ const EN = {
       ["No shame in the room", "Under pressure most of us default to control — as parents, as practitioners, as managers. That's human, not a failing, and nothing here is framed as a verdict on you."],
       ["Honest about what a certificate is", "Our certificate confirms you completed the material. It's widely accepted for CPD logs, placement portfolios, supervision records and fostering panels. It is not a regulated professional qualification and we never imply otherwise."]
     ],
-    whoEyebrow: "Who studies here", whoH2: "One room, four reasons to be in it",
-    whoP: "The courses were written for a mixed audience and stay useful across all of it.",
+    whoEyebrow: "Who studies here", whoH2: "A virtual classroom for anyone",
+    whoP: "Our courses are designed for people from all walks of life.",
     who: [
-      ["Psychology students", "Undergraduate and postgraduate students who want application and depth their syllabus hasn't room for — and something concrete for a placement portfolio."],
-      ["Practitioners, carers and school staff", "Assistant psychologists, family support workers, SENCOs, TAs, foster and kinship carers, adopters. Frequently used as evidence for supervision and panel."],
-      ["Managers and team leads", "People responsible for other people who'd like the actual research on motivation, feedback and psychological safety rather than the airport-bookshop version."],
-      ["Parents and the plainly curious", "No prior training assumed and nothing dumbed down. Plenty of people arrive for one course and stay for the subject."]
+      ["Psychology students", "Undergraduate and postgraduate students who want application and depth their syllabus hasn't room for. Completing our courses will enhance your understanding of the field and develop your CV to stand out from the crowd when looking for future opportunities."],
+      ["Practitioners, carers, parents and school staff", "Assistant psychologists, family support workers, SENCOs, TAs, foster and kinship carers, adopters. Completing our courses will help you learn specific skills to apply to your daily life — whether personal or professional."],
+      ["The simply curious", "No prior training is required to complete our courses. Plenty of people arrive for one course and stay for their passion for psychology, counselling, and personal and professional development."]
     ],
-    quote: "“Rigour and plain language are not opposites.”", quoteSub: "That's the whole editorial policy.",
+    quote: "“Academic learning and plain language are not opposites.”", quoteSub: "That's the whole editorial policy.",
     quoteCta: "See the courses"
   },
 
@@ -155,7 +155,6 @@ const EN = {
       ["Do I need a psychology background?", "Depends on the course, and each one says so under its title. Introductory courses assume nothing. Intermediate ones assume you're comfortable with the basic vocabulary — roughly first-year undergraduate level."],
       ["How long does a course take?", "Between six and sixteen hours depending on the course. Most people spread it over six to ten weeks, doing a module a week with the practice in between. No deadline, no expiry."],
       ["Is there a certificate?", "Yes — mark every module complete and a dated PDF unlocks in your dashboard. Widely used for CPD logs, supervision records, placement portfolios and fostering panel evidence. It is not a regulated professional qualification."],
-      ["Are there any live sessions?", "Yes — a free monthly open webinar on a single idea, open to anyone, and ticketed deep-dive sessions attached to individual modules for people who want to work a case through in a small group. The schedule is still being set; tell us which topic you'd come for and it moves up."],
       ["Isn't therapeutic parenting just being permissive?", "No, and it's the most common misreading. Permissive parenting drops the boundary to avoid conflict, which leaves a child feeling loved but not safe. The therapeutic stance holds the boundary firmly and adds empathy alongside it. The limit doesn't move."],
       ["Can I run this as live training with a group?", "Each module is written as a facilitated session with check-ins, teaching blocks, paired reflection and an applied activity. Get in touch about the facilitator pack."]
     ]
@@ -212,7 +211,7 @@ const EN = {
     ],
     terms: [
       ["What you are buying", "Access to self-paced online course material and a certificate of completion. Access does not expire."],
-      ["What the certificate is — and isn't", "The certificate confirms that you completed the Mindify course material. It is commonly accepted as evidence for CPD logs, supervision records, placement portfolios and fostering panels. It is <strong>not</strong> a regulated professional qualification, a licence to practise, or accreditation by any statutory body, and we never present it as one."],
+      ["What the certificate is — and isn't", "The certificate confirms that you completed the Mindify course material. Our courses are accredited by Continuing Professional Development UK (CPDUK) and the International Practitioners of Holistic Medicine (IPHM); on completion you receive certificates from both bodies in addition to your Mindify UK certificate. These are professional CPD accreditations. They are <strong>not</strong> a regulated qualification or a licence to practise, and we never present them as one."],
       ["Educational content, not clinical advice", "Everything on this site is educational. It is not therapy, not a diagnostic tool, and not a substitute for advice from a qualified clinician. Courses covering controlled substances are informational only and never describe sourcing, dosing or method of use."],
       ["Your account", "One person per account. Please don't share login details — progress and certificates are tied to a named individual, and a shared account produces a certificate in the wrong name."],
       ["Refunds", "If a course isn't right for you, email us within fourteen days of enrolling and we will refund you in full, no explanation needed."],
@@ -238,35 +237,35 @@ const TR = {
   home: {
     title: "Bir akademisyenden psikoloji kursları",
     desc: "Mindify, İngiltere'de görev yapan bir akademisyen psikolog tarafından yürütülen, kendi hızınızda ilerlediğiniz bir uygulamalı psikoloji okuludur.",
-    eyebrow: "Psikoloji, hakkı verilerek",
-    h1: "Akademik derinlikte psikoloji,<br>kendi programınıza göre.",
-    lede: "İngiltere'de ders veren bir akademisyen psikolog tarafından yazılan ve anlatılan, kendi hızınızda ilerlediğiniz kurslar. Bir seminerde savunulacak kadar sağlam, sıradan bir salı gününde işe yarayacak kadar açık.",
-    ctaCourses: "Kursları incele", ctaAbout: "Farkı ne?",
-    note: "Bugün başla, ne zaman bitirebilirsen bitir · tamamlama sertifikası",
+    eyebrow: "Simplify. Mindify. Qualify.",
+    h1: "Üniversite düzeyinde mesleki gelişim,<br>kendi programınıza göre.",
+    lede: "İngiltere'de halen ders veren akademisyenler tarafından hazırlanan, kendi hızınızda ilerlediğiniz kurslar. Akredite, uygulanabilir ve işe yarar.",
+    ctaCourses: "Kurslarımıza göz atın", ctaAbout: "Farkı ne?",
+    note: "Bugün başlayın, ne zaman bitirebilirseniz bitirin · tamamlandığında sertifikasyon",
     stats: { courses: "KURS", hours: "SAATLİK İÇERİK", paced: "KENDİ HIZINDA", access: "ERİŞİM" },
-    howEyebrow: "Nasıl öğretiyoruz", howH2: "Bilimsel titizlikte bir öğrenme",
-    howLede: "İnsanı anlamak bir kez edinilip biten bir beceri değil. Her seferinde daha iyi sorularla geri dönülen bir pratik. Buradaki her şey akademik ölçütlere dayanacak şekilde kuruldu — ve sonra odadan dışarı taşınacak şekilde.",
+    allEyebrow: "Her kurs", allH2: "Bütün kurslarımız",
+    allItems: ["kendi hızınızda ilerliyor", "tamamlandığında sertifikalı", "akreditasyon kurumlarınca kalite denetiminden geçmiş"],
+    allNote: "Kursu tamamladığınızda, kursunuzun içeriğini ayrıntılandıran bir Mindify UK sertifikasının yanı sıra Continuing Professional Development UK (CPDUK) ve International Practitioners of Holistic Medicine (IPHM) sertifikalarını da alırsınız.",
+    howEyebrow: "Nasıl ve neden Mindify?", howH2: "Sanal sınıflarımıza katılın, uygulanabilir becerilerle ayrılın",
+    howLede: "İnsanı anlamak bir kez edinilip biten bir beceri değil. Öğrencilerin koç, mentor, psikolog, terapist ya da sadece harika bir arkadaş olarak ustalaşmasına yardımcı olmak için pek çok farklı yaklaşım kullanılıyor. Kurslarımız, İngiltere'de halen ders veren saygın akademisyenler tarafından, akademik titizlikle pratik gerçekliği harmanlayarak hazırlanıyor.",
+    howBullets: ["Kursunuzun içeriğine hâkim olun", "Akredite bir CPD sertifikası kazanın", "Gerçek hayatta uygulayın"],
     catEyebrow: "Katalog",
     catLede: "Bağlanma ve gelişimsel uygulama, psychedelic bilimi, nefes çalışması eğitmenliği, doğa temelli iyi oluş. Her kurs kendi içinde bütün, kendi hızınızda ve tarihli bir sertifikayla bitiyor.",
     catCta: "Tüm kursları gör",
-    whyEyebrow: "Neden Mindify", whyH2: "Slayt gösterisi değil, seminer",
-    why: [
-      ["Kaynaklar yerinde", "Bowlby ve Ainsworth, Siegel, Perry, Hughes. Bir bulgu tartışmalıysa ya da tekrarlanamadıysa, bunu bir slogana indirgemek yerine açıkça söylüyoruz."],
-      ["Ödev okuyan biri tarafından anlatılıyor", "İçerik ekibi değil, halen ders veren bir akademisyen psikolog yazdı ve anlatıyor. Ton bir satış hunisinin değil, bir süpervizyon görüşmesinin tonu."],
-      ["Kursların yanında canlı oturumlar", "Tek bir fikir üzerine her ay ücretsiz açık webinar, ayrıca belirli modüllere bağlı, biletli derinleşme oturumları — kaydın cevaplayamadığı soruyu sorabileceğiniz yer."],
-      ["Gerçek programlara göre", "Gece 10'da on dakika da sayılır. İlerleme kendiliğinden kaydediliyor; modülün ortasında bırakıp haftaya kaldığınız yerden devam edebilirsiniz."],
-      ["Temasla sınanan teori", "Her modül denenecek tek bir şeyle bitiyor. Uygulanacak bir program değil — bir hafta boyunca tek bir deney. Dağınık denemeler de sayılır."],
-      ["Tamamlama sertifikası", "Kursu bitirdiğinizde adınıza tarihli bir PDF indiriyorsunuz — sürekli mesleki gelişim kayıtları, staj dosyaları ve süpervizyon için kullanılabilir."]
+    boxes: [
+      ["İngiltere akademisyenleri ve alan uzmanları tarafından hazırlandı",
+        "Her kurs, İngiltere'den akademisyenlerden — öğretim üyeleri, yardımcı doçent ve doçentler — ve eğitimde önde gelen deneyimli profesyonellerden oluşan bir ekip tarafından tasarlanıyor. Yaklaşım, eleştirel bir dost yaklaşımı. Bütün kurs içeriği alandaki ampirik kanıta dayanıyor; böylece konudaki güncel araştırmayla tanışıyorsunuz."],
+      ["Herkese açık",
+        "Kurslarımız herkes için. İster psikoloji öğrencisi olun, ister danışman adayı ya da diplomalı danışman, ister iyi oluşu anlamak ve desteklemek isteyen herhangi bir profesyonel — kurslarımız size göre."],
+      ["Gerçek hayatta uygulanabilir",
+        "Bütün kurslar gerçek hayat düşünülerek tasarlandı. Gerçek durumlarda uygulayacağınız pratik beceriler geliştireceksiniz."],
+      ["Uzun vade için kuruldu",
+        "Hesabınızı oluşturduktan sonra erişiminizin süresi hiç dolmuyor. Kurs içeriği, alandaki en güncel değişiklikleri yansıtacak şekilde düzenli olarak gözden geçiriliyor. Buradaki öğrenme bir satın alma değil, bir alışkanlık."],
+      ["Gerçek programlara göre",
+        "Gece 10'da on dakika da sayılır. İlerleme kendiliğinden kaydediliyor; modülün ortasında bırakıp haftaya kaldığınız yerden devam edebilirsiniz."],
+      ["Tanınan bir UK sertifikası kazanın",
+        "Kaydolun, çalışın ve kursunuzu tamamlayarak hem CV'nizi hem pratik becerilerinizi güçlendiren, tam akredite bir CPD sertifikası indirin."]
     ],
-    liveEyebrow: "Canlı oturumlar", liveH2: "Bazı şeyler yalnızca odada olur",
-    liveLede: "Kendi hızında ilerleyen içerik teori için doğru biçim. Sonradan aklınıza gelen soru için yanlış biçim.",
-    liveBody: "Bu yüzden kurslar canlı oturumlarla eşleşiyor: tek bir fikri, kendi hızında bir modülün izin verdiğinden daha derine götüren <b>ayda bir ücretsiz açık webinar</b> — ve <b>belirli modüllere bağlı biletli oturumlar</b>; küçük bir grubun eğitmenle birlikte gerçek bir vakayı izlemek yerine birlikte çalıştığı yer.",
-    liveNote: "Takvim yakında açıklanacak. Hangi konu için geleceğinizi söyleyin, sıraya o girsin.",
-    liveCta: "Konu öner",
-    liveCard1Pill: "Ücretsiz · aylık", liveCard1H: "Açık webinar",
-    liveCard1P: "Tek fikir, bir saat, herkese açık. Sonrasında kaydı yayınlanıyor ama canlı soru-cevap odada kalıyor.",
-    liveCard2Pill: "Biletli · modül başına", liveCard2H: "Modül derinleşmesi",
-    liveCard2P: "Küçük bir grup, gerçek bir vaka ve modülün anlatılmaktan çok tartışılması gereken kısımları. Yeni bitirdiğiniz modüle bağlı.",
     tEyebrow: "Öğrencilerimizden", tH2: "Sonrasında ne söylüyorlar",
     ctaEyebrow: "Hazır olduğunuzda", ctaH2: "Hesabınızı açın, acele etmeyin",
     ctaLede: "Kursu hayatınızın izin verdiği hızda ilerletin, bitirdiğinizde sertifikanızı indirin. Hiçbir şeyin süresi dolmuyor.",
@@ -278,17 +277,18 @@ const TR = {
     eyebrow: "Kurslar", h1: (n) => `${n} kurs, hepsi açık`,
     lede: "Her kurs kendi içinde bütün, kendi hızınızda ilerliyor, tarihli bir sertifikayla bitiyor ve süresi hiç dolmuyor. Hangisinden başlarsanız başlayın — zorunlu bir sıra yok.",
     ctaAccount: "Hesap oluştur", ctaCatalogue: "Kataloğa git",
-    availEyebrow: "Şu anda açık", availH2: "Kayıtlar açık",
+    availEyebrow: "Şu anda açık", availH2: "Mevcut kurslar",
     soonEyebrow: "Hazırlanıyor", soonH2: "Sırada ne var",
     soonLede: "Ders planlarını erken yayınlıyoruz ki yazılmadan önce eksiğini söyleyebilesiniz.",
-    howEyebrow: "Nasıl işliyor", howH2: "Kaydol, ilerle, sertifikanı indir",
-    howP: "Katılmanız gereken canlı ders yok, yetişmeniz gereken bir sınıf yok. Kaydolduğunuz anda kursun tamamı sizin.",
+    howEyebrow: "Nasıl işliyor", howH2: "Kaydolun, ilerleyin, sertifikanızı alın",
+    howP: "Katılmanız gereken canlı ders yok, yetişmeniz gereken bir sınıf yok, yazılı ödev yok. Kaydolduğunuz anda kursun tamamı sizin.",
     steps: [
-      ["Öğrenci hesabı oluştur", "E-posta ve bir şifre. Otuz saniye sürüyor."],
-      ["Modülleri ilerlet", "Sırayla en iyisi — her biri bir öncekine yaslanıyor — ama hiçbiri kilitli değil. İlerledikçe tamamlandı olarak işaretleyin."],
-      ["Her hafta küçük bir şey dene", "Her modül tek bir deneyle bitiyor. Öğrenmenin gerçekten yerleştiği yer orası."],
-      ["Sertifikanı indir", "Tüm modüller tamamlandığında panelinizde tarihli bir PDF açılıyor."]
+      ["Otuz saniyede hesap oluşturun", ""],
+      ["Modülleri ilerletin", ""],
+      ["Görevleri tamamlayın ve düşünün", ""],
+      ["Sertifikanızı indirin", ""]
     ],
+    stepsNote: "Kursu tamamladığınızda, kursunuzun içeriğini ayrıntılandıran bir Mindify UK sertifikasının yanı sıra Continuing Professional Development UK (CPDUK) ve International Practitioners of Holistic Medicine (IPHM) sertifikalarını da alırsınız.",
     modules: "modül", topics: "başlık", hours: "saat",
     availableNow: "Şu anda açık", inDevelopment: "Hazırlanıyor", comingSoon: "Yakında",
     viewCourse: "Kursa git", noticeShort: "Yalnızca eğitim amaçlıdır · kişisel kullanım önerisi değildir"
@@ -299,6 +299,7 @@ const TR = {
     back: "← Tüm kurslar", jump: "Modülleri gör",
     enrol: "Kaydol — hesap oluştur", dashboard: "Panelime git",
     whyEyebrow: "Bu kurs neden var", whyH2: "Doldurduğu boşluk",
+    outcomesEyebrow: "Neler yapabileceksiniz", outcomesH2: "Öğrenim çıktıları",
     devH2: "Henüz yazılmadı",
     devP: "Bu kurs hâlâ yazılıyor. Aşağıdaki plan, yazılmadan önce eksiğini söyleyebilmeniz için erken yayınlandı — söyleyin, sırası öne alınsın.",
     curriculumEyebrow: "Müfredat",
@@ -324,12 +325,11 @@ const TR = {
 
   about: {
     title: "Hakkımızda", desc: "Mindify, bir akademisyen psikolog tarafından yürütülen uygulamalı psikoloji okuludur.",
-    eyebrow: "Mindify hakkında", h1: "Yalnızca teknikleri değil, düşünme biçimini öğretiyoruz.",
-    lede: "Mindify, üniversite düzeyinde ders veren ve süpervizyon yapan bir akademisyen psikoloğun yürüttüğü küçük bir uygulamalı psikoloji okulu. Kurslar, keşke olsaydı dediğimiz kurslar: bir seminerde ayakta kalacak kadar sağlam, konuyla ilk kez karşılaşan biri için yeterince açık.",
+    eyebrow: "Mindify hakkında", h1: "Hem düşünme biçimini hem becerileri öğretiyoruz.",
+    lede: "Mindify, İngiltere merkezli, küresel erişimi olan butik bir uygulamalı psikoloji girişimi. Perde arkasında, öğrencilere ve diğer profesyonellere ders verme ve süpervizyon konusunda onlarca yıllık deneyimi olan profesyonel bir İngiltere akademisyenleri ekibi var — danışmanlar, psikologlar ve akademik yöneticiler.",
     body: [
-      "Psikolojinin ortasında tuhaf bir boşluk var. Üniversite eğitimi titiz ama uygulamaya nadiren iniyor — Bowlby ve Ainsworth'le bir derste tanışıyorsunuz, sınava giriyorsunuz ve o teorinin gerçek bir salı öğleden sonrasında kullanıldığını hiç görmüyorsunuz. Öte yandan uygulamalı piyasa, kaynaklarını sessizce düşürmüş, kendinden emin ama kanıtı zayıf eğitimlerle dolu.",
-      "Mindify tam o boşlukta duruyor. Her kurs kaynakları koruyor, kanıtın tartışmalı olduğu yeri açıkça söylüyor ve sonra teoriyi ne yapacağınıza ve ne söyleyeceğinize kadar takip ediyor.",
-      "Bu da onu başta beklediğimizden çok daha fazla kişiye yarar hâle getiriyor — bir asistan psikolog, bir koruyucu aile, bir okul rehber öğretmeni, on bir kişiyi yöneten ve geri bildiriminin neden geri sektiğini merak eden biri. İçerik her biri için değişmiyor. Değişmesi de gerekmiyor."
+      "Akademik öğrenme ile sade dilin karşıt olmadığına inanıyoruz. Sunduğumuz kurslar akademik olarak titiz, ama konuyla ilk kez çalışan biri için yeterince açık.",
+      "Bu da onları beklediğinizden çok daha fazla kişiye yarar hâle getiriyor — bir psikoloji öğrencisi, bir asistan psikolog, bir koruyucu aile, bir okul rehber öğretmeni, ekibini yöneten ve geri bildiriminin neden geri sektiğini merak eden biri. İçerik her biri için değişmiyor. Değişmesi de gerekmiyor."
     ],
     approachEyebrow: "Yaklaşımımız", approachH2: "Taviz vermediğimiz beş ilke",
     principles: [
@@ -339,15 +339,14 @@ const TR = {
       ["Odada utanç yok", "Baskı altında çoğumuz kontrole kaçarız — ebeveyn olarak da, uygulayıcı olarak da, yönetici olarak da. Bu bir kusur değil, insanlık; buradaki hiçbir şey sizin hakkınızda bir hüküm olarak kurulmadı."],
       ["Sertifikanın ne olduğu konusunda dürüstlük", "Sertifikamız içeriği tamamladığınızı belgeler. Sürekli mesleki gelişim kayıtları, staj dosyaları ve süpervizyon için yaygın olarak kabul edilir. Düzenlenmiş bir mesleki yeterlilik değildir ve öyleymiş gibi de sunmayız."]
     ],
-    whoEyebrow: "Kimler öğrenim görüyor", whoH2: "Tek bir oda, orada olmak için dört sebep",
-    whoP: "Kurslar karma bir kitle için yazıldı ve hepsinde işlevini koruyor.",
+    whoEyebrow: "Kimler öğrenim görüyor", whoH2: "Herkese açık bir sanal sınıf",
+    whoP: "Kurslarımız hayatın her alanından insanlar için tasarlandı.",
     who: [
-      ["Psikoloji öğrencileri", "Müfredatın yer ayıramadığı uygulama ve derinliği isteyen lisans ve yüksek lisans öğrencileri — ve staj dosyasına koyacak somut bir şey."],
-      ["Uygulayıcılar, bakım verenler ve okul çalışanları", "Asistan psikologlar, aile destek çalışanları, rehber öğretmenler, koruyucu ve akraba bakım verenler, evlat edinenler. Süpervizyon ve komisyon için kanıt olarak sıkça kullanılıyor."],
-      ["Yöneticiler ve ekip liderleri", "Başkalarından sorumlu olan ve motivasyon, geri bildirim ve psikolojik güvenlik konusunda havalimanı kitapçısı sürümünü değil gerçek araştırmayı isteyen kişiler."],
-      ["Ebeveynler ve meraklılar", "Ön eğitim varsayılmıyor, hiçbir şey de basitleştirilmiyor. Pek çok kişi tek bir kurs için geliyor, konu için kalıyor."]
+      ["Psikoloji öğrencileri", "Müfredatın yer ayıramadığı uygulama ve derinliği isteyen lisans ve yüksek lisans öğrencileri. Kurslarımızı tamamlamak alana dair anlayışınızı derinleştirir ve gelecekteki fırsatları ararken kalabalıktan sıyrılmanızı sağlayacak şekilde CV'nizi geliştirir."],
+      ["Uygulayıcılar, bakım verenler, ebeveynler ve okul çalışanları", "Asistan psikologlar, aile destek çalışanları, rehber öğretmenler, koruyucu ve akraba bakım verenler, evlat edinenler. Kurslarımızı tamamlamak, kişisel ya da mesleki günlük hayatınızda uygulayacağınız belirli beceriler öğrenmenize yardımcı olur."],
+      ["Sadece meraklı olanlar", "Kurslarımızı tamamlamak için ön eğitim gerekmiyor. Pek çok kişi tek bir kurs için geliyor, psikolojiye, danışmanlığa ve kişisel-mesleki gelişime duyduğu tutku için kalıyor."]
     ],
-    quote: "“Titizlik ile sade dil karşıt değildir.”", quoteSub: "Tüm yayın politikamız bundan ibaret.",
+    quote: "“Akademik öğrenme ile sade dil karşıt değildir.”", quoteSub: "Tüm yayın politikamız bundan ibaret.",
     quoteCta: "Kursları gör"
   },
 
@@ -371,7 +370,6 @@ const TR = {
       ["Psikoloji altyapısı gerekiyor mu?", "Kursa göre değişiyor ve her kurs bunu başlığının altında yazıyor. Giriş düzeyi kurslar hiçbir şey varsaymıyor. Orta düzey olanlar temel kavramlara aşina olduğunuzu varsayıyor — kabaca lisans birinci sınıf seviyesi."],
       ["Bir kurs ne kadar sürüyor?", "Kursa göre altı ila on altı saat arası. Çoğu kişi altı-on haftaya yayıyor; haftada bir modül, arasında pratik. Süre sınırı yok, erişim süresi dolmuyor."],
       ["Sertifika var mı?", "Evet — tüm modülleri tamamlandı olarak işaretlediğinizde panelinizde tarihli bir PDF açılıyor. Sürekli mesleki gelişim kayıtları, süpervizyon, staj dosyaları ve koruyucu aile komisyonu için yaygın olarak kullanılıyor. Düzenlenmiş bir mesleki yeterlilik değildir."],
-      ["Canlı oturum var mı?", "Evet — tek bir fikir üzerine herkese açık, ayda bir ücretsiz webinar; ve küçük bir grupta gerçek bir vaka üzerinde çalışmak isteyenler için belirli modüllere bağlı biletli derinleşme oturumları. Takvim hâlâ oluşuyor; hangi konu için geleceğinizi söyleyin, sırası öne alınsın."],
       ["Terapötik ebeveynlik sadece izin verici olmak değil mi?", "Hayır, ve bu en yaygın yanlış okuma. İzin verici ebeveynlik çatışmadan kaçınmak için sınırı düşürür; bu da çocuğu sevilmiş ama güvende hissetmemiş bırakır. Terapötik duruş sınırı sıkıca tutar ve yanına empatiyi ekler. Sınır yerinden oynamaz."],
       ["Bunu bir grupla canlı eğitim olarak yürütebilir miyim?", "Her modül; açılış turu, anlatım blokları, ikili paylaşım ve uygulama etkinliği olan kolaylaştırılmış bir oturum olarak yazıldı. Eğitmen paketi için bize yazın."]
     ]
@@ -428,7 +426,7 @@ const TR = {
     ],
     terms: [
       ["Ne satın alıyorsunuz", "Kendi hızınızda ilerleyen çevrimiçi kurs içeriğine erişim ve bir tamamlama sertifikası. Erişimin süresi dolmuyor."],
-      ["Sertifika nedir — ve ne değildir", "Sertifika, Mindify kurs içeriğini tamamladığınızı belgeler. Sürekli mesleki gelişim kayıtları, süpervizyon kayıtları, staj dosyaları ve koruyucu aile komisyonları için kanıt olarak yaygın biçimde kabul edilir. Düzenlenmiş bir mesleki yeterlilik, bir uygulama lisansı ya da herhangi bir resmî kurum tarafından verilmiş bir akreditasyon <strong>değildir</strong> ve bunu hiçbir zaman öyle sunmuyoruz."],
+      ["Sertifika nedir — ve ne değildir", "Sertifika, Mindify kurs içeriğini tamamladığınızı belgeler. Kurslarımız Continuing Professional Development UK (CPDUK) ve International Practitioners of Holistic Medicine (IPHM) tarafından akredite edilmiştir; kursu tamamladığınızda Mindify UK sertifikanızın yanı sıra her iki kurumdan da sertifika alırsınız. Bunlar mesleki CPD akreditasyonlarıdır. Düzenlenmiş bir yeterlilik ya da uygulama lisansı <strong>değildir</strong> ve bunu hiçbir zaman öyle sunmuyoruz."],
       ["Eğitim içeriği, klinik tavsiye değil", "Bu sitedeki her şey eğitim amaçlıdır. Terapi değildir, tanı aracı değildir ve nitelikli bir klinisyenin görüşünün yerine geçmez. Kontrole tabi maddeleri konu alan kurslar yalnızca bilgilendirme amaçlıdır; hiçbir temin yolu, doz ya da kullanım yöntemi anlatılmaz."],
       ["Hesabınız", "Hesap başına bir kişi. Giriş bilgilerinizi paylaşmayın — ilerleme ve sertifikalar adı geçen kişiye bağlıdır; paylaşılan bir hesap yanlış isimde sertifika üretir."],
       ["İade", "Bir kurs size uygun değilse, kayıttan sonraki on dört gün içinde bize yazın, açıklama gerekmeden tamamını iade edelim."],

@@ -50,6 +50,14 @@ window.MINDIFY_COURSES = [
       level: "Giriş düzeyi · ön eğitim gerekmez",
       summary: "Bağlanma kuramı ve duygulanım nörobiliminin uygulamaya bakan ucu. Davranışı iletişim olarak okumak, akıl yürütmeden önce düzenlemek ve iyi onarmak üzerine altı modül — İngiltere'de okulların ve koruyucu aile hizmetlerinin travma-bilgili uygulamasının dayandığı model.",
       why: "Öğrenciler Bowlby ve Siegel ile derslerde tanışıyor, sonra bunların kullanıldığını hiç görmüyor. Bu kurs o köprü: aynı teori, salı akşamı saat altıda ağzınızdan çıkacak cümleye kadar takip edilmiş.",
+      outcomes: [
+        "Davranışı iletişim olarak okumak ve altındaki duyguyu ya da karşılanmamış ihtiyacı tanımak",
+        "Düzenlemenin akıl yürütmeden önce gelmesi gerektiğini açıklamak ve düzenle–bağ kur–akıl yürüt sırasını uygulamak",
+        "Bağlanmayı güvenli üs ve güvenli liman olarak anlatmak, PACE duruşunu gündelik ilişkide kullanmak",
+        "Taşkın anında çocuğa beş adımlı yapılandırılmış bir yanıtla eşlik etmek",
+        "Doğal ve mantıklı sonuçları cezadan ayırmak, sınırı koruyan bir yanıt tasarlamak",
+        "Bir kopuşu ustalıkla onarmak; çocukta ve kendinde utancı suçluluktan ayırmak"
+      ],
     },
     title: "Therapeutic Parenting",
     subtitle: "Connection, Regulation & Repair",
@@ -61,6 +69,14 @@ window.MINDIFY_COURSES = [
       "The applied end of attachment theory and affective neuroscience. Six modules on reading behaviour as communication, regulating before reasoning, and repairing well — the model underpinning most trauma-informed practice in UK schools and fostering services.",
     why:
       "Students meet Bowlby and Siegel in lectures and then never see them used. This course is the bridge: the same theory, followed all the way through to what you actually say at six o'clock on a Tuesday.",
+    outcomes: [
+      "Read behaviour as communication and identify the feeling or unmet need beneath it",
+      "Explain why regulation must precede reasoning, and apply the regulate–relate–reason sequence",
+      "Describe attachment as a secure base and safe haven, and use the PACE stance in everyday exchanges",
+      "Co-regulate a child through overwhelm using a structured five-step response",
+      "Tell natural and logical consequences apart from punishment, and design a response that keeps the boundary intact",
+      "Repair a rupture skilfully, and distinguish shame from guilt in the child and in yourself"
+    ],
     modules: [
       { n: 1, slug: "foundations", title: "Foundations — From Control to Connection",
         tagline: "Behaviour is communication. Connection comes before correction.", minutes: 120,
@@ -109,6 +125,14 @@ window.MINDIFY_COURSES = [
       level: "Orta düzey · akademik; psikoloji ve tıp öğrencilerine uygun",
       summary: "Psychedelic rönesansının eleştirel okuması. Farmakoloji, varsayılan mod ağı, klinik araştırma kanıtının durum durum incelenmesi, terapötik model, gerçek riskler ve dünyada ile Türkiye'deki yasal tablo üzerine altı adet iki saatlik modül.",
       why: "Kamuoyu tartışması mucize ilaç ile ahlaki panik arasında gidip geliyor ve araştırma literatürünü iyi okumak gerçekten zor. Bu kursun amacı ne savunuculuk ne de reddiye — sağlam bir bulguyu erken bir bulgudan ayırt edebilir hâle gelmeniz.",
+      outcomes: [
+        "Başlıca psychedelic madde ailelerini sınıflandırmak ve her birinin nasıl çalıştığını anlatmak",
+        "5-HT2A mekanizmasını, varsayılan mod ağını, entropi ve nöroplastisite açıklamasını anlatmak",
+        "Klinik araştırma kanıtını durum durum değerlendirmek ve bir çalışmayı eleştirel okumak",
+        "Psychedelic destekli terapinin bir ilaç etkisi değil bir süreç olduğunu açıklamak",
+        "Fiziksel, psikolojik ve etik riskleri ve başlıca kontrendikasyonları söylemek",
+        "Dünyadaki ve Türkiye'deki yasal tabloyu anlatmak ve alana yasal bir giriş yolu tanımlamak"
+      ],
       notice: "Yalnızca eğitim ve akademik içerik. Hiçbir temin yolu, doz veya kullanım yöntemi anlatılmaz; kişisel kullanım önerilmez. Türkiye'de bu maddeler Türk Ceza Kanunu 188 ve 191. maddeleri kapsamında yasa dışıdır; anlatılan klinik uygulamalar yalnızca yasal olduğu ülkeler için geçerlidir.",
     },
     title: "Psychedelics in Mental Health",
@@ -123,6 +147,14 @@ window.MINDIFY_COURSES = [
       "The psychedelic renaissance read critically. Six two-hour modules covering pharmacology, the default mode network, the clinical trial evidence condition by condition, the therapeutic model, the real risks, and the legal picture in the world and in Türkiye.",
     why:
       "The public conversation runs between miracle cure and moral panic, and the research literature is genuinely hard to read well. The aim of this course is neither advocacy nor dismissal — it is to leave you able to tell a solid finding from an early one.",
+    outcomes: [
+      "Classify the main psychedelic substance families and describe how each works",
+      "Explain the 5-HT2A mechanism, the default mode network, and the entropy and plasticity account",
+      "Assess the clinical trial evidence condition by condition, and read a trial critically",
+      "Explain why psychedelic-assisted therapy is a process rather than a drug effect",
+      "State the physical, psychological and ethical risks, and the main contraindications",
+      "Describe the legal position internationally and in Türkiye, and identify a lawful path into the field"
+    ],
     modules: [
       { n: 1, slug: "introduction", title: "Introduction to Psychedelics",
         tagline: "Definitions, history, and the ‘psychedelic renaissance’.", minutes: 120,
@@ -171,6 +203,14 @@ window.MINDIFY_COURSES = [
       level: "Giriş–orta düzey · eğitmen eğitimi",
       summary: "Mistisizm üzerine değil fizyoloji üzerine kurulmuş bir eğitmen eğitimi. Nefes alan beden, HRV ve CO₂ toleransı, teknik seti, alan tutma zanaati, travma-bilgili güvenlik ve oturum tasarımı üzerine altı modül.",
       why: "Nefes çalışması eğitimleri genelde ya pratiği olmayan anatomi dersine ya da mekanizması olmayan pratiğe ayrılıyor. Burada ikisi birlikte: her teknik sinir sistemine ne yaptığına kadar geri götürülüyor ve her iddia desteklenmiş, makul ya da spekülatif olarak işaretleniyor.",
+      outcomes: [
+        "Nefes mekaniğini ve karbondioksidin nefes alma dürtüsündeki rolünü açıklamak",
+        "HRV'yi, rezonans nefesini ve CO₂ toleransını anlatmak, sonuncusunu ölçmek",
+        "Herhangi bir tekniği beş değişkenle çözümlemek — hız, derinlik, oran, yol ve tutuş",
+        "Mevcudiyet, uyumlanma ve travma-bilgili dille kolaylaştırıcılık yapmak",
+        "Kontrendikasyonları taramak, bilgilendirilmiş onam almak ve yoğunluğu güvenle yönetmek",
+        "Bütünleşme ve sonrası bakım dahil, tam bir oturum tasarlayıp yürütmek"
+      ],
     },
     title: "Integrative Breathwork Facilitation",
     subtitle: "Physiology, Technique and Holding Space",
@@ -182,6 +222,14 @@ window.MINDIFY_COURSES = [
       "A facilitator training built on physiology rather than mysticism. Six modules covering the breathing body, HRV and CO₂ tolerance, the technique toolkit, the craft of holding space, trauma-informed safety, and how to design and run a session.",
     why:
       "Breathwork training tends to split into anatomy lectures with no practice, or practice with no mechanism. This keeps both: every technique is traced back to what it does to the nervous system, and every claim is marked as supported, plausible or speculative.",
+    outcomes: [
+      "Explain the mechanics of breathing and the role of carbon dioxide in the urge to breathe",
+      "Describe HRV, resonance breathing and CO₂ tolerance, and measure the last of these",
+      "Analyse any technique through five variables — rate, depth, ratio, route and retention",
+      "Facilitate with presence, attunement and trauma-informed language",
+      "Screen for contraindications, take informed consent, and manage intensity safely",
+      "Design and deliver a full session, including integration and aftercare"
+    ],
     modules: [
       { n: 1, slug: "foundations-of-breath", title: "Foundations of Breath",
         tagline: "The breathing body and the field of breathwork.", minutes: 90,
@@ -230,6 +278,14 @@ window.MINDIFY_COURSES = [
       level: "Giriş düzeyi · eğitmen eğitimi",
       summary: "Shinrin-yoku bir wellness trendi olarak değil, kanıta dayalı bir uygulama olarak anlatılıyor. Kökenler ve etik çerçeve, fizyolojik araştırma, psikolojik mekanizmalar ve sınırları, ANFT standart dizisi, oturum tasarımı ve profesyonel uygulama üzerine altı modül.",
       why: "Doğa temelli iyi oluş alanı fazla iddiaya açık. Bu kurs çalışmaları koruyor — fitonsitler ve NK hücreleri, kortizol, ART ve SRT — kanıt düzeylerini dürüstçe söylüyor, kolaylaştırıcılık zanaatını da bunun üzerine kuruyor.",
+      outcomes: [
+        "Shinrin-yoku'nun kökenini anlatmak ve onu yürüyüşten ya da doğa gezisinden ayırmak",
+        "Fizyolojik araştırmayı — fitonsitler, kortizol, otonom denge — kanıt düzeyleriyle birlikte özetlemek",
+        "Dikkat Onarımı Kuramı ile Stres Azaltma Kuramını birbirinden ayırmak",
+        "ANFT standart dizisini yürütmek ve kendi davetlerini tasarlamak",
+        "Güvenli ve erişilebilir bir oturum planlamak, grup dinamiğini ve duygusal açılmaları yönetmek",
+        "Etik sınır içinde çalışmak, katılımcı değişimini ölçmek ve ne zaman yönlendireceğini bilmek"
+      ],
     },
     title: "Forest Bathing & Silvotherapy",
     subtitle: "Psychological Wellbeing Facilitation",
@@ -241,6 +297,14 @@ window.MINDIFY_COURSES = [
       "Shinrin-yoku taught as an evidence-based practice rather than a wellness trend. Six modules covering the origins and ethical frame, the physiological research, the psychological mechanisms and their limits, the ANFT standard sequence, session design, and professional practice.",
     why:
       "Nature-based wellbeing attracts a lot of overclaiming. This course keeps the studies — phytoncides and NK cells, cortisol, ART and SRT — and states their evidence levels honestly, then teaches the facilitation craft on top of that.",
+    outcomes: [
+      "Explain the origins of shinrin-yoku and distinguish it from walking or hiking",
+      "Summarise the physiological research — phytoncides, cortisol, autonomic balance — with its evidence levels",
+      "Distinguish Attention Restoration Theory from Stress Reduction Theory",
+      "Guide the ANFT standard sequence and design your own invitations",
+      "Plan a safe, accessible session and manage group dynamics and emotional openings",
+      "Work within an ethical scope, measure participant change, and know when to refer"
+    ],
     modules: [
       { n: 1, slug: "introduction", title: "Introduction to Forest Bathing and Silvotherapy",
         tagline: "Roots, concepts and the ethical framework.", minutes: 60,

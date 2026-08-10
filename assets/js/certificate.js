@@ -211,7 +211,7 @@
 
     doc.setFont("helvetica", "normal"); doc.setFontSize(6.6);
     doc.setTextColor(SAGE[0], SAGE[1], SAGE[2]);
-    doc.text("Certificate ref " + id + "  ·  Self-paced online training  ·  Not a regulated professional qualification",
+    doc.text("Certificate ref " + id + "  ·  Self-paced online training  ·  CPD accredited  ·  Not a licence to practise",
       W / 2, H - M - 6, { align: "center" });
 
     doc.setProperties({

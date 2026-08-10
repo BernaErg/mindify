@@ -44,6 +44,19 @@ for (const L of LANGS) {
   </div>
 </section>
 
+<section style="padding-top:clamp(30px,4vw,52px)">
+  <div class="wrap">
+    <div class="center" style="max-width:62ch;margin-inline:auto;margin-bottom:24px">
+      <p class="eyebrow">${t.allEyebrow}</p>
+      <h2>${t.allH2}</h2>
+      <ul class="tick-list" style="max-width:46ch;margin-inline:auto;text-align:left">
+        ${t.allItems.map((x) => `<li>${x}</li>`).join("\n        ")}
+      </ul>
+      <p class="muted" style="font-size:.82rem">${t.allNote}</p>
+    </div>
+  </div>
+</section>
+
 <section class="section-tight">
   <div class="wrap">
     <div class="stats reveal">
@@ -61,9 +74,12 @@ for (const L of LANGS) {
       <p class="eyebrow">${t.howEyebrow}</p>
       <h2>${t.howH2}</h2>
       <p class="lede">${t.howLede}</p>
+      <ul class="tick-list" style="max-width:46ch;margin-inline:auto;text-align:left">
+        ${t.howBullets.map((x) => `<li>${x}</li>`).join("\n        ")}
+      </ul>
     </div>
-    <div class="grid grid-2">
-      ${PLATFORM.audiences.map((a) => audienceCard(L, a)).join("\n      ")}
+    <div class="grid grid-3">
+      ${t.boxes.map((b) => featureCard(icons.brain, b[0], b[1])).join("\n      ")}
     </div>
   </div>
 </section>
@@ -84,46 +100,6 @@ for (const L of LANGS) {
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="center" style="max-width:60ch;margin-inline:auto;margin-bottom:48px">
-      <p class="eyebrow">${t.whyEyebrow}</p>
-      <h2>${t.whyH2}</h2>
-    </div>
-    <div class="grid grid-3">
-      ${[icons.brain, icons.people, icons.heart, icons.clock, icons.repeat, icons.cert]
-        .map((ic, i) => featureCard(ic, t.why[i][0], t.why[i][1])).join("\n      ")}
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="grid grid-2" style="align-items:center;gap:clamp(32px,5vw,64px)">
-      <div>
-        <p class="eyebrow">${t.liveEyebrow}</p>
-        <h2>${t.liveH2}</h2>
-        <p class="lede">${t.liveLede}</p>
-        <p>${t.liveBody}</p>
-        <p class="muted" style="font-size:.92rem">${t.liveNote}</p>
-        <a class="btn btn-ghost" style="margin-top:8px" href="contact.html">${t.liveCta}</a>
-      </div>
-      <div>
-        <div class="card reveal" style="margin-bottom:14px;border-left:3px solid var(--blue-700)">
-          <span class="pill">${t.liveCard1Pill}</span>
-          <h4 style="margin-top:12px">${t.liveCard1H}</h4>
-          <p style="margin:0;font-size:.94rem">${t.liveCard1P}</p>
-        </div>
-        <div class="card reveal" style="border-left:3px solid var(--amber)">
-          <span class="pill">${t.liveCard2Pill}</span>
-          <h4 style="margin-top:12px">${t.liveCard2H}</h4>
-          <p style="margin:0;font-size:.94rem">${t.liveCard2P}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="band-tint">
   <div class="wrap">
     <div class="center" style="max-width:56ch;margin-inline:auto;margin-bottom:48px">
@@ -131,7 +107,7 @@ for (const L of LANGS) {
       <h2>${t.tH2}</h2>
     </div>
     <div class="grid grid-3">
-      ${TESTIMONIALS.map((x) => testimonialCard(L, x)).join("\n      ")}
+      ${TESTIMONIALS.slice(0, 3).map((x) => testimonialCard(L, x)).join("\n      ")}
     </div>
   </div>
 </section>
@@ -171,7 +147,6 @@ for (const L of LANGS) {
 <section id="catalogue" class="band-tint">
   <div class="wrap">
     <div class="center" style="max-width:56ch;margin-inline:auto;margin-bottom:44px">
-      <p class="eyebrow">${cs.availEyebrow}</p>
       <h2>${cs.availH2}</h2>
     </div>
     <div class="grid grid-3">${live.map((c, i) => courseCard(L, c, i)).join("\n      ")}</div>
@@ -196,7 +171,8 @@ for (const L of LANGS) {
       </div>
       <div>
         ${cs.steps.map((s, i) => `<div class="card reveal" style="margin-bottom:14px"><div class="feature"><div class="feature-icon">${i + 1}</div><div>
-          <h4>${s[0]}</h4><p>${s[1]}</p></div></div></div>`).join("\n        ")}
+          <h4>${s[0]}</h4>${s[1] ? `<p>${s[1]}</p>` : ""}</div></div></div>`).join("\n        ")}
+        <p class="muted" style="font-size:.82rem">${cs.stepsNote}</p>
       </div>
     </div>
   </div>
@@ -231,6 +207,14 @@ for (const L of LANGS) {
     <p class="eyebrow">${cd.whyEyebrow}</p>
     <h2 id="c-why-h">${cd.whyH2}</h2>
     <p class="lede" id="c-why"></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-narrow">
+    <p class="eyebrow">${cd.outcomesEyebrow}</p>
+    <h2>${cd.outcomesH2}</h2>
+    <ul id="c-outcomes" class="tick-list"></ul>
   </div>
 </section>
 

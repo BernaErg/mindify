@@ -135,3 +135,74 @@ const BANNER = (i) => `<svg viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000
   <rect width="1200" height="260" filter="url(#grbn${i})" opacity=".5"/></svg>`;
 
 module.exports = { MARK, MARK_ON_DARK, HERO, COVER, BANNER, wave, strata, rings, GRAIN, SOFT };
+
+/* =========================================================================
+   Topic-specific course covers. Same palette, grain and strata grammar as
+   the generic covers — each course just gains a motif that gestures at its
+   subject. Keyed by slug; an unknown slug falls back to COVER().
+   ========================================================================= */
+const MOTIF = {
+  // Attachment: a smaller form cradled by a larger one.
+  "therapeutic-parenting": () => `
+    ${rings(300, 142, 88, 164, 26, "#8FA3CE", 1.1, .22)}
+    <path d="M206 142a94 94 0 0 1 188 0v104H206Z" fill="#2E4372" opacity=".5"/>
+    <circle cx="300" cy="142" r="54" fill="#16213B"/>
+    <circle cx="300" cy="142" r="54" fill="none" stroke="#8FA3CE" stroke-width="1.2" opacity=".45"/>
+    <circle cx="300" cy="142" r="18" fill="#D99A3E"/>
+    ${strata(-10, 450, 214, 96, 320, "#8FA3CE", "#D99A3E")}`,
+
+  // Psychedelics: an entropic network — nodes and edges spreading from a core.
+  "psychedelics-in-mental-health": () => `
+    ${rings(214, 126, 44, 180, 26, "#8FA3CE", 1, .16)}
+    <g stroke="#8FA3CE" stroke-width="1.4" opacity=".5" fill="none">
+      <path d="M214 126 116 70M214 126 320 64M214 126 88 172M214 126 348 158M214 126 156 208M214 126 292 212"/>
+      <path d="M116 70 320 64M88 172 156 208M348 158 292 212M320 64 348 158"/>
+    </g>
+    ${[[116,70,9],[320,64,11],[88,172,7],[348,158,10],[156,208,8],[292,212,9]]
+      .map(([x,y,r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#8FA3CE" opacity=".85"/>`).join("")}
+    <circle cx="214" cy="126" r="24" fill="#D99A3E"/>
+    <circle cx="214" cy="126" r="38" fill="none" stroke="#D99A3E" stroke-width="1.2" opacity=".45"/>
+    ${strata(-10, 450, 236, 80, 320, "#8FA3CE", "#D99A3E")}`,
+
+  // Breathwork: expanding rings and one swell that rises then settles.
+  "integrative-breathwork": () => `
+    ${[0,1,2,3].map(i => `<circle cx="112" cy="140" r="${32 + i*26}" fill="none" stroke="#8FA3CE" stroke-width="${1.9 - i*.35}" opacity="${.5 - i*.1}"/>`).join("")}
+    <circle cx="112" cy="140" r="19" fill="#D99A3E"/>
+    <path d="M-10 206C58 206 92 92 162 92s102 114 172 114 108-38 118-38" fill="none"
+      stroke="#8FA3CE" stroke-width="3.6" stroke-linecap="round" opacity=".9"/>
+    <path d="M-10 234C58 234 92 150 162 150s102 84 172 84 108-24 118-24" fill="none"
+      stroke="#5A76B0" stroke-width="2.8" stroke-linecap="round" opacity=".8"/>
+    ${strata(-10, 450, 250, 74, 320, "#8FA3CE", "#D99A3E")}`,
+
+  // Forest bathing: canopy mass behind, thin trunks in front.
+  "forest-bathing": () => `
+    ${[[40,60,72,.13],[130,38,88,.11],[236,56,80,.13],[330,34,84,.10],[410,70,66,.12]]
+      .map(([x,y,r,o]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#8FA3CE" opacity="${o}"/>`).join("")}
+    <circle cx="356" cy="58" r="24" fill="#D99A3E"/>
+    <circle cx="356" cy="58" r="39" fill="none" stroke="#D99A3E" stroke-width="1.1" opacity=".38"/>
+    ${[[46,.78,158],[74,.50,120],[108,.86,186],[144,.44,104],[176,.70,148],[216,.56,128],
+       [250,.84,176],[290,.42,96],[322,.66,140],[360,.48,112],[396,.74,154]]
+      .map(([x,o,h]) => `<rect x="${x}" y="${240-h}" width="${(3.6 + o*3.4).toFixed(1)}" height="${h}" rx="${(1.8 + o*1.7).toFixed(1)}"
+        fill="#8FA3CE" opacity="${(o*.46).toFixed(2)}"/>`).join("")}
+    ${strata(-10, 450, 230, 88, 320, "#8FA3CE", "#D99A3E")}`
+};
+
+const COVER_FOR = (slug, i) => {
+  const motif = MOTIF[slug];
+  if (!motif) return COVER(i);
+  const k = "cf" + slug.replace(/[^a-z]/g, "");
+  return `<svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Course cover" preserveAspectRatio="xMidYMid slice">
+    <defs>${GRAIN(k, .18)}${SOFT(k, 26)}
+      <linearGradient id="bg${k}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#1C2B4B"/><stop offset="1" stop-color="#0E1728"/></linearGradient>
+      <clipPath id="cp${k}"><rect width="440" height="300"/></clipPath></defs>
+    <g clip-path="url(#cp${k})">
+      <rect width="440" height="300" fill="url(#bg${k})"/>
+      <circle cx="70" cy="34" r="110" fill="#2E4372" opacity=".38" filter="url(#sf${k})"/>
+      ${motif()}
+      <rect width="440" height="300" filter="url(#gr${k})" opacity=".5"/>
+    </g></svg>`;
+};
+
+module.exports.COVER_FOR = COVER_FOR;
+module.exports.MOTIF = MOTIF;

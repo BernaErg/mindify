@@ -33,6 +33,13 @@
     $("c-why").textContent = t.devP;
   }
 
+  var oc = (LANG !== "en" && c.tr && c.tr.outcomes) || c.outcomes || [];
+  var ocEl = $("c-outcomes");
+  if (ocEl) {
+    ocEl.innerHTML = oc.map(function (o) { return "<li>" + o + "</li>"; }).join("");
+    if (!oc.length) ocEl.closest("section").classList.add("hidden");
+  }
+
   /* Banner art, reused from the generated system. */
   var i = ALL.indexOf(c);
   var b = document.querySelector('.banner');
