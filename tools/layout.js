@@ -83,7 +83,7 @@ function foot(L, page) {
     <div class="footer-grid">
       <div>
         <a class="brand" href="index.html">${LOGO_DARK}<span class="brand-name">mindify</span></a>
-        <p style="max-width:34ch">${L.footer.blurb}</p>
+        <p>${L.footer.blurb}</p>
       </div>
       <div>
         <h5>${L.footer.learn}</h5>
@@ -107,7 +107,6 @@ function foot(L, page) {
     </div>
     <div class="footer-bot">
       <span>© <span data-year>2026</span> Mindify · mindify.co.uk</span>
-      <span>${L.footer.madeFor}</span>
     </div>
   </div>
 </footer>

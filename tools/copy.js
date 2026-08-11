@@ -12,11 +12,11 @@ const EN = {
   nav: { home: "Home", about: "About", courses: "Courses", contact: "Contact Us", login: "Student Login", dashboard: "My dashboard" },
 
   footer: {
-    blurb: "Self-paced psychology training from a UK academic — for students, practitioners, managers and parents.",
+    blurb: "Psychology, taught properly.",
     learn: "Learn", allCourses: "All courses", brand: "Brand", logoGuide: "Logo guide (PDF)", studentLogin: "Student login",
     company: "Company", aboutUs: "About Mindify", approach: "Our approach", contactUs: "Contact us",
     legal: "Legal", faqs: "FAQs", privacy: "Privacy", terms: "Terms",
-    madeFor: "Psychology, taught properly.", skip: "Skip to content"
+    skip: "Skip to content"
   },
 
   home: {
@@ -38,7 +38,7 @@ const EN = {
     catCta: "See all courses",
     boxes: [
       ["Developed by UK academics and experts in the field",
-        "Each course is designed by a team of UK academics — lecturers, assistant and associate professors — and experienced professionals, leaders in education. The approach is that of a critical friend. All course content is based on empirical evidence in the field, to familiarise you with up-to-date research on the topic."],
+        "Developed by UK academics and experts in the field, each course is designed by a team of UK academics such as lecturers, professors and experienced professionals in education. All course content is based on empirical evidence in the field, to familiarise you with up-to-date research on the topic."],
       ["Open to anyone",
         "Our courses are for anyone. Whether you are a psychology student, a trainee or qualified counsellor, or any professional seeking to understand and promote wellbeing, our courses are for you."],
       ["Applicable to the real world",
@@ -226,11 +226,11 @@ const TR = {
   nav: { home: "Ana Sayfa", about: "Hakkımızda", courses: "Kurslar", contact: "İletişim", login: "Öğrenci Girişi", dashboard: "Panelim" },
 
   footer: {
-    blurb: "Bir akademisyen psikolog tarafından hazırlanan, kendi hızınızda ilerlediğiniz psikoloji eğitimleri.",
+    blurb: "Psikoloji, hakkı verilerek anlatıldığında.",
     learn: "Öğren", allCourses: "Tüm kurslar", brand: "Marka", logoGuide: "Logo kılavuzu (PDF)", studentLogin: "Öğrenci girişi",
     company: "Kurum", aboutUs: "Mindify hakkında", approach: "Yaklaşımımız", contactUs: "İletişim",
     legal: "Yasal", faqs: "SSS", privacy: "Gizlilik", terms: "Koşullar",
-    madeFor: "Psikoloji, hakkı verilerek anlatıldığında.", skip: "İçeriğe geç"
+    skip: "İçeriğe geç"
   },
 
   home: {
@@ -252,7 +252,7 @@ const TR = {
     catCta: "Tüm kursları gör",
     boxes: [
       ["İngiltere akademisyenleri ve alan uzmanları tarafından hazırlandı",
-        "Her kurs, İngiltere'den akademisyenlerden — öğretim üyeleri, yardımcı doçent ve doçentler — ve eğitimde önde gelen deneyimli profesyonellerden oluşan bir ekip tarafından tasarlanıyor. Yaklaşım, eleştirel bir dost yaklaşımı. Bütün kurs içeriği alandaki ampirik kanıta dayanıyor; böylece konudaki güncel araştırmayla tanışıyorsunuz."],
+        "İngiltere akademisyenleri ve alan uzmanları tarafından geliştirilen her kurs; öğretim görevlileri, profesörler ve eğitimde deneyimli profesyonellerden oluşan bir ekip tarafından tasarlanıyor. Bütün kurs içeriği alandaki ampirik kanıta dayanıyor; böylece konudaki güncel araştırmayla tanışıyorsunuz."],
       ["Herkese açık",
         "Kurslarımız herkes için. İster psikoloji öğrencisi olun, ister danışman adayı ya da diplomalı danışman, ister iyi oluşu anlamak ve desteklemek isteyen herhangi bir profesyonel — kurslarımız size göre."],
       ["Gerçek hayatta uygulanabilir",

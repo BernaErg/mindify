@@ -44,7 +44,7 @@ for (const L of LANGS) {
   </div>
 </section>
 
-<section style="padding-top:clamp(30px,4vw,52px)">
+<section class="section-tight">
   <div class="wrap">
     <div class="center" style="max-width:62ch;margin-inline:auto;margin-bottom:24px">
       <p class="eyebrow">${t.allEyebrow}</p>
@@ -57,8 +57,7 @@ for (const L of LANGS) {
   </div>
 </section>
 
-
-<section style="padding-top:clamp(30px,4vw,52px)">
+<section style="padding-top:clamp(24px,3vw,40px)">
   <div class="wrap">
     <div class="center" style="max-width:62ch;margin-inline:auto;margin-bottom:44px">
       <p class="eyebrow">${t.howEyebrow}</p>
@@ -68,7 +67,7 @@ for (const L of LANGS) {
         ${t.howBullets.map((x) => `<li>${x}</li>`).join("\n        ")}
       </ul>
     </div>
-    <div class="grid grid-3">
+    <div class="grid grid-3 boxes-grid">
       ${t.boxes.map((b) => featureCard(icons.brain, b[0], b[1])).join("\n      ")}
     </div>
   </div>
