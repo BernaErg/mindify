@@ -2,7 +2,7 @@ const fs = require("fs"), path = require("path");
 const { page } = require("./layout");
 const { LANGS } = require("./copy");
 const { heroArt, icons, courseCard, audienceCard, testimonialCard, f,
-        PLATFORM, COURSES, TESTIMONIALS, BANNER, HERO_ABOUT } = require("./pieces");
+        PLATFORM, COURSES, TESTIMONIALS, BANNER, HERO_ABOUT, BANNER_LIGHT } = require("./pieces");
 
 const ROOT = path.join(__dirname, "..");
 const live = COURSES.filter((c) => c.status === "available");
@@ -47,7 +47,6 @@ for (const L of LANGS) {
 <section class="section-tight">
   <div class="wrap">
     <div class="center" style="max-width:62ch;margin-inline:auto;margin-bottom:24px">
-      <p class="eyebrow">${t.allEyebrow}</p>
       <h2>${t.allH2}</h2>
       <ul class="tick-list" style="max-width:46ch;margin-inline:auto;text-align:left">
         ${t.allItems.map((x) => `<li>${x}</li>`).join("\n        ")}
@@ -57,7 +56,9 @@ for (const L of LANGS) {
   </div>
 </section>
 
-<section style="padding-top:clamp(24px,3vw,40px)">
+<div class="wrap"><div class="rule"></div></div>
+
+<section style="padding-top:clamp(22px,3vw,38px)">
   <div class="wrap">
     <div class="center" style="max-width:62ch;margin-inline:auto;margin-bottom:44px">
       <p class="eyebrow">${t.howEyebrow}</p>
@@ -130,14 +131,16 @@ for (const L of LANGS) {
 </section>
 
 <section class="section-tight" style="padding-top:0">
-  <div class="wrap"><div class="banner">${BANNER(2)}</div></div>
-</section>
-
-<section id="catalogue" class="band-tint">
   <div class="wrap">
-    <div class="center" style="max-width:56ch;margin-inline:auto;margin-bottom:44px">
+    <div class="banner-head">
+      <div class="art">${BANNER_LIGHT(2)}</div>
       <h2>${cs.availH2}</h2>
     </div>
+  </div>
+</section>
+
+<section id="catalogue" class="band-tint" style="padding-top:clamp(28px,3.5vw,46px)">
+  <div class="wrap">
     <div class="grid grid-3">${live.map((c, i) => courseCard(L, c, i)).join("\n      ")}</div>
     ${soon.length ? `
     <div class="center" style="max-width:56ch;margin-inline:auto;margin:64px auto 44px">

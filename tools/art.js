@@ -234,3 +234,17 @@ const HERO_ABOUT = () => `<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/20
   </g></svg>`;
 
 module.exports.HERO_ABOUT = HERO_ABOUT;
+
+/* A lighter banner, built to carry white type. The ground sits at mid-blue
+   rather than midnight so a heading placed over it stays legible. */
+const BANNER_LIGHT = (i) => `<svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Layered strata">
+  <defs>${GRAIN("bl" + i, .15)}${SOFT("bl" + i, 60)}
+    <linearGradient id="blb${i}" x1="0" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#435D93"/><stop offset="1" stop-color="#2B4070"/></linearGradient></defs>
+  <rect width="1200" height="300" fill="url(#blb${i})"/>
+  <circle cx="1040" cy="20" r="200" fill="#5C79B4" opacity=".38" filter="url(#sfbl${i})"/>
+  <circle cx="150" cy="290" r="180" fill="#1F2F55" opacity=".30" filter="url(#sfbl${i})"/>
+  ${strata(-20, 1220, 202, 134, 322, "#B7C4E2", "#D99A3E")}
+  <rect width="1200" height="300" filter="url(#grbl${i})" opacity=".45"/></svg>`;
+
+module.exports.BANNER_LIGHT = BANNER_LIGHT;
