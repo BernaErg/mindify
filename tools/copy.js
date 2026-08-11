@@ -38,7 +38,7 @@ const EN = {
     catCta: "See all courses",
     boxes: [
       ["Developed by UK academics and experts in the field",
-        "Developed by UK academics and experts in the field, each course is designed by a team of UK academics such as lecturers, professors and experienced professionals in education. All course content is based on empirical evidence in the field, to familiarise you with up-to-date research on the topic."],
+        "Each course is designed by UK academics such as lecturers, professors and experienced professionals in education. All course content is based on empirical evidence in the field, to familiarise you with up-to-date research on the topic."],
       ["Open to anyone",
         "Our courses are for anyone. Whether you are a psychology student, a trainee or qualified counsellor, or any professional seeking to understand and promote wellbeing, our courses are for you."],
       ["Applicable to the real world",
@@ -252,7 +252,7 @@ const TR = {
     catCta: "Tüm kursları gör",
     boxes: [
       ["İngiltere akademisyenleri ve alan uzmanları tarafından hazırlandı",
-        "İngiltere akademisyenleri ve alan uzmanları tarafından geliştirilen her kurs; öğretim görevlileri, profesörler ve eğitimde deneyimli profesyonellerden oluşan bir ekip tarafından tasarlanıyor. Bütün kurs içeriği alandaki ampirik kanıta dayanıyor; böylece konudaki güncel araştırmayla tanışıyorsunuz."],
+        "Her kurs, İngiltere'den öğretim görevlileri, profesörler ve eğitimde deneyimli profesyoneller tarafından tasarlanıyor. Bütün kurs içeriği alandaki ampirik kanıta dayanıyor; böylece konudaki güncel araştırmayla tanışıyorsunuz."],
       ["Herkese açık",
         "Kurslarımız herkes için. İster psikoloji öğrencisi olun, ister danışman adayı ya da diplomalı danışman, ister iyi oluşu anlamak ve desteklemek isteyen herhangi bir profesyonel — kurslarımız size göre."],
       ["Gerçek hayatta uygulanabilir",

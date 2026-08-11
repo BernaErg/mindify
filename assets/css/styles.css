@@ -199,7 +199,6 @@ section{padding:clamp(56px,8vw,104px) 0}
 .grid{display:grid;gap:22px}
 .grid-2{grid-template-columns:repeat(2,1fr)}
 .grid-3{grid-template-columns:repeat(3,1fr)}
-.boxes-grid{align-items:start}
 @media (max-width:940px){.grid-3{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:660px){.grid-2,.grid-3{grid-template-columns:1fr}}
 

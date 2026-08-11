@@ -67,7 +67,7 @@ for (const L of LANGS) {
         ${t.howBullets.map((x) => `<li>${x}</li>`).join("\n        ")}
       </ul>
     </div>
-    <div class="grid grid-3 boxes-grid">
+    <div class="grid grid-3">
       ${t.boxes.map((b) => featureCard(icons.brain, b[0], b[1])).join("\n      ")}
     </div>
   </div>
