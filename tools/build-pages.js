@@ -46,13 +46,11 @@ for (const L of LANGS) {
 
 <section class="section-tight">
   <div class="wrap">
-    <div class="center" style="max-width:62ch;margin-inline:auto;margin-bottom:24px">
+    <div class="allcourses">
       <h2>${t.allH2}</h2>
-      <ul class="tick-list" style="max-width:46ch;margin-inline:auto;text-align:left">
-        ${t.allItems.map((x) => `<li>${x}</li>`).join("\n        ")}
-      </ul>
-      <p class="muted" style="font-size:.82rem">${t.allNote}</p>
+      <ul class="tick-list">${t.allItems.map((x) => `<li>${x}</li>`).join("")}</ul>
     </div>
+    <p class="allcourses-note">${t.allNote}</p>
   </div>
 </section>
 
@@ -78,7 +76,7 @@ for (const L of LANGS) {
   <div class="wrap">
     <div class="center" style="max-width:62ch;margin-inline:auto;margin-bottom:48px">
       <p class="eyebrow">${t.catEyebrow}</p>
-      <h2>${COURSES.length} ${L.courses.modules === "modül" ? "kurs" : "courses"}, ${totalModules} ${L.courses.modules}</h2>
+      <h2>${t.catH2}</h2>
       <p class="lede">${t.catLede}</p>
     </div>
     <div class="grid grid-3">
@@ -103,7 +101,7 @@ for (const L of LANGS) {
 </section>
 
 <section class="band-ink">
-  <div class="wrap center" style="max-width:62ch">
+  <div class="wrap center" style="max-width:82ch">
     <p class="eyebrow">${t.ctaEyebrow}</p>
     <h2>${t.ctaH2}</h2>
     <p class="lede" style="color:#BFCBE6">${t.ctaLede}</p>
@@ -121,7 +119,7 @@ for (const L of LANGS) {
 <section class="hero" style="padding-bottom:clamp(32px,5vw,56px)">
   <div class="wrap" style="max-width:840px">
     <p class="eyebrow">${cs.eyebrow}</p>
-    <h1>${cs.h1(live.length)}</h1>
+    <h1>${cs.h1}</h1>
     <p class="lede">${cs.lede}</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="login.html?mode=signup">${cs.ctaAccount}</a>
@@ -306,15 +304,13 @@ for (const L of LANGS) {
 
 <section id="approach" class="band-tint">
   <div class="wrap">
-    <div class="center" style="max-width:56ch;margin-inline:auto;margin-bottom:48px">
+    <div class="center" style="max-width:74ch;margin-inline:auto;margin-bottom:48px">
       <p class="eyebrow">${ab.approachEyebrow}</p>
       <h2>${ab.approachH2}</h2>
     </div>
     <div class="grid grid-2">
       ${[icons.brain, icons.shield, icons.repeat, icons.people].map((ic, i) =>
         featureCard(ic, ab.principles[i][0], ab.principles[i][1])).join("\n      ")}
-      <div class="card reveal" style="grid-column:1/-1"><div class="feature"><div class="feature-icon">${icons.cert}</div><div>
-        <h4>${ab.principles[4][0]}</h4><p>${ab.principles[4][1]}</p></div></div></div>
     </div>
   </div>
 </section>

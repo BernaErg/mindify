@@ -50,6 +50,7 @@ a:hover{text-decoration:underline}
 h1,h2,h3,h4{font-family:var(--font-serif);font-weight:500;line-height:1.15;letter-spacing:-.015em;margin:0 0 .5em}
 h1{font-size:clamp(2.3rem,5.2vw,3.6rem)}
 h2{font-size:clamp(1.75rem,3.4vw,2.5rem)}
+h1,h2{text-wrap:balance}
 h3{font-size:1.28rem;letter-spacing:-.01em}
 h4{font-size:1.05rem;font-family:var(--font-sans);font-weight:600}
 p{margin:0 0 1.1em}
@@ -60,6 +61,22 @@ p:last-child{margin-bottom:0}
 section{padding:clamp(56px,8vw,104px) 0}
 .section-tight{padding:clamp(40px,5vw,64px) 0}
 .rule{max-width:var(--wrap);margin-inline:auto;border-top:1px solid var(--line)}
+
+.allcourses{
+  display:grid;grid-template-columns:.85fr 1.15fr;
+  gap:clamp(24px,5vw,64px);align-items:center;
+}
+.allcourses h2{margin:0;font-size:clamp(2rem,4.6vw,3.3rem)}
+.allcourses .tick-list{margin:0}
+.allcourses .tick-list li{font-size:1.05rem;margin-bottom:16px}
+.allcourses-note{
+  margin:clamp(24px,3.5vw,40px) 0 0;text-align:center;
+  font-size:.86rem;color:var(--muted);
+}
+@media (max-width:760px){
+  .allcourses{grid-template-columns:1fr;gap:20px}
+  .allcourses-note{text-align:left}
+}
 
 .eyebrow{
   font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
