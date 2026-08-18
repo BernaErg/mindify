@@ -277,6 +277,8 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 4 */
   {
     slug: "forest-bathing",
+    image: "forest-bathing.jpg",
+    imagePos: "50% 45%",
     tr: {
       subtitle: "Psikolojik İyi Oluş Kolaylaştırıcılığı",
       level: "Giriş düzeyi · eğitmen eğitimi",
