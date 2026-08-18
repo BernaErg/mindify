@@ -45,6 +45,8 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 1 */
   {
     slug: "therapeutic-parenting",
+    image: "therapeutic-parenting.png",
+    imagePos: "50% 35%",
     tr: {
       subtitle: "Bağ, Düzenleme ve Onarım",
       level: "Giriş düzeyi · ön eğitim gerekmez",

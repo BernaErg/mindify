@@ -25,7 +25,11 @@ function courseCard(L, c, i) {
   return `<article class="card card-hover module-card reveal">
         <div class="cover">
           <span class="cover-tag">${live ? t.availableNow : t.inDevelopment}</span>
-          ${COVER_FOR(c.slug, i + 1)}
+          ${c.image
+            ? `<img class="cover-photo" src="/assets/img/courses/${c.image}" alt=""
+                 loading="lazy" decoding="async"
+                 style="object-position:${c.imagePos || "50% 50%"}">`
+            : COVER_FOR(c.slug, i + 1)}
         </div>
         <h3>${c.title}</h3>
         <div class="card-foot">
