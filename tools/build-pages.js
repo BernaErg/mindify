@@ -179,15 +179,16 @@ for (const L of LANGS) {
   </div>
 </section>
 
-<section class="section-tight" style="padding-top:0">
-  <div class="wrap"><div class="banner" id="c-banner"></div></div>
-</section>
-
-<section class="band-tint" style="padding-top:clamp(34px,4vw,56px)">
-  <div class="wrap-narrow">
-    <p class="eyebrow">${cd.whyEyebrow}</p>
-    <h2 id="c-why-h">${cd.whyH2}</h2>
-    <p class="lede" id="c-why"></p>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="feature-band">
+      <div class="art" id="c-banner"></div>
+      <div class="inner">
+        <p class="eyebrow">${cd.whyEyebrow}</p>
+        <h2 id="c-why-h">${cd.whyH2}</h2>
+        <p class="lede" id="c-why"></p>
+      </div>
+    </div>
   </div>
 </section>
 

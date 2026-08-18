@@ -42,7 +42,7 @@
 
   /* Banner art, reused from the generated system. */
   var i = ALL.indexOf(c);
-  var b = document.querySelector('.banner');
+  var b = document.getElementById("c-banner");
   if (b && window.MINDIFY_ART_BANNER) b.innerHTML = window.MINDIFY_ART_BANNER(i + 1);
 
   if (live) {
