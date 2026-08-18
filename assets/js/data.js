@@ -45,7 +45,7 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 1 */
   {
     slug: "therapeutic-parenting",
-    image: "therapeutic-parenting.png",
+    image: "therapeutic-parenting.jpg",
     imagePos: "50% 35%",
     tr: {
       subtitle: "Bağ, Düzenleme ve Onarım",
@@ -122,6 +122,8 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 2 */
   {
     slug: "psychedelics-in-mental-health",
+    image: "psychedelics-in-mental-health.jpg",
+    imagePos: "50% 40%",
     tr: {
       subtitle: "Maddeler, Kanıt ve Terapötik Süreç",
       level: "Orta düzey · akademik; psikoloji ve tıp öğrencilerine uygun",
