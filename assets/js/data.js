@@ -202,6 +202,8 @@ window.MINDIFY_COURSES = [
   /* ---------------------------------------------------------------- 3 */
   {
     slug: "integrative-breathwork",
+    image: "integrative-breathwork.jpg",
+    imagePos: "50% 50%",
     tr: {
       subtitle: "Fizyoloji, Teknik ve Alan Tutma",
       level: "Giriş–orta düzey · eğitmen eğitimi",
