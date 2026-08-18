@@ -128,16 +128,7 @@ for (const L of LANGS) {
   </div>
 </section>
 
-<section class="section-tight" style="padding-top:0">
-  <div class="wrap">
-    <div class="banner-head">
-      <div class="art">${BANNER_LIGHT(2)}</div>
-      <h2>${cs.availH2}</h2>
-    </div>
-  </div>
-</section>
-
-<section id="catalogue" class="band-tint" style="padding-top:clamp(28px,3.5vw,46px)">
+<section id="catalogue" class="band-tint">
   <div class="wrap">
     <div class="grid grid-3">${live.map((c, i) => courseCard(L, c, i)).join("\n      ")}</div>
     ${soon.length ? `

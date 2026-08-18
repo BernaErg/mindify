@@ -236,7 +236,8 @@ const HERO_ABOUT = () => `<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/20
 module.exports.HERO_ABOUT = HERO_ABOUT;
 
 /* A lighter banner, built to carry white type. The ground sits at mid-blue
-   rather than midnight so a heading placed over it stays legible. */
+   rather than midnight so a heading placed over it stays legible.
+   Currently unused. Kept for future section headers. */
 const BANNER_LIGHT = (i) => `<svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Layered strata">
   <defs>${GRAIN("bl" + i, .15)}${SOFT("bl" + i, 60)}
     <linearGradient id="blb${i}" x1="0" y1="0" x2=".9" y2="1">

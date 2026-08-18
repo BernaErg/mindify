@@ -88,8 +88,6 @@ function foot(L, page) {
       <div>
         <h5>${L.footer.learn}</h5>
         <a href="courses.html">${L.footer.allCourses}</a>
-        <a href="brand.html">${L.footer.brand}</a>
-        <a href="${B}brand-kit/Mindify-Logo-Guide.pdf">${L.footer.logoGuide}</a>
         <a href="login.html">${L.footer.studentLogin}</a>
       </div>
       <div>

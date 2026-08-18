@@ -13,7 +13,7 @@ const EN = {
 
   footer: {
     blurb: "Psychology, taught properly.",
-    learn: "Learn", allCourses: "All courses", brand: "Brand", logoGuide: "Logo guide (PDF)", studentLogin: "Student login",
+    learn: "Learn", allCourses: "All courses", studentLogin: "Student login",
     company: "Company", aboutUs: "About Mindify", approach: "Our approach", contactUs: "Contact us",
     legal: "Legal", faqs: "FAQs", privacy: "Privacy", terms: "Terms",
     skip: "Skip to content"
@@ -61,7 +61,7 @@ const EN = {
     eyebrow: "Courses", h1: "All courses",
     lede: "Every course is self-contained and self-paced, ends with a dated certificate, and never expires. Start with any of them — there's no required order.",
     ctaAccount: "Create your account", ctaCatalogue: "See the catalogue",
-    availEyebrow: "Available now", availH2: "Current courses",
+    availEyebrow: "Available now",
     soonEyebrow: "In development", soonH2: "Coming next",
     soonLede: "Outlines are published early so you can tell us what's missing before they're written.",
     howEyebrow: "How it works", howH2: "Enrol, work through it, collect your certificate",
@@ -226,7 +226,7 @@ const TR = {
 
   footer: {
     blurb: "Psikoloji, hakkı verilerek anlatıldığında.",
-    learn: "Öğren", allCourses: "Tüm kurslar", brand: "Marka", logoGuide: "Logo kılavuzu (PDF)", studentLogin: "Öğrenci girişi",
+    learn: "Öğren", allCourses: "Tüm kurslar", studentLogin: "Öğrenci girişi",
     company: "Kurum", aboutUs: "Mindify hakkında", approach: "Yaklaşımımız", contactUs: "İletişim",
     legal: "Yasal", faqs: "SSS", privacy: "Gizlilik", terms: "Koşullar",
     skip: "İçeriğe geç"
@@ -274,7 +274,7 @@ const TR = {
     eyebrow: "Kurslar", h1: "Tüm kurslar",
     lede: "Her kurs kendi içinde bütün, kendi hızınızda ilerliyor, tarihli bir sertifikayla bitiyor ve süresi hiç dolmuyor. Hangisinden başlarsanız başlayın — zorunlu bir sıra yok.",
     ctaAccount: "Hesap oluştur", ctaCatalogue: "Kataloğa git",
-    availEyebrow: "Şu anda açık", availH2: "Mevcut kurslar",
+    availEyebrow: "Şu anda açık",
     soonEyebrow: "Hazırlanıyor", soonH2: "Sırada ne var",
     soonLede: "Ders planlarını erken yayınlıyoruz ki yazılmadan önce eksiğini söyleyebilesiniz.",
     howEyebrow: "Nasıl işliyor", howH2: "Kaydolun, ilerleyin, sertifikanızı alın",
