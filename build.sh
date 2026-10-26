@@ -9,6 +9,7 @@ echo "→ Building pages (en + tr)…"
 node tools/build-pages.js
 node tools/build-portal.js
 node tools/build-brand.js
+node tools/build-lessons.js
 
 echo "→ Writing assets/js/config.js…"
 cat > assets/js/config.js <<CONFIG
@@ -19,7 +20,7 @@ window.MINDIFY_CONFIG = {
   supabaseUrl: "${SUPABASE_URL:-}",
   supabaseAnonKey: "${SUPABASE_ANON_KEY:-}",
   siteName: "Mindify",
-  contactEmail: "${CONTACT_EMAIL:-hello@mindify.co.uk}"
+  contactEmail: "${CONTACT_EMAIL:-hello@mindify.uk}"
 };
 CONFIG
 

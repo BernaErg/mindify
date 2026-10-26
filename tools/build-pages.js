@@ -224,56 +224,6 @@ for (const L of LANGS) {
 `, { scripts: `<script>window.MINDIFY_ART_BANNER=function(i){return ${JSON.stringify([1,2,3,4].map(BANNER))}[(i-1)%4];};</script>
 <script src="assets/js/course-page.js"></script>` }));
 
-  /* ======================= MODULE DETAIL ======================= */
-  const md = L.module;
-  write(L, "module.html", page(L, "module.html", md.title, md.desc, `
-<section class="hero" style="padding-bottom:clamp(30px,4vw,52px)">
-  <div class="wrap" style="max-width:840px">
-    <p class="eyebrow"><a id="m-back" href="courses.html">${md.backCourse}</a></p>
-    <p class="eyebrow" id="m-num">${md.title}</p>
-    <h1 id="m-title">…</h1>
-    <p class="lede" id="m-tagline" style="font-style:italic;color:var(--blue-700)"></p>
-    <p class="lede" id="m-blurb"></p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" id="m-cta" href="login.html?mode=signup">${md.enrol}</a>
-      <a class="btn btn-ghost" id="m-all" href="courses.html">${md.full}</a>
-    </div>
-  </div>
-</section>
-
-<section class="band-tint">
-  <div class="wrap">
-    <div class="grid grid-2" style="gap:clamp(28px,4vw,56px)">
-      <div>
-        <p class="eyebrow">${md.outcomesEyebrow}</p>
-        <h2>${md.outcomesH2}</h2>
-        <ul id="m-outcomes" class="tick-list"></ul>
-      </div>
-      <div>
-        <p class="eyebrow">${md.keysEyebrow}</p>
-        <h2>${md.keysH2}</h2>
-        <div id="m-keys" style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px"></div>
-        <div class="card" style="background:var(--white)">
-          <h4>${md.practiceH}</h4>
-          <p id="m-practice" style="margin:0"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap-narrow center">
-    <div class="card" style="padding:40px">
-      <p class="eyebrow">${md.lockedEyebrow}</p>
-      <h2 style="margin-bottom:.4em">${md.lockedH2}</h2>
-      <p class="muted">${md.lockedP}</p>
-      <a class="btn btn-primary" style="margin-top:18px" href="login.html?mode=signup">${md.lockedCta}</a>
-    </div>
-  </div>
-</section>
-`, { scripts: `<script src="assets/js/module-page.js"></script>` }));
-
   /* ======================= ABOUT ======================= */
   const ab = L.about;
   write(L, "about.html", page(L, "about.html", ab.title, ab.desc, `
@@ -368,7 +318,7 @@ for (const L of LANGS) {
       </div>
       <div>
         <div class="card reveal" style="margin-bottom:16px"><div class="feature"><div class="feature-icon">${icons.heart}</div><div>
-          <h4>${ct.sideEmail}</h4><p><a href="mailto:hello@mindify.co.uk">hello@mindify.co.uk</a><br><span class="muted">${ct.sideEmailP}</span></p></div></div></div>
+          <h4>${ct.sideEmail}</h4><p><a href="mailto:hello@mindify.uk">hello@mindify.uk</a><br><span class="muted">${ct.sideEmailP}</span></p></div></div></div>
         <div class="card reveal" style="margin-bottom:16px"><div class="feature"><div class="feature-icon">${icons.people}</div><div>
           <h4>${ct.sideOrg}</h4><p>${ct.sideOrgP}</p></div></div></div>
         <div class="card reveal"><div class="feature"><div class="feature-icon">${icons.shield}</div><div>

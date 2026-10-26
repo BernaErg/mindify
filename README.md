@@ -1,7 +1,7 @@
 # Mindify
 
 Self-paced therapeutic parenting training. Static front end, Supabase for accounts
-and progress, Netlify for hosting. → **mindify.co.uk**
+and progress, Netlify for hosting. → **mindify.uk**
 
 ---
 
@@ -41,7 +41,7 @@ It is now live in demo mode. Everything works — you just don't have real accou
 4. **Authentication → Providers → Email**: leave *Confirm email* on for production.
    Turn it off while testing so you don't wait for emails.
 5. **Authentication → URL Configuration**: set Site URL to your Netlify URL (and
-   later `https://mindify.co.uk`), and add `/login.html` to Redirect URLs.
+   later `https://mindify.uk`), and add `/login.html` to Redirect URLs.
 6. Back in Netlify → **Site configuration → Environment variables** → add:
 
    | Key | Value |
@@ -56,7 +56,7 @@ be public — RLS in the database is what protects the data, not the key.
 
 ### 4 · Custom domain
 
-Netlify → **Domain management → Add a domain** → `mindify.co.uk`. Point your
+Netlify → **Domain management → Add a domain** → `mindify.uk`. Point your
 registrar's nameservers at Netlify, or add the CNAME they give you. HTTPS is
 automatic. Then update Supabase's Site URL to match.
 

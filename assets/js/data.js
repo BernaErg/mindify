@@ -125,6 +125,12 @@ window.MINDIFY_COURSES = [
     image: "psychedelics-in-mental-health.jpg",
     imagePos: "50% 40%",
     tr: {
+      download: {
+        label: "Eğitim genel bakış sunumu",
+        note: "Programın tamamını özetleyen sunum, PDF olarak.",
+        cta: "PDF olarak indir",
+        file: "../assets/downloads/psikedelikler-egitim-genel-bakis.pdf"
+      },
       subtitle: "Maddeler, Kanıt ve Terapötik Süreç",
       level: "Orta düzey · akademik; psikoloji ve tıp öğrencilerine uygun",
       summary: "Psychedelic rönesansının eleştirel okuması. Farmakoloji, varsayılan mod ağı, klinik araştırma kanıtının durum durum incelenmesi, terapötik model, gerçek riskler ve dünyada ile Türkiye'deki yasal tablo üzerine altı adet iki saatlik modül.",

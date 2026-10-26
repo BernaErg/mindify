@@ -27,7 +27,7 @@
       ok.textContent = "Thank you — your message has been sent. We'll reply within two working days.";
       ok.classList.add("show"); form.reset();
     }).catch(function () {
-      err.textContent = "That didn't send. Please email hello@mindify.co.uk instead.";
+      err.textContent = "That didn't send. Please email hello@mindify.uk instead.";
       err.classList.add("show");
     }).finally(function () {
       btn.disabled = false; btn.textContent = "Send message";

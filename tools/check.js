@@ -46,7 +46,6 @@ const contracts = {
   "login.html":     ["auth-form", "i-email", "i-pass", "i-name", "tab-in", "tab-up", "auth-submit", "auth-err", "demo-banner", "forgot"],
   "dashboard.html": ["u-name", "u-sub", "bar", "p-count", "p-pct", "courses", "signout", "dash-err", "dash-note"],
   "course.html":    ["c-level", "c-title", "c-sub", "c-summary", "c-meta", "c-why", "c-why-h", "c-outcomes", "c-modules", "c-outline", "c-cta", "c-cta2", "c-curriculum-h", "c-foot", "c-notice"],
-  "module.html":    ["m-num", "m-title", "m-tagline", "m-blurb", "m-outcomes", "m-keys", "m-practice", "m-cta", "m-back", "m-all"],
   "contact.html":   ["contact-form", "c-ok", "c-err"],
 };
 for (const d of DIRS) {

@@ -104,7 +104,7 @@ function foot(L, page) {
       </div>
     </div>
     <div class="footer-bot">
-      <span>© <span data-year>2026</span> Mindify · mindify.co.uk</span>
+      <span>© <span data-year>2026</span> Mindify · mindify.uk</span>
     </div>
   </div>
 </footer>

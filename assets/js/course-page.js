@@ -27,6 +27,19 @@
     nb.classList.remove("hidden");
   }
 
+  var dl = LANG !== "en" && c.tr && c.tr.download;
+  if (dl) {
+    var host = $("c-outcomes");
+    if (host && host.parentNode) {
+      var box = document.createElement("div");
+      box.className = "card"; box.id = "c-download"; box.style.marginTop = "26px";
+      box.innerHTML = '<h4>' + dl.label + '</h4>' +
+        '<p style="font-size:.94rem;margin:0 0 14px">' + dl.note + '</p>' +
+        '<a class="btn btn-ghost btn-sm" href="' + dl.file + '" download>' + dl.cta + '</a>';
+      host.parentNode.appendChild(box);
+    }
+  }
+
   $("c-why").textContent = loc(c, "why");
   if (!live) {
     $("c-why-h").textContent = t.devH2;
@@ -55,7 +68,7 @@
         '<p>' + m.blurb + '</p>' +
         '<div class="card-foot">' +
           '<span class="foot-pills">' + m.keys.slice(0, 2).map(function (k) { return '<span class="pill">' + k + '</span>'; }).join("") + '</span>' +
-          '<a class="btn btn-ghost btn-sm stretch" href="module.html?c=' + c.slug + '&m=' + m.n + '">Details</a>' +
+          '<a class="btn btn-ghost btn-sm stretch" href="module-' + c.slug + '-' + m.n + '.html">Details</a>' +
         '</div></article>';
     }).join("");
   } else {

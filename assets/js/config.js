@@ -5,5 +5,5 @@ window.MINDIFY_CONFIG = {
   supabaseUrl: "",
   supabaseAnonKey: "",
   siteName: "Mindify",
-  contactEmail: "hello@mindify.co.uk"
+  contactEmail: "hello@mindify.uk"
 };

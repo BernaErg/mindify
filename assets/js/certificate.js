@@ -216,7 +216,7 @@
 
     doc.setProperties({
       title: "Mindify \u2014 Certificate of Completion \u2014 " + rawName,
-      subject: course, author: "Mindify", creator: "mindify.co.uk"
+      subject: course, author: "Mindify", creator: "mindify.uk"
     });
 
     // Fold accents for the filename so nothing is silently dropped (Çağrı → Cagri).

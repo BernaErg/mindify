@@ -204,7 +204,7 @@ const EN = {
       ["Why we collect it", "Your name appears on your certificate. Your email identifies your account and lets you reset your password. Module completion is what makes the progress tracker and certificate work. We do not use any of it for advertising and we do not sell it."],
       ["Where it lives", "Account and progress data is held by our authentication and database provider. Contact form submissions are handled by our hosting provider. Both process data on our behalf under a data processing agreement."],
       ["How long we keep it", "For as long as your account is open. Ask us to delete it and we will remove your account and progress within thirty days."],
-      ["Your rights", "Under UK GDPR you can ask for a copy of your data, ask us to correct it, or ask us to delete it. Email hello@mindify.co.uk and we will respond within one month."],
+      ["Your rights", "Under UK GDPR you can ask for a copy of your data, ask us to correct it, or ask us to delete it. Email hello@mindify.uk and we will respond within one month."],
       ["Cookies", "We use a single first-party storage entry to keep you signed in. We do not run advertising or third-party analytics cookies on this site."]
     ],
     terms: [
@@ -417,7 +417,7 @@ const TR = {
       ["Neden topluyoruz", "Adınız sertifikanızda görünüyor. E-postanız hesabınızı tanımlıyor ve şifrenizi sıfırlamanızı sağlıyor. Modül tamamlama bilgisi ilerleme takibini ve sertifikayı çalışır kılan şey. Hiçbirini reklam için kullanmıyoruz ve satmıyoruz."],
       ["Nerede tutuluyor", "Hesap ve ilerleme verisi kimlik doğrulama ve veritabanı sağlayıcımızda tutuluyor. İletişim formu gönderimleri barındırma sağlayıcımız tarafından işleniyor. Her ikisi de bizim adımıza, bir veri işleme sözleşmesi kapsamında işlem yapıyor."],
       ["Ne kadar süreyle saklıyoruz", "Hesabınız açık kaldığı sürece. Silmemizi isterseniz hesabınızı ve ilerlemenizi otuz gün içinde kaldırıyoruz."],
-      ["Haklarınız", "İngiltere GDPR kapsamında verilerinizin bir kopyasını isteyebilir, düzeltilmesini ya da silinmesini talep edebilirsiniz. hello@mindify.co.uk adresine yazın, bir ay içinde yanıt verelim."],
+      ["Haklarınız", "İngiltere GDPR kapsamında verilerinizin bir kopyasını isteyebilir, düzeltilmesini ya da silinmesini talep edebilirsiniz. hello@mindify.uk adresine yazın, bir ay içinde yanıt verelim."],
       ["Çerezler", "Oturumunuzu açık tutmak için tek bir birinci taraf depolama kaydı kullanıyoruz. Bu sitede reklam ya da üçüncü taraf analiz çerezi çalıştırmıyoruz."]
     ],
     terms: [
