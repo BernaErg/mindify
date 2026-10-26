@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mindify — Instagram backgrounds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17233D;--blue:#2E4372;--corn:#8FA3CE;--amber:#D99A3E;--paper:#FAF7F2;--line:#E0DBD2;--muted:#556075}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:#151C2E;font:400 16px/1.6 Inter,sans-serif;padding:44px 24px 80px}
+.wrap{max-width:1180px;margin:0 auto}
+h1,h2{font-family:Fraunces,serif;font-weight:500;letter-spacing:-.02em;margin:0 0 .25em}
+h1{font-size:2.4rem} h2{font-size:1.5rem;margin-top:56px}
+p{opacity:.78;max-width:70ch}
+.eyebrow{font:600 .7rem/1 Inter;letter-spacing:.17em;text-transform:uppercase;color:var(--blue);margin:0 0 12px}
+.note{border-left:3px solid var(--amber);padding:4px 0 4px 16px;margin:20px 0;max-width:72ch;font-size:.94rem}
+.grid{display:grid;gap:22px;margin-top:24px}
+.g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.g4,.g3{grid-template-columns:1fr}}
+.post{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000;position:relative;line-height:0}
+.post img{width:100%;height:auto;display:block}
+.ov{position:absolute;inset:0;padding:9%;display:flex;flex-direction:column;line-height:1.25}
+.ov.bottom{justify-content:flex-end} .ov.top{justify-content:flex-start} .ov.centre{justify-content:center}
+.kicker{font:600 .58rem/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:.9em}
+.headline{font-family:Fraunces,serif;font-size:1.5rem;letter-spacing:-.025em;color:#fff;margin:0}
+.sub{font:400 .74rem/1.45 Inter;color:#C9D3EA;margin:.7em 0 0;max-width:24ch}
+.light .headline{color:var(--ink)} .light .sub{color:#42506E} .light .kicker{color:var(--blue)}
+.cap{font-size:.78rem;color:var(--muted);margin:8px 2px 0;line-height:1.45}
+.cap b{color:var(--ink);font-weight:600;display:block;font-family:ui-monospace,monospace;font-size:.72rem}
+</style></head><body>
+<div class="wrap">
+  <p class="eyebrow">Mindify · social</p>
+  <h1>Instagram backgrounds</h1>
+  <p>Eight compositions, built from the same geometry as the logo, in three formats. Text shown here is a placeholder — it's there to prove where copy sits. Nothing is baked into the image; every file is a clean background.</p>
+  <div class="note"><b>Where the text goes matters more than which background you pick.</b> Each composition deliberately leaves one region quiet. Put your copy there and these hold together as a grid; ignore it and they fight the type.</div>
+
+  <h2>Square · 1080 × 1080</h2>
+  <p>Feed posts, carousels, quote cards.</p>
+  <div class="grid g4" id="sq"></div>
+
+  <h2>Portrait · 1080 × 1350</h2>
+  <p>Takes more feed height than a square — use for the posts that matter.</p>
+  <div class="grid g3" id="pt"></div>
+
+  <h2>Story · 1080 × 1920</h2>
+  <p>Keep the top 250px and bottom 250px clear of anything important — Instagram's own interface sits there.</p>
+  <div class="grid g4" id="st"></div>
+</div>
+<script>
+const COMPS = [
+  ["discTop","Text bottom-left","The disc sits high right. Longest headline space of the set."],
+  ["baseStrata","Text top","Layers occupy the bottom third. Good for a headline plus a short line."],
+  ["quietLines","Text centre","Almost empty through the middle. Made for a long quote."],
+  ["discCentre","Text over the disc","Highest contrast behind type. Keep copy short."],
+  ["paperStrata","Text top, dark type","The light one. Use it every fourth or fifth post so the grid breathes."],
+  ["amberBase","Text top","Warmest of the set. One per grid row at most."],
+  ["minimal","Anywhere","Deep and nearly empty. The default when the words are doing the work."],
+  ["ringCorner","Text top-right","Disc anchored bottom-left, rings running off-canvas."]
+];
+const SAMPLES = [
+  ["Module 2","Behaviour is communication.","A child acting out is acting out a feeling they can't yet name."],
+  ["New course","Psychedelics in Mental Health","Six modules on the evidence, the process and the risks."],
+  ["","“Rigour and plain language are not opposites.”",""],
+  ["Free webinar","One idea, one hour.","Monthly, open to anyone."],
+  ["Now open","Forest Bathing &amp; Silvotherapy","Shinrin-yoku as an evidence-based practice."],
+  ["Certificate","Finish, and it's yours.","A dated PDF for CPD logs and placement portfolios."],
+  ["","Regulate. Relate. Reason.",""],
+  ["Mindify","Psychology, taught properly.","Self-paced courses from a UK academic psychologist."]
+];
+const POS = {discTop:"bottom",baseStrata:"top",quietLines:"centre",discCentre:"centre",paperStrata:"top",amberBase:"top",minimal:"bottom",ringCorner:"top"};
+function build(target, fmt, list){
+  document.getElementById(target).innerHTML = list.map(i=>{
+    const [name,where,why]=COMPS[i]; const [k,h,s]=SAMPLES[i];
+    const light = name==="paperStrata" ? " light" : "";
+    return `<div><div class="post">
+      <img loading="lazy" src="jpg/mindify-ig-${fmt}-${name}.jpg" alt="${name} background">
+      <div class="ov ${POS[name]}${light}">
+        ${k?`<div class="kicker">${k}</div>`:""}
+        <p class="headline">${h}</p>
+        ${s?`<p class="sub">${s}</p>`:""}
+      </div></div>
+      <p class="cap"><b>${fmt}-${name}.jpg</b>${where} — ${why}</p></div>`;
+  }).join("");
+}
+build("sq","square",[0,1,2,3,4,5,6,7]);
+build("pt","portrait",[0,2,4]);
+build("st","story",[1,3,6,7]);
+</script></body></html>
